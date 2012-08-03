@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>ward_3.kml</name>
+	<Style id="Style">
+		<LineStyle>
+			<color>F7FE2E</color>
+		</LineStyle>
+		<PolyStyle>
+			<color>F7FE2E</color>
+		</PolyStyle>
+	</Style>
+	<Placemark>
+		<name>Ward 3</name>
+		<description>
+			<![CDATA[
+			{"Councillor":"Ann Iwanchuk",
+			 "Photo":"http://www.saskatoon.ca/CITY%20COUNCIL/Your%20Ward%20Councillors/PublishingImages/iwanchuk.JPG",
+			 "Email":"ann.iwanchuk@saskatoon.ca",
+			 "Cell Number":"(306) 380-6870",
+			 "Website":"http://www.saskatoon.ca/CITY%20COUNCIL/Your%20Ward%20Councillors/Pages/ward3.aspx", 
+			 "Bio":"A lifelong Saskatoon resident, Ann was elected to represent Ward 3 on Saskatoon’s City Council on October 19, 2011. Ward 3 represents the extreme west end of Saskatoon including Fairhaven, Parkridge, Blairmore, Pacific Heights, and Confederation Park.\n\nAnn is on the Board of Directors of both the Saskatoon Tourism and the Saskatoon Regional Economic Development Authority Boards. She has been appointed to represent City Council on the City of Saskatoon’s Cultural Diversity Race Relations Committee, the Traffic Safety Committee, and the Street Naming Committee and is also a member of the Audit and Administration and Finance Committees.\n\nIn addition to being an elected representative, Ann is also a negotiator, mediator and facilitator with the Canadian Union of Public Employees. Ann's past experience includes 15 years as a Saskatoon City Hall employee; work with the Saskatoon Police Service; as well as experience with her family’s locally owned and operated downtown business.\n\nAnn volunteers with a number of organizations that support at-risk youth and is also a past member of the Father Vachon parent council.\n\nAnn and her husband Andy have a blended family of three daughters, two son-in-laws, and one grandson."}
+			]]>
+		</description>
+		<styleUrl>#Style</styleUrl>
+		<MultiGeometry>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-106.742305,52.143946,0 -106.741615,52.143945,0 -106.741615,52.14383200000001,0 -106.725891,52.143868,0 -106.725924,52.14288599999999,0 -106.726394,52.14042,0 -106.726173,52.13662299999999,0 -106.725884,52.135954,0 -106.725671,52.135993,0 -106.722706,52.136055,0 -106.721327,52.135937,0 -106.719293,52.135862,0 -106.718128,52.135861,0 -106.717828,52.135755,0 -106.717732,52.13577099999999,0 -106.717235,52.136247,0 -106.71657,52.13615900000001,0 -106.716728,52.135985,0 -106.716876,52.135809,0 -106.717014,52.13562900000001,0 -106.717144,52.135448,0 -106.717264,52.13526299999999,0 -106.717374,52.13507700000001,0 -106.717632,52.134512,0 -106.717984,52.13374399999999,0 -106.71888,52.13178799999999,0 -106.719512,52.130297,0 -106.719765,52.12936,0 -106.719767,52.12935099999999,0 -106.719783,52.12922,0 -106.719792,52.12908999999999,0 -106.719794,52.12895900000001,0 -106.719788,52.128823,0 -106.719775,52.128688,0 -106.719754,52.12855200000001,0 -106.719726,52.12841800000001,0 -106.71969,52.128284,0 -106.719646,52.12815,0 -106.719595,52.128018,0 -106.719546,52.127908,0 -106.719492,52.127798,0 -106.719433,52.12769,0 -106.719369,52.127582,0 -106.719062,52.127138,0 -106.718869,52.12686000000001,0 -106.718691,52.126578,0 -106.718528,52.126293,0 -106.718382,52.126004,0 -106.718251,52.125712,0 -106.718136,52.12541800000001,0 -106.718038,52.125122,0 -106.718076,52.12172,0 -106.718066,52.119896,0 -106.718047,52.116535,0 -106.724382,52.11686,0 -106.729786,52.117134,0 -106.741734,52.117738,0 -106.741734,52.117469,0 -106.753548,52.11806900000001,0 -106.753545,52.114689,0 -106.753578,52.107407,0 -106.765673,52.107381,0 -106.789408,52.107418,0 -106.789408,52.122079,0 -106.824956,52.122086,0 -106.824934,52.1512,0 -106.765663,52.151202,0 -106.765442,52.143874,0 -106.742305,52.143946,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</MultiGeometry>
+	</Placemark>
+</Document>
+</kml>
