@@ -72,6 +72,18 @@
     return nil;
 }
 
+- (id <MKOverlay>) overlayForCoordinate:(CLLocationCoordinate2D)coordinate {
+    MKMapPoint mapPoint = MKMapPointForCoordinate(coordinate);
+    for (id <MKOverlay> overlay in self.overlays) {
+        MKPolygonView *polygonView = (MKPolygonView *)[self viewForOverlay:overlay];
+        CGPoint point = [polygonView pointForMapPoint:mapPoint];
+        if (CGPathContainsPoint(polygonView.path, NULL, point, NO)) {
+            return overlay;
+        }
+    }
+    return nil;
+}
+
 - (MKPolygonView *) polygonViewForCoordinate:(CLLocationCoordinate2D)coordinate {
     MKMapPoint mapPoint = MKMapPointForCoordinate(coordinate);
     for (id <MKOverlay> overlay in self.overlays) {
@@ -84,7 +96,7 @@
     return nil;
 }
 
-- (MKPinAnnotationView *) getPinForAnnotation:(id <MKAnnotation>)annotation {
+- (MKPinAnnotationView *) getPinForAnnotation:(id <MKAnnotation>)annotation withColor:(MKPinAnnotationColor)pinColor {
     NSString *const identifer = @"MKPinAnnotationView";
 	MKPinAnnotationView *annotationView = (MKPinAnnotationView *)[self dequeueReusableAnnotationViewWithIdentifier:identifer];
 	if (annotationView == nil) {
@@ -92,13 +104,8 @@
 	}
 	annotationView.animatesDrop = NO;
 	annotationView.canShowCallout = YES;
-	if ([annotation class] == MKUserLocation.class) {
-		annotationView.pinColor = MKPinAnnotationColorGreen;
-	}
-	else {
-        annotationView.pinColor = MKPinAnnotationColorRed;
-	}
-	return annotationView;
+    annotationView.pinColor = pinColor;
+    return annotationView;
 }
 
 - (MKAnnotationView *) getLabelForAnnotation:(id <MKAnnotation>)annotation withText:(NSString*)text {

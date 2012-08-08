@@ -26,18 +26,18 @@
 // 
 // ##########################################################################################
 
+#import <UIKit/UIKit.h>
+#import <objc/runtime.h>
 #import <MapKit/MapKit.h>
 
-@interface MKMapView (A4G)
+@class A4GData;
 
-- (void) showAllOverlays:(BOOL)showOverlays allAnnotations:(BOOL)showAnnotations;
+@interface MKPolygon (A4G)
 
-- (id <MKOverlay>) overlayForPoint:(CGPoint)point;
-- (id <MKOverlay>) overlayForCoordinate:(CLLocationCoordinate2D)coordinate;
+@property (strong, nonatomic) A4GData *data;
+@property (strong, nonatomic) UIColor *fillColor;
+@property (strong, nonatomic) UIColor *strokeColor;
 
-- (MKPolygonView *) polygonViewForCoordinate:(CLLocationCoordinate2D)coordinate;
-- (MKPinAnnotationView *) getPinForAnnotation:(id <MKAnnotation>)annotation withColor:(MKPinAnnotationColor)pinColor;
-- (MKAnnotationView *) getLabelForAnnotation:(id <MKAnnotation>)annotation withText:(NSString*)text;
-- (void) addTapGestureWithTarget:(id)target action:(SEL)action;
+- (MKOverlayView *)overlayViewForMap:(MKMapView*)mapView;
 
 @end

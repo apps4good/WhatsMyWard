@@ -26,18 +26,52 @@
 // 
 // ##########################################################################################
 
-#import <MapKit/MapKit.h>
+#import "MKPolygon+A4G.h"
+#import "UIColor+A4G.h"
+#import "A4GData.h"
 
-@interface MKMapView (A4G)
+@implementation MKPolygon (A4G)
 
-- (void) showAllOverlays:(BOOL)showOverlays allAnnotations:(BOOL)showAnnotations;
+static NSString *kData = @"Data";
+static NSString *kFillColor = @"FillColor";
+static NSString *kStrokeColor = @"StrokeColor";
 
-- (id <MKOverlay>) overlayForPoint:(CGPoint)point;
-- (id <MKOverlay>) overlayForCoordinate:(CLLocationCoordinate2D)coordinate;
+- (void) setData:(A4GData *)data {
+    objc_setAssociatedObject(self, kData, data, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
 
-- (MKPolygonView *) polygonViewForCoordinate:(CLLocationCoordinate2D)coordinate;
-- (MKPinAnnotationView *) getPinForAnnotation:(id <MKAnnotation>)annotation withColor:(MKPinAnnotationColor)pinColor;
-- (MKAnnotationView *) getLabelForAnnotation:(id <MKAnnotation>)annotation withText:(NSString*)text;
-- (void) addTapGestureWithTarget:(id)target action:(SEL)action;
+- (A4GData*) data {
+    return (A4GData*)objc_getAssociatedObject(self, kData);
+}
+
+- (void) setFillColor:(UIColor *)fillColor {
+        objc_setAssociatedObject(self, kFillColor, fillColor, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (UIColor*) fillColor {
+    return (UIColor*)objc_getAssociatedObject(self, kFillColor);
+}
+
+- (void) setStrokeColor:(UIColor *)strokeColor {
+        objc_setAssociatedObject(self, kStrokeColor, strokeColor, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (UIColor*) strokeColor {
+    return (UIColor*)objc_getAssociatedObject(self, kStrokeColor);
+}
+
+- (MKOverlayView *)overlayViewForMap:(MKMapView*)mapView {
+    MKPolygonView *polygon = [[[MKPolygonView alloc] initWithOverlay:self] autorelease];
+    polygon.lineWidth = 1;
+    if (self.fillColor == nil) {
+        self.fillColor = [UIColor randomColor];
+    }
+    if (self.strokeColor == nil) {
+        self.strokeColor = self.fillColor;
+    }
+    polygon.fillColor = [self.fillColor colorWithAlphaComponent:0.25];
+    polygon.strokeColor = [self.strokeColor colorWithAlphaComponent:0.75];    
+    return polygon;
+}
 
 @end

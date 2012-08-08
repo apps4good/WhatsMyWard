@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E0B86A015D2C69900F4EAB4 /* MKPolygon+A4G.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E0B869F15D2C69900F4EAB4 /* MKPolygon+A4G.m */; };
+		3E0B86A115D2C69900F4EAB4 /* MKPolygon+A4G.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E0B869F15D2C69900F4EAB4 /* MKPolygon+A4G.m */; };
 		3E2676F715CB3E6C0074AECC /* UIColor+A4G.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E2676F615CB3E6C0074AECC /* UIColor+A4G.m */; };
 		3E2676F815CB3E6C0074AECC /* UIColor+A4G.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E2676F615CB3E6C0074AECC /* UIColor+A4G.m */; };
 		3E2676FA15CB3E7A0074AECC /* A4GHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E2676F915CB3E790074AECC /* A4GHeaderView.m */; };
@@ -226,6 +228,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3E0B869E15D2C69900F4EAB4 /* MKPolygon+A4G.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKPolygon+A4G.h"; sourceTree = "<group>"; };
+		3E0B869F15D2C69900F4EAB4 /* MKPolygon+A4G.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKPolygon+A4G.m"; sourceTree = "<group>"; };
 		3E2676F615CB3E6C0074AECC /* UIColor+A4G.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+A4G.m"; sourceTree = "<group>"; };
 		3E2676F915CB3E790074AECC /* A4GHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = A4GHeaderView.m; sourceTree = "<group>"; };
 		3E2676FF15CC35630074AECC /* Default-Portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait.png"; sourceTree = "<group>"; };
@@ -649,14 +653,16 @@
 				3E2676F615CB3E6C0074AECC /* UIColor+A4G.m */,
 				3ED42A8E15BFB42D00769FD1 /* NSString+A4G.h */,
 				3ED42A8F15BFB42D00769FD1 /* NSString+A4G.m */,
-				3ED42A9215BFB54800769FD1 /* UIAlertView+A4G.h */,
-				3ED42A9315BFB54800769FD1 /* UIAlertView+A4G.m */,
-				3E2BA4A615C722F300CFACE7 /* MKMapView+A4G.h */,
-				3E2BA4A715C722F300CFACE7 /* MKMapView+A4G.m */,
-				3E30FCA115C9AD3700FD538C /* UIViewController+A4G.h */,
-				3E30FCA215C9AD3800FD538C /* UIViewController+A4G.m */,
 				3E30FC9C15C984D100FD538C /* UILabel+A4G.h */,
 				3E30FC9D15C984D100FD538C /* UILabel+A4G.m */,
+				3ED42A9215BFB54800769FD1 /* UIAlertView+A4G.h */,
+				3ED42A9315BFB54800769FD1 /* UIAlertView+A4G.m */,
+				3E30FCA115C9AD3700FD538C /* UIViewController+A4G.h */,
+				3E30FCA215C9AD3800FD538C /* UIViewController+A4G.m */,
+				3E2BA4A615C722F300CFACE7 /* MKMapView+A4G.h */,
+				3E2BA4A715C722F300CFACE7 /* MKMapView+A4G.m */,
+				3E0B869E15D2C69900F4EAB4 /* MKPolygon+A4G.h */,
+				3E0B869F15D2C69900F4EAB4 /* MKPolygon+A4G.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -994,6 +1000,7 @@
 				3EC8C7DD15CC784200D8FEB3 /* A4GTableViewCellFactory.m in Sources */,
 				3EC8C7E415CC799B00D8FEB3 /* A4GOptionTableViewCell.m in Sources */,
 				3EC8C7E815CC79F200D8FEB3 /* A4GButtonTableViewCell.m in Sources */,
+				3E0B86A115D2C69900F4EAB4 /* MKPolygon+A4G.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1040,6 +1047,7 @@
 				3EC8C7DC15CC784200D8FEB3 /* A4GTableViewCellFactory.m in Sources */,
 				3EC8C7E315CC799B00D8FEB3 /* A4GOptionTableViewCell.m in Sources */,
 				3EC8C7E715CC79F200D8FEB3 /* A4GButtonTableViewCell.m in Sources */,
+				3E0B86A015D2C69900F4EAB4 /* MKPolygon+A4G.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

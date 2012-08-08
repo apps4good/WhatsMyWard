@@ -41,12 +41,10 @@
 #import "A4GData.h"
 #import "KMLParser.h"
 #import "UIViewController+A4G.h"
+#import "UIColor+A4G.h"
+#import "MKPolygon+A4G.h"
 
 @interface A4GMapViewController ()
-
-@property (strong, nonatomic) NSMutableDictionary *overlays;
-@property (strong, nonatomic) NSMutableDictionary *strokeColors;
-@property (strong, nonatomic) NSMutableDictionary *fillColors;
 
 - (void) mapTapped:(UITapGestureRecognizer *)recognizer;
 - (void) loadKmlFilesFromBundle;
@@ -57,17 +55,14 @@
 
 typedef enum {
     MapViewActionNone,
-    MapViewActionShowUserCallout,
-    MapViewActionShowCurrentCallout
+    MapViewActionShowLocation,
+    MapViewActionShowCallout
 } MapViewAction;
 
 @synthesize mapView = _mapView;
 @synthesize flipView = _flipView;
 @synthesize mapType = _mapType;
 @synthesize infoButton = _infoButton;
-@synthesize strokeColors = _strokeColors;
-@synthesize fillColors = _fillColors;
-@synthesize overlays = _overlays;
 @synthesize refreshButton = _refreshButton;
 @synthesize locateButton = _locateButton;
 @synthesize settingsViewController = _settingsViewController;
@@ -77,7 +72,6 @@ typedef enum {
 
 - (IBAction)locate:(id)sender event:(UIEvent*)event {
     DLog(@"");
-    [self.locateButton setLoading:YES];
     if (self.mapView.userLocationVisible) {
         for (id <MKAnnotation> annotation in self.mapView.annotations) {
             if ([annotation class] == MKUserLocation.class) {
@@ -137,10 +131,6 @@ typedef enum {
     [self.mapType setTitle:NSLocalizedString(@"Satellite", nil) forSegmentAtIndex:MKMapTypeSatellite];
     [self.mapType setTitle:NSLocalizedString(@"Hybrid", nil) forSegmentAtIndex:MKMapTypeHybrid];
     
-    self.overlays = [NSMutableDictionary dictionary];
-    self.fillColors = [NSMutableDictionary dictionary];
-    self.strokeColors = [NSMutableDictionary dictionary];
-    
     [self.mapView addTapGestureWithTarget:self action:@selector(mapTapped:)];
     
     [self loadKmlFilesFromBundle];
@@ -169,45 +159,40 @@ typedef enum {
 #pragma mark - MKMapViewDelegate
 
 - (MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id <MKOverlay>)overlay {
-    MKPolygonView *polygon = [[[MKPolygonView alloc] initWithOverlay:overlay] autorelease];
-    polygon.lineWidth = 1;
-
-    UIColor *fillColor = [self.fillColors objectForKey:overlay.title];
-    polygon.fillColor = [fillColor colorWithAlphaComponent:0.25];
-
-    UIColor *strokeColor = [self.strokeColors objectForKey:overlay.title];
-    polygon.strokeColor = [strokeColor colorWithAlphaComponent:0.75];    
-
-    return polygon;
+    if ([overlay isKindOfClass:[MKPolygon class]]) {
+        MKPolygon *polygon = (MKPolygon *)overlay;
+        return [polygon overlayViewForMap:mapView];
+    }
+    //TODO show other overlay types
+    return nil;
 }
 
 - (MKAnnotationView *) mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation {
-    if ([annotation isKindOfClass:[MKUserLocation class]]) {
-        MKPinAnnotationView *annotationView = [mapView getPinForAnnotation:annotation];
+    if ([annotation isKindOfClass:[MKPolygon class]]) {
+        MKAnnotationView *annotationView = [mapView getLabelForAnnotation:annotation withText:[annotation.title stringWithNumbersOnly]];
         annotationView.canShowCallout = YES;
-        annotationView.pinColor = MKPinAnnotationColorGreen;
+        annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+        return annotationView;
+    }
+    else if ([annotation isKindOfClass:[MKUserLocation class]]) {
+        MKPinAnnotationView *annotationView = [mapView getPinForAnnotation:annotation withColor:MKPinAnnotationColorGreen];
+        annotationView.canShowCallout = NO;
         CLLocationCoordinate2D coordinate = mapView.userLocation.coordinate;
         for (id <MKOverlay> overlay in self.mapView.overlays) {
             MKMapPoint userPoint = MKMapPointForCoordinate(coordinate);
             if (MKMapRectContainsPoint(overlay.boundingMapRect, userPoint) ) {
                 annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
                 annotation.title = overlay.title;
-                annotation.subtitle = overlay.subtitle;      
+                annotation.subtitle = overlay.subtitle;  
+                annotationView.canShowCallout = YES;
                 break;
             }
         }
         return annotationView;
     }
-    else if ([self.overlays objectForKey:annotation.title] != nil) {
-        MKAnnotationView *annotationView = [mapView getLabelForAnnotation:annotation withText:[annotation.title stringWithNumbersOnly]];
-        annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-        annotationView.canShowCallout = YES;
-        return annotationView;
-    }
     else {
-        MKPinAnnotationView *annotationView = [mapView getPinForAnnotation:annotation];
+        MKPinAnnotationView *annotationView = [mapView getPinForAnnotation:annotation withColor:MKPinAnnotationColorRed];
         annotationView.canShowCallout = YES;
-        annotationView.pinColor = MKPinAnnotationColorRed;
         annotationView.rightCalloutAccessoryView = nil;
         return annotationView;
     }
@@ -227,11 +212,11 @@ typedef enum {
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation {
     DLog(@"%f,%f", userLocation.location.coordinate.latitude, userLocation.location.coordinate.longitude);
     MKPolygonView *polygonView = [mapView polygonViewForCoordinate:userLocation.coordinate];
-    if (polygonView != nil) {
-        polygonView.fillColor = [polygonView.fillColor colorWithAlphaComponent:0.70];
+    if (polygonView != nil && [polygonView isKindOfClass:[MKPolygonView class]]) {
+        polygonView.fillColor = [polygonView.fillColor colorWithAlphaComponent:0.75];
         polygonView.strokeColor = [polygonView.strokeColor colorWithAlphaComponent:0.90];  
         [polygonView setNeedsDisplay];
-        mapView.tag = MapViewActionShowUserCallout;
+        mapView.tag = MapViewActionShowLocation;
     }
     [self.locateButton setLoading:NO];
 }
@@ -252,7 +237,7 @@ typedef enum {
     if (mapView.selectedAnnotations.count == 0) {
         for (MKAnnotationView *annotationView in views) {
             if ([annotationView.annotation isKindOfClass:[MKUserLocation class]]) {
-                if (mapView.tag == MapViewActionShowUserCallout) {
+                if (mapView.tag == MapViewActionShowLocation) {
                     DLog(@"User:%@", annotationView.annotation.title);
                     [mapView selectAnnotation:annotationView.annotation animated:YES];
                     mapView.tag = MapViewActionNone;  
@@ -267,16 +252,33 @@ typedef enum {
 }
 
 - (void)mapView:(MKMapView *)mapView didDeselectAnnotationView:(MKAnnotationView *)view {
-    if (mapView.tag == MapViewActionShowCurrentCallout) {
+    if (mapView.tag == MapViewActionShowCallout) {
         [mapView selectAnnotation:view.annotation animated:NO];
         mapView.tag = MapViewActionNone;
     }
 }
 
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
-    DLog(@"%@", view.annotation.title);
+    DLog(@"%@ %@", [view class], view.annotation.title);
     self.detailsViewController.title = view.annotation.title;
-    self.detailsViewController.data = [self.overlays objectForKey:view.annotation.title];
+    id <MKAnnotation> annotation = view.annotation;
+    if ([annotation respondsToSelector:@selector(data)]) {
+        self.detailsViewController.data = [annotation performSelector:@selector(data)];
+    }
+    else if ([annotation isKindOfClass:[MKUserLocation class]]) {
+        for (id <MKOverlay> overlay in mapView.overlays) {
+            if ([overlay.title isEqualToString:annotation.title]) {
+                if ([overlay respondsToSelector:@selector(data)]) {
+                    A4GData *data = [overlay performSelector:@selector(data)];
+                    if (data != nil) {
+                        DLog(@"%@ %@", [overlay class], overlay.title);
+                        self.detailsViewController.data = data;
+                        break;    
+                    }
+                }
+            }
+        }      
+    }
     self.detailsViewController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
     self.detailsViewController.modalPresentationStyle = UIModalPresentationPageSheet;
     [self.navigationController pushViewController:self.detailsViewController animated:YES]; 
@@ -293,21 +295,19 @@ typedef enum {
         self.mapView.tag = MapViewActionNone;
         CGPoint point = [recognizer locationInView:self.mapView];
         id<MKOverlay> overlay = [self.mapView overlayForPoint:point];
-        if (overlay != nil && [self.overlays objectForKey:overlay.title] != nil) {
-            DLog(@"Tapped:%@", overlay.title);
-            for (id <MKAnnotation> annotation in self.mapView.annotations) {
-                if ([annotation.title isEqualToString:overlay.title] && 
-                    self.mapView.selectedAnnotations.count == 0) {
-                    self.mapView.tag = MapViewActionShowCurrentCallout;
-                    [self.mapView selectAnnotation:annotation animated:YES];
-                    return;
-                }
+        DLog(@"Tapped:%@", overlay.title);
+        for (id <MKAnnotation> annotation in self.mapView.annotations) {
+            if ([annotation.title isEqualToString:overlay.title] && 
+                self.mapView.selectedAnnotations.count == 0) {
+                self.mapView.tag = MapViewActionShowCallout;
+                [self.mapView selectAnnotation:annotation animated:YES];
+                return;
             }
-        }
+        }        
     }
 }
 
-#pragma mark - Parse KML
+#pragma mark - KMLParser
 
 - (void) loadKmlFilesFromBundle {
     for (NSString *kml in [[NSBundle mainBundle] pathsForResourcesOfType:@"kml" inDirectory:nil]) { 
@@ -315,27 +315,21 @@ typedef enum {
         KMLParser *kmlParser = [[KMLParser alloc] initWithURL:url];
         [kmlParser parseKML];
         for (id <MKOverlay> overlay in [kmlParser overlays]) {
-            if ([NSString isNilOrEmpty:overlay.subtitle] == NO) {
-                DLog(@"%@ : %@", overlay.title, overlay.subtitle);
-                A4GData *data = [[A4GData alloc] initWithJSON:overlay.subtitle];
-                [self.overlays setObject:data forKey:overlay.title];
-                [data release];
-                overlay.subtitle = nil;
+            DLog(@"%@ %@", [overlay class], overlay.title);
+            if ([overlay isKindOfClass:[MKPolygon class]]) {
+                MKPolygon *polygon = (MKPolygon*)overlay;
+                //TODO check is subtitle is JSON
+                if ([NSString isNilOrEmpty:overlay.subtitle] == NO) {
+                    A4GData *data = [[A4GData alloc] initWithJSON:overlay.subtitle];
+                    [polygon setData:data];
+                    [data release];
+                    overlay.subtitle = nil;
+                    [self.mapView addAnnotation:polygon];
+                }
+                [polygon setFillColor:[kmlParser fillColorForOverlay:overlay]];
+                [polygon setStrokeColor:[kmlParser strokeColorForOverlay:overlay]];
             }
-            UIColor *fillColor = [kmlParser fillColorForOverlay:overlay];
-            if (fillColor == nil) {
-                fillColor = [UIColor randomColor];
-            }
-            [self.fillColors setObject:fillColor forKey:overlay.title];
-            
-            UIColor *strokeColor = [kmlParser strokeColorForOverlay:overlay];
-            if (strokeColor == nil) {
-                strokeColor = fillColor;
-            }
-            [self.strokeColors setObject:strokeColor forKey:overlay.title];    
-            
             [self.mapView addOverlay:overlay];
-            [self.mapView addAnnotation:overlay];
         }
         for (id <MKAnnotation> annotation in [kmlParser points]) {
             [self.mapView addAnnotation:annotation];
