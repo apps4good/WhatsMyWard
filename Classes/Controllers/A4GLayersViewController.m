@@ -26,92 +26,82 @@
 // 
 // ##########################################################################################
 
-#import "A4GSettingsViewController.h"
+#import "A4GLayersViewController.h"
+#import "A4GCheckTableViewCell.h"
 #import "A4GTableViewCellFactory.h"
-#import "A4GImageTableViewCell.h"
-#import "A4GButtonTableViewCell.h"
+#import "A4GMapViewController.h"
 #import "A4GSettings.h"
+#import "NSString+A4G.h"
 
-@interface A4GSettingsViewController ()
+@interface A4GLayersViewController ()
+
+@property (strong, nonatomic) NSMutableDictionary *layers;
 
 @end
 
-@implementation A4GSettingsViewController
+@implementation A4GLayersViewController
 
-typedef enum {
-    TableSectionAbout,
-    TableSections
-} TableSection;
+@synthesize mapViewController = _mapViewController;
+@synthesize layers = _layers;
 
-typedef enum {
-    TableSectionAboutRowImage,
-    TableSectionAboutRowUrl,
-    TableSectionAboutRows
-} TableSectionAboutRow;
+#pragma mark - UIViewController
 
-#pragma mark - Handlers
-
-- (IBAction) done:(id)sender event:(UIEvent*)event {
-    [self dismissViewControllerAnimated:YES completion:nil];
+- (IBAction)done:(id)sender event:(UIEvent*)event {
+    DLog(@"");
+    [self dismissModalViewControllerAnimated:YES];   
 }
 
 #pragma mark - UIViewController
 
 - (void)dealloc {
+    [_layers release];
+    [_mapViewController release];
     [super dealloc];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.layers = [NSMutableDictionary dictionaryWithCapacity:0];
+    for (NSString *kml in [A4GSettings kmlFiles]) {
+        [self.layers setObject:[NSNumber numberWithBool:YES] forKey:kml];
+    }
 }
 
 #pragma mark - UITableViewController
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return TableSections;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (section == TableSectionAbout) {
-        return TableSectionAboutRows;
-    }
-    return 0;
+    return self.layers.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == TableSectionAbout) {
-        if (indexPath.row == TableSectionAboutRowImage) {
-            A4GImageTableViewCell *cell = [A4GTableViewCellFactory imageTableViewCell:tableView delegate:self index:indexPath];
-            cell.image = [UIImage imageNamed:@"logo.png"];
-            return cell;
-        }
-        else if (indexPath.row == TableSectionAboutRowUrl) {
-            A4GButtonTableViewCell *cell = [A4GTableViewCellFactory buttonTableViewCell:tableView delegate:self index:indexPath];
-            cell.title = @"http://apps4good.ca";
-            return cell;
-        }
-    }
-    return nil;
+    A4GCheckTableViewCell *cell = [A4GTableViewCellFactory checkTableViewCell:tableView delegate:self index:indexPath];
+    NSArray *kmlFiles = [[self.layers allKeys] sortedArrayUsingSelector:@selector(compare:)];
+    NSString *kml = [kmlFiles objectAtIndex:indexPath.row];
+    cell.titleLabel.text = [[kml lastPathComponent] makePretty];
+    cell.subtitleLabel.text = [kml lastPathComponent];
+    cell.checked = [[self.layers objectForKey:kml] boolValue];
+    return cell;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == TableSectionAbout) {
-        if (indexPath.row == TableSectionAboutRowImage) {
-            UIImage *image = [UIImage imageNamed:@"logo.png"];
-            return image.size.height;
-        }
-        else if (indexPath.row == TableSectionAboutRowUrl) {
-            return 44;
-        } 
-    }
-    return 0;
-}
+#pragma mark - A4GCheckTableViewCell
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == TableSectionAbout) {
-        [self openURL:@"http://apps4good.ca"];
+- (void) checkTableViewCellChanged:(A4GCheckTableViewCell *)cell index:(NSIndexPath *)indexPath checked:(BOOL)checked {
+    NSArray *kmlFiles = [[self.layers allKeys] sortedArrayUsingSelector:@selector(compare:)];
+    NSString *kml = [kmlFiles objectAtIndex:indexPath.row];
+    if (checked) {
+        DLog(@"Add: %@", kml);
+        [self.mapViewController addKML:kml];
+        [self.layers setObject:[NSNumber numberWithBool:YES] forKey:kml];
     }
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    else {
+        DLog(@"Remove: %@", kml);
+        [self.mapViewController removeKML:kml];
+        [self.layers setObject:[NSNumber numberWithBool:NO] forKey:kml];
+    }
 }
 
 @end

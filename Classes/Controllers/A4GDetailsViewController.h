@@ -26,16 +26,14 @@
 // 
 // ##########################################################################################
 
-#import "A4GBaseViewController.h"
+#import "A4GTableViewController.h"
 
 @class A4GData;
 
-@interface A4GDetailsViewController : A4GBaseViewController<UITableViewDataSource, 
-                                                          UITableViewDelegate,
-                                                          UIActionSheetDelegate,
-                                                          UIAlertViewDelegate>
-
-@property (strong, nonatomic) IBOutlet UITableView *tableView;
+@interface A4GDetailsViewController : A4GTableViewController<UITableViewDataSource, 
+                                                             UITableViewDelegate,
+                                                             UIActionSheetDelegate,
+                                                             UIAlertViewDelegate>
 @property (strong, nonatomic) A4GData *data;
 
 - (IBAction) done:(id)sender event:(UIEvent*)event;

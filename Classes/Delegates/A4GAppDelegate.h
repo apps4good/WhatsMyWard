@@ -31,13 +31,18 @@
 @class A4GMapViewController;
 @class A4GDetailsViewController;
 @class A4GSettingsViewController;
+@class A4GLayersViewController;
 
 @interface A4GAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) IBOutlet UIWindow *window;
-@property (strong, nonatomic) IBOutlet UINavigationController *navigationController;
+@property (strong, nonatomic) IBOutlet UINavigationController *masterNavigationController;
+@property (strong, nonatomic) IBOutlet UINavigationController *detailNavigationController;
 @property (strong, nonatomic) IBOutlet A4GMapViewController *mapViewController;
 @property (strong, nonatomic) IBOutlet A4GDetailsViewController *detailsViewController;
 @property (strong, nonatomic) IBOutlet A4GSettingsViewController *settingsViewController;
+@property (strong, nonatomic) IBOutlet A4GLayersViewController *layersViewController;
+
+- (void)sidebar:(id)sender event:(UIEvent*)event;
 
 @end

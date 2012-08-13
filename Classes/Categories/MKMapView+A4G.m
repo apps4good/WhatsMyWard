@@ -46,13 +46,15 @@
     }
     if (showAnnotations) {
         for (id <MKAnnotation> annotation in self.annotations) {
-            MKMapPoint annotationPoint = MKMapPointForCoordinate(annotation.coordinate);
-            MKMapRect pointRect = MKMapRectMake(annotationPoint.x, annotationPoint.y, 0, 0);
-            if (MKMapRectIsNull(visibleMapRect)) {
-                visibleMapRect = pointRect;
-            } 
-            else {
-                visibleMapRect = MKMapRectUnion(visibleMapRect, pointRect);
+            if ([annotation isKindOfClass:[MKUserLocation class]] == NO) {
+                MKMapPoint annotationPoint = MKMapPointForCoordinate(annotation.coordinate);
+                MKMapRect pointRect = MKMapRectMake(annotationPoint.x, annotationPoint.y, 0, 0);
+                if (MKMapRectIsNull(visibleMapRect)) {
+                    visibleMapRect = pointRect;
+                } 
+                else {
+                    visibleMapRect = MKMapRectUnion(visibleMapRect, pointRect);
+                }
             }
         }
     }

@@ -34,10 +34,12 @@
 #import <Accounts/Accounts.h>
 #endif
 
-@interface A4GBaseViewController : UIViewController<UIAlertViewDelegate,
+@interface A4GViewController : UIViewController<UIAlertViewDelegate,
                                                     UIPrintInteractionControllerDelegate,
                                                     MFMailComposeViewControllerDelegate,
                                                     MFMessageComposeViewControllerDelegate>
+
+@property (strong, nonatomic) IBOutlet UINavigationBar *navigationBar;
 
 - (BOOL) canPrintText;
 - (BOOL) canSendSMS;

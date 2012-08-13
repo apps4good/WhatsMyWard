@@ -26,14 +26,11 @@
 // 
 // ##########################################################################################
 
-#import "A4GBaseViewController.h"
+#import "A4GTableViewController.h"
 #import "A4GImageTableViewCell.h"
 
-@interface A4GSettingsViewController : A4GBaseViewController<UITableViewDataSource, 
-                                                             UITableViewDelegate>
-
-@property (strong, nonatomic) IBOutlet UINavigationBar *navigationBar;
-@property (strong, nonatomic) IBOutlet UITableView *tableView;
+@interface A4GSettingsViewController : A4GTableViewController<UITableViewDataSource, 
+                                                              UITableViewDelegate>
 
 - (IBAction) done:(id)sender event:(UIEvent*)event;
 

@@ -35,7 +35,13 @@
 +(NSString *) appVersion;
 
 +(UIColor *) navBarColor;
-+(UIColor *) tableHeaderColor;
-+(UIColor *) tableBackgroundColor;
++(UIColor *) tableHeaderBackColor;
++(UIColor *) tableHeaderTextColor;
++(UIColor *) tableRowOddColor;
++(UIColor *) tableRowEvenColor;
++(UIColor *) tablePlainBackColor;
++(UIColor *) tableGroupedBackColor;
+
++ (NSArray *) kmlFiles;
 
 @end

@@ -26,19 +26,15 @@
 // 
 // ##########################################################################################
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#import "A4GTableViewController.h"
 
-@interface NSString (A4G)
+@class A4GMapViewController;
 
-+ (BOOL) isNilOrEmpty:(NSString *)string;
-+ (BOOL) isPhoneNumber:(NSString *)string;
-+ (BOOL) isEmailAddress:(NSString *)string;
-+ (BOOL) isWebURL:(NSString *)string;
-+ (BOOL) isPhotoURL:(NSString *)string;
-+ (BOOL) isTwitterURL:(NSString *)string;
-- (NSString *) stringWithNumbersOnly;
-- (NSString *) stringWithLettersOnly;
-- (NSString *) removeTwitterURL;
-- (NSString *) makePretty;
+@interface A4GLayersViewController : A4GTableViewController
+
+@property (strong, nonatomic) IBOutlet A4GMapViewController *mapViewController;
+
+- (IBAction)done:(id)sender event:(UIEvent*)event;
 
 @end

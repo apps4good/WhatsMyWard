@@ -70,10 +70,18 @@
 	</array>
 	<key>A4GNavBarColor</key>
 	<string>#585858</string>
-	<key>A4GTableBackgroundColor</key>
-	<string>#E6E6E6</string>
-	<key>A4GTableHeaderColor</key>
+	<key>A4GTablePlainBackColor</key>
+	<string>#FAFAFA</string>
+	<key>A4GTableGroupedBackColor</key>
+	<string>#F2F2F2</string>
+	<key>A4GTableHeaderBackColor</key>
 	<string>#6E6E6E</string>
+	<key>A4GTableHeaderTextColor</key>
+	<string>#424242</string>
+	<key>A4GTableRowOddColor</key>
+	<string>#F2F2F2</string>
+	<key>A4GTableRowEvenColor</key>
+	<string>#FAFAFA</string>
 	<key>A4GAppDownload</key>
 	<string></string>
 </dict>

@@ -26,19 +26,33 @@
 // 
 // ##########################################################################################
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
-@interface NSString (A4G)
+@protocol A4GCheckTableViewCellDelegate;
 
-+ (BOOL) isNilOrEmpty:(NSString *)string;
-+ (BOOL) isPhoneNumber:(NSString *)string;
-+ (BOOL) isEmailAddress:(NSString *)string;
-+ (BOOL) isWebURL:(NSString *)string;
-+ (BOOL) isPhotoURL:(NSString *)string;
-+ (BOOL) isTwitterURL:(NSString *)string;
-- (NSString *) stringWithNumbersOnly;
-- (NSString *) stringWithLettersOnly;
-- (NSString *) removeTwitterURL;
-- (NSString *) makePretty;
+@interface A4GCheckTableViewCell : UITableViewCell {
+@private
+    UILabel *textlabel;
+    UILabel *detailsTextlabel;
+}
+
+@property (nonatomic, strong) IBOutlet UIButton *checkBox;
+@property (nonatomic, strong) IBOutlet UILabel *titleLabel;
+@property (nonatomic, strong) IBOutlet UILabel *subtitleLabel;
+@property (nonatomic, assign) IBOutlet id<A4GCheckTableViewCellDelegate>delegate;
+
+@property (nonatomic, strong) NSIndexPath *indexPath;
+@property (nonatomic, assign) BOOL checked;
+
+- (IBAction)checked:(id)sender;
++ (CGFloat) cellHeight;
+
+@end
+
+@protocol A4GCheckTableViewCellDelegate <NSObject>
+
+@optional
+
+- (void) checkTableViewCellChanged:(A4GCheckTableViewCell *)cell index:(NSIndexPath *)indexPath checked:(BOOL)checked;
 
 @end

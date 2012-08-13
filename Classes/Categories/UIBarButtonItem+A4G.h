@@ -26,19 +26,10 @@
 // 
 // ##########################################################################################
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
-@interface NSString (A4G)
+@interface UIBarButtonItem (A4G)
 
-+ (BOOL) isNilOrEmpty:(NSString *)string;
-+ (BOOL) isPhoneNumber:(NSString *)string;
-+ (BOOL) isEmailAddress:(NSString *)string;
-+ (BOOL) isWebURL:(NSString *)string;
-+ (BOOL) isPhotoURL:(NSString *)string;
-+ (BOOL) isTwitterURL:(NSString *)string;
-- (NSString *) stringWithNumbersOnly;
-- (NSString *) stringWithLettersOnly;
-- (NSString *) removeTwitterURL;
-- (NSString *) makePretty;
++ (UIBarButtonItem*) borderedItemWithImage:(UIImage*)image target:(id)target action:(SEL)action;
 
 @end

@@ -32,6 +32,9 @@
 #import "A4GMapViewController.h"
 #import "A4GDetailsViewController.h"
 #import "A4GSettingsViewController.h"
+#import "A4GLayersViewController.h"
+#import "A4GDevice.h"
+#import "A4GSettings.h"
 
 @interface A4GAppDelegate ()
 
@@ -43,31 +46,97 @@
 
 @synthesize window = _window;
 @synthesize splitViewController = _splitViewController;
-@synthesize navigationController = _navigationController;
 @synthesize mapViewController = _mapViewController;
 @synthesize detailsViewController = _detailsViewController;
 @synthesize settingsViewController = _settingsViewController;
+@synthesize layersViewController = _layersViewController;
+@synthesize masterNavigationController = _masterNavigationController;
+@synthesize detailNavigationController = _detailNavigationController;
+
+#pragma mark - Public
+
+- (void)sidebar:(id)sender event:(UIEvent*)event {
+    UIBarButtonItem *barButtonItem = (UIBarButtonItem*)sender;
+    CGRect master = self.masterNavigationController.view.frame;
+    CGRect split = self.splitViewController.view.frame;    
+    UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];  
+    DLog(@"Before:%@", NSStringFromCGRect(split));
+    BOOL restoreSplitFrame = NO;
+    if (orientation == UIInterfaceOrientationLandscapeLeft) {
+        DLog(@"UIInterfaceOrientationLandscapeLeft");
+        if (split.size.height > self.window.frame.size.height) {
+            split.size.height = self.window.frame.size.height;   
+            barButtonItem.image = [UIImage imageNamed:@"hide.png"];
+        }
+        else {
+            split.size.height += master.size.width;   
+            barButtonItem.image = [UIImage imageNamed:@"show.png"];
+        }
+    }
+    else if (orientation == UIInterfaceOrientationLandscapeRight) {
+        DLog(@"UIInterfaceOrientationLandscapeRight");
+        if (split.origin.y < 0) {
+            split.origin.y = 0;
+            restoreSplitFrame = YES;
+            barButtonItem.image = [UIImage imageNamed:@"hide.png"];
+        }
+        else {
+            split.origin.y -= master.size.width;
+            split.size.height += master.size.width;   
+            barButtonItem.image = [UIImage imageNamed:@"show.png"];
+        }
+    }
+    else {
+        DLog(@"Orientation:%d", orientation);
+    }
+    DLog(@"After:%@", NSStringFromCGRect(split));
+    [UIView animateWithDuration:0.3
+                          delay:0.0
+                        options:UIViewAnimationOptionCurveEaseIn
+                     animations:^{
+                         self.splitViewController.view.frame = split;
+                     }
+                     completion:^(BOOL finished){
+                         if (restoreSplitFrame) {
+                             DLog(@"restoreSplitFrame");
+                             CGRect split = self.splitViewController.view.frame; 
+                             split.size.height = self.window.frame.size.height;
+                             self.splitViewController.view.frame = split;
+                         }
+                     }];
+}
+
+#pragma mark - UIApplication
 
 - (void)dealloc {
     [_window release];
     [_splitViewController release];
-    [_navigationController release];
     [_mapViewController release];
     [_detailsViewController release];
     [_settingsViewController release];
+    [_detailNavigationController release];
+    [_masterNavigationController release];
     [super dealloc];
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    DLog(@"%@", launchOptions);
+    DLog(@"Options:%@", launchOptions);
     if (self.window == nil) {
         self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     }
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        //Do iPhone specific stuff here
+    if ([A4GDevice isIPad]) {
+        self.masterNavigationController.navigationBar.tintColor = [A4GSettings navBarColor];
+        self.detailNavigationController.navigationBar.tintColor = [A4GSettings navBarColor];
+        
+        self.splitViewController = [[UISplitViewController alloc] init];
+        self.splitViewController.viewControllers = [NSArray arrayWithObjects:self.masterNavigationController, self.detailNavigationController, nil];
+        self.splitViewController.delegate = self.mapViewController;
+        
+        self.window.rootViewController = self.splitViewController;
     } 
     else {
-        //Do iPad specific stuff here
+        self.masterNavigationController.navigationBar.tintColor = [A4GSettings navBarColor];
+        self.window.rootViewController = self.masterNavigationController;
     }
     [self.window makeKeyAndVisible];
     return YES;

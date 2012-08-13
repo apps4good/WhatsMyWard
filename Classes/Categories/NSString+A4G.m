@@ -95,4 +95,26 @@
     return tweet;
 }
 
+- (NSString *)makePretty {
+    NSString *original = [[self stringByDeletingPathExtension] stringByReplacingOccurrencesOfString:@"_" withString:@" "];
+    @try {
+        NSMutableString *pretty = [NSMutableString stringWithCapacity:original.length];
+        for (NSString *word in [original componentsSeparatedByString:@" "]) {
+            if (pretty.length > 0) {
+                [pretty appendString:@" "];
+            }
+            if (word.length > 1) {
+                [pretty appendString:[word stringByReplacingCharactersInRange:NSMakeRange(0,1) withString:[[word substringToIndex:1] capitalizedString]]];    
+            }
+            else {
+                [pretty appendString:[word capitalizedString]];
+            }
+        }
+        return pretty;   
+    }
+    @catch (NSException *exception) {
+        return original;
+    }
+}
+
 @end

@@ -26,19 +26,12 @@
 // 
 // ##########################################################################################
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#import "A4GViewController.h"
 
-@interface NSString (A4G)
+@interface A4GTableViewController : A4GViewController<UITableViewDelegate, 
+                                                      UITableViewDataSource>
 
-+ (BOOL) isNilOrEmpty:(NSString *)string;
-+ (BOOL) isPhoneNumber:(NSString *)string;
-+ (BOOL) isEmailAddress:(NSString *)string;
-+ (BOOL) isWebURL:(NSString *)string;
-+ (BOOL) isPhotoURL:(NSString *)string;
-+ (BOOL) isTwitterURL:(NSString *)string;
-- (NSString *) stringWithNumbersOnly;
-- (NSString *) stringWithLettersOnly;
-- (NSString *) removeTwitterURL;
-- (NSString *) makePretty;
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 @end

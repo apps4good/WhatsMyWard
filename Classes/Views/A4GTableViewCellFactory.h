@@ -34,11 +34,13 @@
 @class A4GButtonTableViewCell;
 @class A4GParagraphTableViewCell;
 @class A4GInputTableViewCell;
+@class A4GCheckTableViewCell;
 
 @protocol A4GSwitchTableViewCellDelegate;
 @protocol A4GOptionTableViewCellDelegate;
 @protocol A4GKioskTableViewCellDelegate;
 @protocol A4GInputTableViewCellDelegate;
+@protocol A4GCheckTableViewCellDelegate;
 
 @interface A4GTableViewCellFactory : NSObject
 
@@ -59,5 +61,7 @@
 + (A4GParagraphTableViewCell*) paragraphTableViewCell:(UITableView*)tableView delegate:(id)delegate index:(NSIndexPath*)indexPath;
 
 + (A4GInputTableViewCell*) inputTableViewCell:(UITableView*)tableView delegate:(id)delegate index:(NSIndexPath*)indexPath;
+
++ (A4GCheckTableViewCell*) checkTableViewCell:(UITableView*)tableView delegate:(id)delegate index:(NSIndexPath*)indexPath;
 
 @end

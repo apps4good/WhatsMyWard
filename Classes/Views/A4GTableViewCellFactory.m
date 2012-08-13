@@ -34,6 +34,7 @@
 #import "A4GImageTableViewCell.h"
 #import "A4GParagraphTableViewCell.h"
 #import "A4GInputTableViewCell.h"
+#import "A4GCheckTableViewCell.h"
 
 @interface A4GTableViewCellFactory ()
 
@@ -115,6 +116,21 @@
     cell.text = nil;
     cell.placeholder = nil;
     return cell;
+}
+
++ (A4GCheckTableViewCell*) checkTableViewCell:(UITableView*)tableView delegate:(id)delegate index:(NSIndexPath*)indexPath {
+    A4GCheckTableViewCell *cell = (A4GCheckTableViewCell*)[tableView dequeueReusableCellWithIdentifier:@"A4GCheckTableViewCell"];
+    if (cell == nil) {
+        NSArray *objects = [[NSBundle mainBundle] loadNibNamed:@"A4GCheckTableViewCell" owner:delegate options:nil];
+        cell = (A4GCheckTableViewCell*)[objects lastObject];
+    }
+    cell.accessoryType = UITableViewCellAccessoryNone;
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    cell.delegate = delegate;
+    cell.indexPath = indexPath;
+    cell.titleLabel.text = nil;
+    cell.subtitleLabel.text = nil;
+    return cell; 
 }
 
 + (UITableViewCell *) defaultTableViewCell:(UITableView*)tableView {

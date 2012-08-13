@@ -26,19 +26,12 @@
 // 
 // ##########################################################################################
 
-#import <Foundation/Foundation.h>
+#import "UIBarButtonItem+A4G.h"
 
-@interface NSString (A4G)
+@implementation UIBarButtonItem (A4G)
 
-+ (BOOL) isNilOrEmpty:(NSString *)string;
-+ (BOOL) isPhoneNumber:(NSString *)string;
-+ (BOOL) isEmailAddress:(NSString *)string;
-+ (BOOL) isWebURL:(NSString *)string;
-+ (BOOL) isPhotoURL:(NSString *)string;
-+ (BOOL) isTwitterURL:(NSString *)string;
-- (NSString *) stringWithNumbersOnly;
-- (NSString *) stringWithLettersOnly;
-- (NSString *) removeTwitterURL;
-- (NSString *) makePretty;
++ (UIBarButtonItem*) borderedItemWithImage:(UIImage*)image target:(id)target action:(SEL)action {
+    return [[[UIBarButtonItem alloc] initWithImage:image style:UIBarButtonItemStyleBordered target:target action:action] autorelease];
+}
 
 @end

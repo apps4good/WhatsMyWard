@@ -28,6 +28,7 @@
 
 #import "A4GMapViewController.h"
 #import "A4GDetailsViewController.h"
+#import "A4GLayersViewController.h"
 #import "A4GSettingsViewController.h"
 #import "A4GLoadingButton.h"
 #import "A4GSettings.h"
@@ -43,11 +44,14 @@
 #import "UIViewController+A4G.h"
 #import "UIColor+A4G.h"
 #import "MKPolygon+A4G.h"
+#import "UIBarButtonItem+A4G.h"
 
 @interface A4GMapViewController ()
 
+@property (strong, nonatomic) NSMutableDictionary *overlays;
+@property (strong, nonatomic) NSMutableDictionary *annotations;
+
 - (void) mapTapped:(UITapGestureRecognizer *)recognizer;
-- (void) loadKmlFilesFromBundle;
 
 @end
 
@@ -61,14 +65,74 @@ typedef enum {
 
 @synthesize mapView = _mapView;
 @synthesize flipView = _flipView;
+@synthesize titleView = _titleView;
 @synthesize mapType = _mapType;
+@synthesize overlays = _overlays;
+@synthesize annotations = _annotations;
 @synthesize infoButton = _infoButton;
 @synthesize refreshButton = _refreshButton;
 @synthesize locateButton = _locateButton;
 @synthesize settingsViewController = _settingsViewController;
+@synthesize layersViewController = _layersViewController;
 @synthesize detailsViewController = _detailsViewController;
 
 #pragma mark - Handlers
+
+- (void) addKML:(NSString*)kml {
+    //DLog(@"%@", kml);
+    NSURL *url = [NSURL fileURLWithPath:kml];
+    KMLParser *kmlParser = [[KMLParser alloc] initWithURL:url];
+    [kmlParser parseKML];
+    NSMutableArray *overlays = [NSMutableArray array];
+    NSMutableArray *annotations = [NSMutableArray array];
+    for (id <MKOverlay> overlay in [kmlParser overlays]) {
+        //DLog(@"%@ %@", [overlay class], overlay.title);
+        if ([overlay isKindOfClass:[MKPolygon class]]) {
+            MKPolygon *polygon = (MKPolygon*)overlay;
+            //TODO check is subtitle is JSON
+            if ([NSString isNilOrEmpty:overlay.subtitle] == NO) {
+                A4GData *data = [[A4GData alloc] initWithJSON:overlay.subtitle];
+                [polygon setData:data];
+                [data release];
+                overlay.subtitle = nil;
+                [self.mapView addAnnotation:polygon];
+                [annotations addObject:polygon];
+            }
+            [polygon setFillColor:[kmlParser fillColorForOverlay:overlay]];
+            [polygon setStrokeColor:[kmlParser strokeColorForOverlay:overlay]];
+        }
+        [self.mapView addOverlay:overlay];
+        [overlays addObject:overlay];
+    }
+    [self.overlays setObject:overlays forKey:kml];
+    for (id <MKAnnotation> annotation in [kmlParser points]) {
+        [self.mapView addAnnotation:annotation];
+        [annotations addObject:annotation];
+    }
+    [self.annotations setObject:annotations forKey:kml];
+    [kmlParser release];
+    [self.mapView showAllOverlays:YES allAnnotations:YES];
+}
+
+- (void) removeKML:(NSString*)kml {
+    //DLog(@"%@", kml);
+    for (id <MKOverlay> overlay in [self.overlays objectForKey:kml]) {
+        [self.mapView removeOverlay:overlay];
+    }
+    [self.overlays removeObjectForKey:kml];
+    for (id <MKAnnotation> annotation  in [self.annotations objectForKey:kml]) {
+        [self.mapView removeAnnotation:annotation];
+    }
+    [self.annotations removeObjectForKey:kml];
+    [self.mapView showAllOverlays:YES allAnnotations:YES];
+}
+
+- (IBAction)settings:(id)sender event:(UIEvent*)event {
+    DLog(@"");
+    self.settingsViewController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    self.settingsViewController.modalPresentationStyle = UIModalPresentationPageSheet;
+    [self.navigationController presentModalViewController:self.settingsViewController animated:YES];  
+}
 
 - (IBAction)locate:(id)sender event:(UIEvent*)event {
     DLog(@"");
@@ -86,11 +150,11 @@ typedef enum {
     [self.mapView setShowsUserLocation:YES];
 }
 
-- (IBAction)settings:(id)sender event:(UIEvent*)event {
+- (IBAction)layers:(id)sender event:(UIEvent*)event {
     DLog(@"");
-    self.settingsViewController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
-    self.settingsViewController.modalPresentationStyle = UIModalPresentationPageSheet;
-    [self.navigationController presentModalViewController:self.settingsViewController animated:YES];  
+    self.layersViewController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    self.layersViewController.modalPresentationStyle = UIModalPresentationFormSheet;
+    [self.navigationController presentModalViewController:self.layersViewController animated:YES];  
 }
 
 - (IBAction) mapTypeChanged:(id)sender event:(UIEvent*)event {
@@ -114,26 +178,33 @@ typedef enum {
 
 - (void)dealloc {
     [_mapView release];
+    [_titleView release];
     [_refreshButton release];
     [_locateButton release];
-    [_settingsViewController release];
+    [_overlays release];
+    [_annotations release];
     [_detailsViewController release];
+    [_settingsViewController release];
     [super dealloc];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationController.navigationBar.tintColor = [A4GSettings navBarColor];
-    self.title = [A4GSettings appName];
+    [self.titleView setTitle:[A4GSettings appName] forState:UIControlStateNormal];
+    [self.titleView setTitle:[A4GSettings appName] forState:UIControlStateSelected];
+    [self.flipView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"pattern.png"]]];
     
-    self.flipView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"pattern.png"]];
     [self.mapType setTitle:NSLocalizedString(@"Standard", nil) forSegmentAtIndex:MKMapTypeStandard];
     [self.mapType setTitle:NSLocalizedString(@"Satellite", nil) forSegmentAtIndex:MKMapTypeSatellite];
     [self.mapType setTitle:NSLocalizedString(@"Hybrid", nil) forSegmentAtIndex:MKMapTypeHybrid];
-    
     [self.mapView addTapGestureWithTarget:self action:@selector(mapTapped:)];
+    [self.mapView showAllOverlays:YES allAnnotations:YES];
     
-    [self loadKmlFilesFromBundle];
+    self.overlays = [NSMutableDictionary dictionary];
+    self.annotations = [NSMutableDictionary dictionary];
+    for (NSString *kml in [A4GSettings kmlFiles]) {
+        [self addKML:kml];
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -307,36 +378,40 @@ typedef enum {
     }
 }
 
-#pragma mark - KMLParser
+#pragma mark - UISplitViewController
 
-- (void) loadKmlFilesFromBundle {
-    for (NSString *kml in [[NSBundle mainBundle] pathsForResourcesOfType:@"kml" inDirectory:nil]) { 
-        NSURL *url = [NSURL fileURLWithPath:kml];
-        KMLParser *kmlParser = [[KMLParser alloc] initWithURL:url];
-        [kmlParser parseKML];
-        for (id <MKOverlay> overlay in [kmlParser overlays]) {
-            DLog(@"%@ %@", [overlay class], overlay.title);
-            if ([overlay isKindOfClass:[MKPolygon class]]) {
-                MKPolygon *polygon = (MKPolygon*)overlay;
-                //TODO check is subtitle is JSON
-                if ([NSString isNilOrEmpty:overlay.subtitle] == NO) {
-                    A4GData *data = [[A4GData alloc] initWithJSON:overlay.subtitle];
-                    [polygon setData:data];
-                    [data release];
-                    overlay.subtitle = nil;
-                    [self.mapView addAnnotation:polygon];
-                }
-                [polygon setFillColor:[kmlParser fillColorForOverlay:overlay]];
-                [polygon setStrokeColor:[kmlParser strokeColorForOverlay:overlay]];
-            }
-            [self.mapView addOverlay:overlay];
-        }
-        for (id <MKAnnotation> annotation in [kmlParser points]) {
-            [self.mapView addAnnotation:annotation];
-        }
-        [kmlParser release];
+- (void)splitViewController:(UISplitViewController *)splitController 
+     willHideViewController:(UIViewController *)viewController 
+          withBarButtonItem:(UIBarButtonItem *)barButtonItem 
+       forPopoverController:(UIPopoverController *)popoverController {
+    barButtonItem.image = [UIImage imageNamed:@"layers.png"];
+    self.navigationItem.leftBarButtonItem = barButtonItem;
+}
+
+- (void)splitViewController:(UISplitViewController *)splitController 
+     willShowViewController:(UIViewController *)viewController 
+  invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem {
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem borderedItemWithImage:[UIImage imageNamed:@"hide.png"] 
+                                                                            target:[[UIApplication sharedApplication] delegate] 
+                                                                            action:@selector(sidebar:event:)];
+ }
+
+- (BOOL)splitViewController: (UISplitViewController*)splitController 
+   shouldHideViewController:(UIViewController *)viewController 
+              inOrientation:(UIInterfaceOrientation)orientation {
+    if (orientation == UIInterfaceOrientationLandscapeLeft) {
+        return NO;
     }
-    [self.mapView showAllOverlays:YES allAnnotations:NO];
+    if (orientation == UIInterfaceOrientationLandscapeRight) {
+        return NO;
+    }
+    if (orientation == UIInterfaceOrientationPortrait) {
+        return YES;
+    }
+    if (orientation == UIInterfaceOrientationPortraitUpsideDown) {
+        return YES;
+    }
+    return NO;
 }
 
 @end

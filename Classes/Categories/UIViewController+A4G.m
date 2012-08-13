@@ -27,6 +27,7 @@
 // ##########################################################################################
 
 #import "UIViewController+A4G.h"
+#import "A4GSettings.h"
 
 @implementation UIViewController (A4G)
 
@@ -69,6 +70,50 @@
     rect.size.width = 5;
     rect.size.height = 5;
     return rect;
+}
+
++ (NSString *)stringByAppendingPathComponents:(NSString *)string, ... {
+    va_list args;
+    va_start(args, string);
+	NSArray *filePaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+	NSString *filePath = [filePaths objectAtIndex:0];
+	for (NSString *arg = string; arg != nil; arg = va_arg(args, NSString*)) {
+		if (arg != nil && [arg length] > 0) {
+			filePath = [filePath stringByAppendingPathComponent:arg];
+		}
+	}
+	va_end(args);
+	return filePath;
+}
+
+- (UIBarButtonItem *) barButtonWithItems:(UIBarButtonItem*)item, ... {
+    va_list args;
+    va_start(args, item);
+    UIToolbar *toolbar = [[[UIToolbar alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 0.0f, 44.01f)] autorelease]; 
+    toolbar.clearsContextBeforeDrawing = NO;
+    toolbar.clipsToBounds = NO;
+    toolbar.tintColor = [UIColor colorWithWhite:0.305f alpha:0.0f];
+    toolbar.barStyle = -1; 
+    NSMutableArray *buttons = [ NSMutableArray arrayWithCapacity:3];
+    for (UIBarButtonItem *arg = item; arg != nil; arg = va_arg(args, UIBarButtonItem*)) {
+        if ([arg respondsToSelector:@selector(setTintColor:)]) {
+            arg.tintColor = [A4GSettings navBarColor];
+        }
+        [buttons addObject:arg];
+    }
+    va_end(args);
+    [toolbar setItems:buttons animated:NO];
+    
+    double width = [toolbar.items count] > 1 ? 12.0 : 0.0;
+    for(int i = 0; i < [toolbar.subviews count]; i++){
+        UIView *view = (UIView *)[toolbar.subviews objectAtIndex:i];
+        width += view.bounds.size.width;
+    }
+    CGSize size = toolbar.frame.size;
+    size.width = width;
+    toolbar.frame = CGRectMake(0, 0, size.width, size.height);
+    
+    return [[[UIBarButtonItem alloc] initWithCustomView:toolbar] autorelease];
 }
 
 @end

@@ -27,7 +27,7 @@
 // ##########################################################################################
 
 #import "A4GDetailsViewController.h"
-#import "A4GBaseViewController.h"
+#import "A4GTableViewController.h"
 #import "A4GHeaderView.h"
 #import "A4GSettings.h"
 #import "A4GDevice.h"
@@ -49,7 +49,6 @@
 @implementation A4GDetailsViewController
 
 @synthesize data = _data;
-@synthesize tableView = _tableView;
 @synthesize textShareSMS = _textShareSMS;
 @synthesize textShareEmail = _textShareEmail;
 @synthesize textShareTwitter = _textShareTwitter;
@@ -98,7 +97,6 @@ typedef enum {
 #pragma mark - UIViewController
 
 - (void)dealloc {
-    [_tableView release];
     [_data release];
     [_textShareTwitter release];
     [_textShareSMS release];
@@ -109,26 +107,11 @@ typedef enum {
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    if ([A4GDevice isIPad]) {
-        [self.tableView setBackgroundView:nil];
-        [self.tableView setBackgroundView:[[[UIView alloc] init] autorelease]];
-    }
-    self.tableView.backgroundColor = [A4GSettings tableBackgroundColor];
     self.textShareEmail = NSLocalizedString(@"Share via Email", nil);
     self.textShareSMS = NSLocalizedString(@"Share via SMS", nil);
     self.textShareTwitter = NSLocalizedString(@"Share via Twitter", nil);
     self.textPrintDetails = NSLocalizedString(@"Print Information", nil);
     self.textCancelAction = NSLocalizedString(@"Cancel", nil);
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    [self.tableView reloadData];
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    [self.tableView flashScrollIndicators];
 }
 
 #pragma mark - UITableViewController
@@ -191,17 +174,6 @@ typedef enum {
         return cell;
     }
     return nil;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return [A4GHeaderView getViewHeight];
-}
-
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    return [A4GHeaderView headerForTable:tableView 
-                                   text:[self tableView:tableView titleForHeaderInSection:section]
-                              textColor:[A4GSettings tableHeaderColor] 
-                        backgroundColor:[A4GSettings tableBackgroundColor]];   
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {

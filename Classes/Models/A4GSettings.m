@@ -51,6 +51,10 @@
 
 @implementation A4GSettings
 
++ (NSArray *) kmlFiles {
+    return [[NSBundle mainBundle] pathsForResourcesOfType:@"kml" inDirectory:nil];
+}
+
 + (NSString *)appName {
     return [A4GSettings stringFromBundleForKey:@"CFBundleName"]; 
 }
@@ -67,12 +71,28 @@
     return [A4GSettings colorFromBundleForKey:@"A4GNavBarColor"];
 }
 
-+ (UIColor *) tableHeaderColor {
-    return [A4GSettings colorFromBundleForKey:@"A4GTableHeaderColor"];
++ (UIColor *) tableHeaderBackColor {
+    return [A4GSettings colorFromBundleForKey:@"A4GTableHeaderBackColor"];
 }
 
-+ (UIColor *) tableBackgroundColor {
-    return [A4GSettings colorFromBundleForKey:@"A4GTableBackgroundColor"]; 
++ (UIColor *) tableHeaderTextColor {
+    return [A4GSettings colorFromBundleForKey:@"A4GTableHeaderTextColor"];
+}
+
++(UIColor *) tablePlainBackColor {
+    return [A4GSettings colorFromBundleForKey:@"A4GTablePlainBackColor"]; 
+}
+
++(UIColor *) tableGroupedBackColor {
+    return [A4GSettings colorFromBundleForKey:@"A4GTableGroupedBackColor"]; 
+}
+
++(UIColor *) tableRowOddColor {
+    return [A4GSettings colorFromBundleForKey:@"A4GTableRowOddColor"];
+}
+
++(UIColor *) tableRowEvenColor {
+    return [A4GSettings colorFromBundleForKey:@"A4GTableRowEvenColor"];
 }
 
 #pragma mark - Helpers

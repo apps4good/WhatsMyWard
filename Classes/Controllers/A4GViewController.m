@@ -26,24 +26,25 @@
 // 
 // ##########################################################################################
 
-#import "A4GBaseViewController.h"
+#import "A4GViewController.h"
 #import "A4GSettings.h"
 #import "UIAlertView+A4G.h"
 #import "A4GLoadingView.h"
 
-@interface A4GBaseViewController ()
+@interface A4GViewController ()
 
 @property (strong, nonatomic) A4GLoadingView *loadingView;
 
 @end
 
-@implementation A4GBaseViewController
+@implementation A4GViewController
 
 typedef enum {
     AlertViewError,
     AlertViewWebsite
 } AlertView;
 
+@synthesize navigationBar = _navigationBar;
 @synthesize loadingView = _loadingView;
 
 #pragma mark - A4GLoadingView
@@ -191,42 +192,50 @@ typedef enum {
 
 #pragma mark - UIViewController
 
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    DLog(@"%@", self.nibName);
+}
+
 - (void)dealloc {
+    DLog(@"%@", self.nibName);
     [_loadingView release];
+    [_navigationBar release];
     [super dealloc];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    DLog(@"");
+    DLog(@"%@", self.nibName);
     self.loadingView = [A4GLoadingView initWithController:self];
+    self.navigationBar.tintColor = [A4GSettings navBarColor];
 }
 
 - (void)viewDidUnload {
     [super viewDidUnload];
-    DLog(@"");
+    DLog(@"%@", self.nibName);
     self.loadingView = nil;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    DLog(@"");
+    DLog(@"%@", self.nibName);
     self.loadingView.center = self.view.center;
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    DLog(@"");
+    DLog(@"%@", self.nibName);
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    DLog(@"");
+    DLog(@"%@", self.nibName);
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
-    DLog(@"");
+    DLog(@"%@", self.nibName);
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
