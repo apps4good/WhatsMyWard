@@ -59,40 +59,68 @@
     return [A4GSettings stringFromBundleForKey:@"CFBundleName"]; 
 }
 
-+ (NSString *)appDownload {
-    return [A4GSettings stringFromBundleForKey:@"A4GAppDownload"]; 
++ (NSString *)appText {
+    return [A4GSettings stringFromBundleForKey:@"A4GAppText"]; 
+}
+
++ (NSString *)appURL {
+    return [A4GSettings stringFromBundleForKey:@"A4GAppURL"]; 
 }
 
 + (NSString *) appVersion {
 	return [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleVersion"];
 }
 
++(NSString *) aboutText {
+    return [A4GSettings stringFromBundleForKey:@"A4GAboutText"]; 
+}
+
++(NSString *) aboutURL {
+    return [A4GSettings stringFromBundleForKey:@"A4GAboutURL"]; 
+}
+
 + (UIColor *) navBarColor {
     return [A4GSettings colorFromBundleForKey:@"A4GNavBarColor"];
 }
 
-+ (UIColor *) tableHeaderBackColor {
-    return [A4GSettings colorFromBundleForKey:@"A4GTableHeaderBackColor"];
++ (UIColor *) buttonDoneColor {
+    return [A4GSettings colorFromBundleForKey:@"A4GButtonDoneColor"];
 }
 
-+ (UIColor *) tableHeaderTextColor {
-    return [A4GSettings colorFromBundleForKey:@"A4GTableHeaderTextColor"];
++ (UIColor *) tablePlainBackColor {
+    return [A4GSettings colorFromBundleForKey:@"A4GTablePlainBackColor"];
 }
 
-+(UIColor *) tablePlainBackColor {
-    return [A4GSettings colorFromBundleForKey:@"A4GTablePlainBackColor"]; 
++ (UIColor *) tablePlainTextColor {
+    return [A4GSettings colorFromBundleForKey:@"A4GTablePlainTextColor"];
 }
 
-+(UIColor *) tableGroupedBackColor {
-    return [A4GSettings colorFromBundleForKey:@"A4GTableGroupedBackColor"]; 
++ (UIColor *) tablePlainRowOddColor {
+    return [A4GSettings colorFromBundleForKey:@"A4GTablePlainRowOddColor"];
 }
 
-+(UIColor *) tableRowOddColor {
-    return [A4GSettings colorFromBundleForKey:@"A4GTableRowOddColor"];
++ (UIColor *) tablePlainRowEvenColor {
+    return [A4GSettings colorFromBundleForKey:@"A4GTablePlainRowEvenColor"];
 }
 
-+(UIColor *) tableRowEvenColor {
-    return [A4GSettings colorFromBundleForKey:@"A4GTableRowEvenColor"];
++ (UIColor *) tablePlainHeaderBackColor {
+    return [A4GSettings colorFromBundleForKey:@"A4GTablePlainHeaderBackColor"];
+}
+
++ (UIColor *) tablePlainHeaderTextColor {
+    return [A4GSettings colorFromBundleForKey:@"A4GTablePlainHeaderTextColor"];
+}
+
++ (UIColor *) tableGroupedBackColor {
+    return [A4GSettings colorFromBundleForKey:@"A4GTableGroupedBackColor"];
+}
+
++ (UIColor *) tableGroupedTextColor {
+    return [A4GSettings colorFromBundleForKey:@"A4GTableGroupedTextColor"];
+}
+
++ (UIColor *) tableGroupedHeaderTextColor {
+    return [A4GSettings colorFromBundleForKey:@"A4GTableGroupedHeaderTextColor"];
 }
 
 #pragma mark - Helpers

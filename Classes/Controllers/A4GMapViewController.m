@@ -130,7 +130,7 @@ typedef enum {
 - (IBAction)settings:(id)sender event:(UIEvent*)event {
     DLog(@"");
     self.settingsViewController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
-    self.settingsViewController.modalPresentationStyle = UIModalPresentationPageSheet;
+    self.settingsViewController.modalPresentationStyle = UIModalPresentationFormSheet;
     [self.navigationController presentModalViewController:self.settingsViewController animated:YES];  
 }
 

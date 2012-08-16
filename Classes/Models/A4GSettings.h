@@ -30,17 +30,30 @@
 
 @interface A4GSettings : NSObject
 
-+(NSString *) appName;
-+(NSString *) appDownload;
-+(NSString *) appVersion;
++ (NSString *) appName;
++ (NSString *) appText;
++ (NSString *) appURL;
++ (NSString *) appVersion;
 
-+(UIColor *) navBarColor;
-+(UIColor *) tableHeaderBackColor;
-+(UIColor *) tableHeaderTextColor;
-+(UIColor *) tableRowOddColor;
-+(UIColor *) tableRowEvenColor;
-+(UIColor *) tablePlainBackColor;
-+(UIColor *) tableGroupedBackColor;
++ (NSString *) aboutText;
++ (NSString *) aboutURL;
+
++ (UIColor *) navBarColor;
++ (UIColor *) buttonDoneColor;
+
++ (UIColor *) tablePlainBackColor;
++ (UIColor *) tablePlainTextColor;
+
++ (UIColor *) tablePlainRowOddColor;
++ (UIColor *) tablePlainRowEvenColor;
+
++ (UIColor *) tablePlainHeaderBackColor;
++ (UIColor *) tablePlainHeaderTextColor;
+
++ (UIColor *) tableGroupedBackColor;
++ (UIColor *) tableGroupedTextColor;
+
++ (UIColor *) tableGroupedHeaderTextColor;
 
 + (NSArray *) kmlFiles;
 

@@ -44,7 +44,7 @@
 						<string key="NSFrameSize">{320, 44}</string>
 						<reference key="NSSuperview" ref="162295725"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
+						<reference key="NSNextKeyView" ref="542617244"/>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<int key="IBUIBarStyle">1</int>
 						<array key="IBUIItems">
@@ -52,10 +52,13 @@
 								<reference key="IBUINavigationBar" ref="753393577"/>
 								<string key="IBUITitle">Layers</string>
 								<object class="IBUIBarButtonItem" key="IBUIRightBarButtonItem" id="154577833">
+									<object class="NSCustomResource" key="IBUIImage">
+										<string key="NSClassName">NSImage</string>
+										<string key="NSResourceName">done.png</string>
+									</object>
 									<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-									<int key="IBUIStyle">1</int>
+									<int key="IBUIStyle">2</int>
 									<reference key="IBUINavigationItem" ref="506945069"/>
-									<int key="IBUISystemItemIdentifier">0</int>
 								</object>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 							</object>
@@ -67,6 +70,7 @@
 						<string key="NSFrame">{{0, 44}, {320, 416}}</string>
 						<reference key="NSSuperview" ref="162295725"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">3</int>
 							<bytes key="NSWhite">MQA</bytes>
@@ -218,27 +222,24 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">19</int>
+			<int key="maxID">20</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
 				<object class="IBPartialClassDescription">
 					<string key="className">A4GDetailsViewController</string>
 					<string key="superclassName">A4GTableViewController</string>
-					<dictionary class="NSMutableDictionary" key="actions">
-						<string key="action:event:">id</string>
-						<string key="done:event:">id</string>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="actionInfosByName">
-						<object class="IBActionInfo" key="action:event:">
+					<object class="NSMutableDictionary" key="actions">
+						<string key="NS.key.0">action:event:</string>
+						<string key="NS.object.0">id</string>
+					</object>
+					<object class="NSMutableDictionary" key="actionInfosByName">
+						<string key="NS.key.0">action:event:</string>
+						<object class="IBActionInfo" key="NS.object.0">
 							<string key="name">action:event:</string>
 							<string key="candidateClassName">id</string>
 						</object>
-						<object class="IBActionInfo" key="done:event:">
-							<string key="name">done:event:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-					</dictionary>
+					</object>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">./Classes/A4GDetailsViewController.h</string>
@@ -247,34 +248,28 @@
 				<object class="IBPartialClassDescription">
 					<string key="className">A4GLayersViewController</string>
 					<string key="superclassName">A4GTableViewController</string>
-					<dictionary class="NSMutableDictionary" key="actions">
-						<string key="done:event:">id</string>
-						<string key="settings:event:">id</string>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="actionInfosByName">
-						<object class="IBActionInfo" key="done:event:">
+					<object class="NSMutableDictionary" key="actions">
+						<string key="NS.key.0">done:event:</string>
+						<string key="NS.object.0">id</string>
+					</object>
+					<object class="NSMutableDictionary" key="actionInfosByName">
+						<string key="NS.key.0">done:event:</string>
+						<object class="IBActionInfo" key="NS.object.0">
 							<string key="name">done:event:</string>
 							<string key="candidateClassName">id</string>
 						</object>
-						<object class="IBActionInfo" key="settings:event:">
-							<string key="name">settings:event:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="outlets">
-						<string key="mapViewController">A4GMapViewController</string>
-						<string key="settingsViewController">A4GSettingsViewController</string>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<object class="IBToOneOutletInfo" key="mapViewController">
+					</object>
+					<object class="NSMutableDictionary" key="outlets">
+						<string key="NS.key.0">mapViewController</string>
+						<string key="NS.object.0">A4GMapViewController</string>
+					</object>
+					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<string key="NS.key.0">mapViewController</string>
+						<object class="IBToOneOutletInfo" key="NS.object.0">
 							<string key="name">mapViewController</string>
 							<string key="candidateClassName">A4GMapViewController</string>
 						</object>
-						<object class="IBToOneOutletInfo" key="settingsViewController">
-							<string key="name">settingsViewController</string>
-							<string key="candidateClassName">A4GSettingsViewController</string>
-						</object>
-					</dictionary>
+					</object>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">./Classes/A4GLayersViewController.h</string>
@@ -296,6 +291,7 @@
 						<string key="locate:event:">id</string>
 						<string key="mapTypeCancelled:event:">id</string>
 						<string key="mapTypeChanged:event:">id</string>
+						<string key="settings:event:">id</string>
 						<string key="showInfo:event:">id</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
@@ -315,6 +311,10 @@
 							<string key="name">mapTypeChanged:event:</string>
 							<string key="candidateClassName">id</string>
 						</object>
+						<object class="IBActionInfo" key="settings:event:">
+							<string key="name">settings:event:</string>
+							<string key="candidateClassName">id</string>
+						</object>
 						<object class="IBActionInfo" key="showInfo:event:">
 							<string key="name">showInfo:event:</string>
 							<string key="candidateClassName">id</string>
@@ -329,6 +329,8 @@
 						<string key="mapType">UISegmentedControl</string>
 						<string key="mapView">MKMapView</string>
 						<string key="refreshButton">A4GLoadingButton</string>
+						<string key="settingsViewController">A4GSettingsViewController</string>
+						<string key="titleView">UIButton</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
 						<object class="IBToOneOutletInfo" key="detailsViewController">
@@ -362,6 +364,14 @@
 						<object class="IBToOneOutletInfo" key="refreshButton">
 							<string key="name">refreshButton</string>
 							<string key="candidateClassName">A4GLoadingButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="settingsViewController">
+							<string key="name">settingsViewController</string>
+							<string key="candidateClassName">A4GSettingsViewController</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="titleView">
+							<string key="name">titleView</string>
+							<string key="candidateClassName">UIButton</string>
 						</object>
 					</dictionary>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
@@ -432,6 +442,10 @@
 		<string key="IBDocument.TargetRuntimeIdentifier">IBCocoaTouchFramework</string>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
+		<object class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
+			<string key="NS.key.0">done.png</string>
+			<string key="NS.object.0">{20, 20}</string>
+		</object>
 		<string key="IBCocoaTouchPluginVersion">933</string>
 	</data>
 </archive>

@@ -27,10 +27,11 @@
 // ##########################################################################################
 
 #import "A4GTableViewController.h"
-#import "A4GImageTableViewCell.h"
+#import "A4GShareController.h"
 
 @interface A4GSettingsViewController : A4GTableViewController<UITableViewDataSource, 
-                                                              UITableViewDelegate>
+                                                              UITableViewDelegate,
+                                                              A4GShareControllerDelegate>
 
 - (IBAction) done:(id)sender event:(UIEvent*)event;
 

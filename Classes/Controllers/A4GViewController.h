@@ -27,33 +27,10 @@
 // ##########################################################################################
 
 #import <UIKit/UIKit.h>
-#import <MessageUI/MessageUI.h>
-#import <MessageUI/MFMailComposeViewController.h>
-#if defined(__IPHONE_5_0) && __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_5_0
-#import <Twitter/Twitter.h>
-#import <Accounts/Accounts.h>
-#endif
 
-@interface A4GViewController : UIViewController<UIAlertViewDelegate,
-                                                    UIPrintInteractionControllerDelegate,
-                                                    MFMailComposeViewControllerDelegate,
-                                                    MFMessageComposeViewControllerDelegate>
+@interface A4GViewController : UIViewController<UIAlertViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UINavigationBar *navigationBar;
-
-- (BOOL) canPrintText;
-- (BOOL) canSendSMS;
-- (BOOL) canSendEmail;
-- (BOOL) canSendTweet;
-- (BOOL) canCallNumber:(NSString*)number;
-- (BOOL) canOpenURL:(NSString*)url;
-
-- (void) callNumber:(NSString *)number;
-- (void) openURL:(NSString *)url;
-- (void) sendTweet:(NSString*)tweet withURL:(NSString*)url;
-- (void) printText:(NSString*)text withTitle:(NSString*)title;
-- (void) sendEmail:(NSString*)message withSubject:(NSString *)subject toRecipients:(NSArray*)recipients;
-- (void) sendSMS:(NSString *)message;
 
 - (void) showLoading;
 - (void) showLoadingWithMessage:(NSString *)message;

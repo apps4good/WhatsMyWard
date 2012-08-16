@@ -96,10 +96,10 @@ typedef enum {
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (tableView.style == UITableViewStylePlain) {
      	if (indexPath.row % 2) {
-            cell.backgroundColor = [A4GSettings tableRowEvenColor];
+            cell.backgroundColor = [A4GSettings tablePlainRowEvenColor];
         }
         else {
-            cell.backgroundColor = [A4GSettings tableRowOddColor];
+            cell.backgroundColor = [A4GSettings tablePlainRowOddColor];
         }   
     }
     else {
@@ -112,23 +112,59 @@ typedef enum {
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    NSString *header = [self tableView:tableView titleForHeaderInSection:section];
-    return [NSString isNilOrEmpty:header] == NO ? [A4GHeaderView getViewHeight] : 0;
+    if (tableView.style == UITableViewStylePlain) {
+        NSString *header = [self tableView:tableView titleForHeaderInSection:section];
+        return [NSString isNilOrEmpty:header] == NO ? [A4GHeaderView getViewHeight] : 0;   
+    }
+    return 30;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSString *text = @"";
+    CGFloat width = tableView.frame.size.width;
+    if (tableView.style == UITableViewStyleGrouped) {
+        if ([A4GDevice isIPad]){
+            width -= 90.0;
+        }
+        else {
+            width -= 20.0;
+        }
+    }
+    CGSize size = [text sizeWithFont:[UIFont boldSystemFontOfSize:17] 
+                   constrainedToSize:CGSizeMake(width, MAXFLOAT) 
+                       lineBreakMode:UILineBreakModeWordWrap];
+    return MAX(size.height + 25, 44.0f);
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     if (tableView.style == UITableViewStylePlain) {
         return [A4GHeaderView headerForTable:tableView 
                                         text:[self tableView:tableView titleForHeaderInSection:section]
-                                   textColor:[A4GSettings tableHeaderTextColor] 
-                             backgroundColor:[A4GSettings tableHeaderBackColor]];   
+                                   textColor:[A4GSettings tablePlainHeaderTextColor] 
+                             backgroundColor:[A4GSettings tablePlainHeaderBackColor]];   
     }
     else {
         return [A4GHeaderView headerForTable:tableView 
                                         text:[self tableView:tableView titleForHeaderInSection:section]
-                                   textColor:[UIColor blackColor] 
-                             backgroundColor:[A4GSettings tableGroupedBackColor]];
+                                   textColor:[A4GSettings tableGroupedHeaderTextColor] 
+                             backgroundColor:[UIColor clearColor]];
     }   
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForText:(NSString*)text withFont:(UIFont*)font {
+    CGFloat width = tableView.frame.size.width;
+    if (tableView.style == UITableViewStyleGrouped) {
+        if ([A4GDevice isIPad]){
+            width -= 90.0;
+        }
+        else {
+            width -= 20.0;
+        }
+    }
+    CGSize size = [text sizeWithFont:font 
+                   constrainedToSize:CGSizeMake(width, MAXFLOAT) 
+                       lineBreakMode:UILineBreakModeWordWrap];
+    return MAX(size.height + 25, 44.0f);
 }
 
 @end

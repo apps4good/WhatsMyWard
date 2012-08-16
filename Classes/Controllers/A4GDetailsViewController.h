@@ -27,16 +27,17 @@
 // ##########################################################################################
 
 #import "A4GTableViewController.h"
+#import "A4GShareController.h"
 
 @class A4GData;
 
 @interface A4GDetailsViewController : A4GTableViewController<UITableViewDataSource, 
                                                              UITableViewDelegate,
                                                              UIActionSheetDelegate,
-                                                             UIAlertViewDelegate>
+                                                             UIAlertViewDelegate,
+                                                             A4GShareControllerDelegate>
 @property (strong, nonatomic) A4GData *data;
 
-- (IBAction) done:(id)sender event:(UIEvent*)event;
 - (IBAction) action:(id)sender event:(UIEvent*)event;
 
 @end

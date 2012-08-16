@@ -34,4 +34,6 @@
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 
+- (CGFloat)tableView:(UITableView *)tableView heightForText:(NSString*)text withFont:(UIFont*)font;
+
 @end

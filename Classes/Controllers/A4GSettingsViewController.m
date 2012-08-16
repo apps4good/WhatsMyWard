@@ -28,23 +28,34 @@
 
 #import "A4GSettingsViewController.h"
 #import "A4GTableViewCellFactory.h"
-#import "A4GImageTableViewCell.h"
-#import "A4GButtonTableViewCell.h"
+#import "UIViewController+A4G.h"
 #import "A4GSettings.h"
+#import "A4GDevice.h"
 
 @interface A4GSettingsViewController ()
+
+@property (strong, nonatomic) A4GShareController *shareController;
 
 @end
 
 @implementation A4GSettingsViewController
 
+@synthesize shareController = _shareController;
+
 typedef enum {
+    TableSectionApp,
     TableSectionAbout,
     TableSections
 } TableSection;
 
 typedef enum {
-    TableSectionAboutRowImage,
+    TableSectionAppRowText,
+    TableSectionAppRowUrl,
+    TableSectionAppRows
+} TableSectionAppRow;
+
+typedef enum {
+    TableSectionAboutRowText,
     TableSectionAboutRowUrl,
     TableSectionAboutRows
 } TableSectionAboutRow;
@@ -58,11 +69,19 @@ typedef enum {
 #pragma mark - UIViewController
 
 - (void)dealloc {
+    [_shareController release];
     [super dealloc];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.shareController = [[A4GShareController alloc] initWithController:self];
+    self.navigationBar.topItem.title = NSLocalizedString(@"Settings", nil);
+}
+
+- (void) viewDidUnload {
+    [super viewDidUnload];
+    self.shareController = nil;
 }
 
 #pragma mark - UITableViewController
@@ -72,6 +91,9 @@ typedef enum {
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if (section == TableSectionApp) {
+        return TableSectionAppRows;
+    }
     if (section == TableSectionAbout) {
         return TableSectionAboutRows;
     }
@@ -79,37 +101,74 @@ typedef enum {
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == TableSectionAbout) {
-        if (indexPath.row == TableSectionAboutRowImage) {
-            A4GImageTableViewCell *cell = [A4GTableViewCellFactory imageTableViewCell:tableView delegate:self index:indexPath];
-            cell.image = [UIImage imageNamed:@"logo.png"];
-            return cell;
+    UITableViewCell *cell = [A4GTableViewCellFactory defaultTableViewCell:tableView];
+    cell.textLabel.font = [UIFont boldSystemFontOfSize:17];
+    cell.textLabel.textColor = [A4GSettings tableGroupedTextColor];
+    cell.textLabel.numberOfLines = 0;
+    if (indexPath.section == TableSectionApp) {
+        if (indexPath.row == TableSectionAppRowText) {
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            cell.accessoryView = nil;
+            cell.textLabel.text = [A4GSettings appText];
+        }
+        else if (indexPath.row == TableSectionAppRowUrl) {
+            cell.selectionStyle = UITableViewCellSelectionStyleGray;
+            cell.accessoryView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"web.png"]];
+            cell.textLabel.text = [A4GSettings appURL];
+        }
+    }
+    else if (indexPath.section == TableSectionAbout) {
+        if (indexPath.row == TableSectionAboutRowText) {
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            cell.accessoryView = nil;
+            cell.textLabel.text = [A4GSettings aboutText];
         }
         else if (indexPath.row == TableSectionAboutRowUrl) {
-            A4GButtonTableViewCell *cell = [A4GTableViewCellFactory buttonTableViewCell:tableView delegate:self index:indexPath];
-            cell.title = @"http://apps4good.ca";
-            return cell;
+            cell.selectionStyle = UITableViewCellSelectionStyleGray;
+            cell.accessoryView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"web.png"]];
+            cell.textLabel.text = [A4GSettings aboutURL];
         }
+    }
+    return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSString *text = nil;
+    if (indexPath.section == TableSectionApp) {
+        if (indexPath.row == TableSectionAppRowText) {
+            text = [A4GSettings appText];
+        }
+        else if (indexPath.row == TableSectionAppRowUrl) {
+            text = [A4GSettings appURL];
+        }
+    }
+    else if (indexPath.section == TableSectionAbout) {
+        if (indexPath.row == TableSectionAboutRowText) {
+            text = [A4GSettings aboutText];
+        }
+        else if (indexPath.row == TableSectionAboutRowUrl) {
+            text = [A4GSettings aboutURL];
+        }
+    }
+    return [self tableView:tableView heightForText:text withFont:[UIFont boldSystemFontOfSize:17]];
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    if (section == TableSectionApp) {
+        return NSLocalizedString(@"About", nil);
+    }
+    else if (section == TableSectionAbout) {
+        return NSLocalizedString(@"Apps4Good", nil);
     }
     return nil;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == TableSectionAbout) {
-        if (indexPath.row == TableSectionAboutRowImage) {
-            UIImage *image = [UIImage imageNamed:@"logo.png"];
-            return image.size.height;
-        }
-        else if (indexPath.row == TableSectionAboutRowUrl) {
-            return 44;
-        } 
-    }
-    return 0;
-}
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == TableSectionAbout) {
-        [self openURL:@"http://apps4good.ca"];
+    if (indexPath.section == TableSectionApp && indexPath.row == TableSectionAppRowUrl) {
+        [self.shareController openURL:[A4GSettings appURL]];
+    }
+    else if (indexPath.section == TableSectionAbout && indexPath.row == TableSectionAboutRowUrl) {
+        [self.shareController openURL:[A4GSettings aboutURL]];
     }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }

@@ -61,6 +61,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationBar.topItem.title = NSLocalizedString(@"Layers", nil);
     self.layers = [NSMutableDictionary dictionaryWithCapacity:0];
     for (NSString *kml in [A4GSettings kmlFiles]) {
         [self.layers setObject:[NSNumber numberWithBool:YES] forKey:kml];

@@ -70,19 +70,33 @@
 	</array>
 	<key>A4GNavBarColor</key>
 	<string>#585858</string>
+	<key>A4GButtonDoneColor</key>
+	<string>#2E2E2E</string>
 	<key>A4GTablePlainBackColor</key>
 	<string>#FAFAFA</string>
+	<key>A4GTablePlainTextColor</key>
+	<string>#848484</string>
+	<key>A4GTablePlainRowOddColor</key>
+	<string>#F2F2F2</string>
+	<key>A4GTablePlainRowEvenColor</key>
+	<string>#FAFAFA</string>
+	<key>A4GTablePlainHeaderBackColor</key>
+	<string>#6E6E6E</string>
+	<key>A4GTablePlainHeaderTextColor</key>
+	<string>#424242</string>
 	<key>A4GTableGroupedBackColor</key>
 	<string>#F2F2F2</string>
-	<key>A4GTableHeaderBackColor</key>
+	<key>A4GTableGroupedTextColor</key>
+	<string>#848484</string>
+	<key>A4GTableGroupedHeaderTextColor</key>
 	<string>#6E6E6E</string>
-	<key>A4GTableHeaderTextColor</key>
-	<string>#424242</string>
-	<key>A4GTableRowOddColor</key>
-	<string>#F2F2F2</string>
-	<key>A4GTableRowEvenColor</key>
-	<string>#FAFAFA</string>
-	<key>A4GAppDownload</key>
-	<string></string>
+	<key>A4GAppText</key>
+	<string>What&apos;s My Ward is an app to help find what ward you live in and who your city councillor is.</string>
+	<key>A4GAppURL</key>
+	<string>http://apps4good.ca/apps/whats-my-ward/</string>
+	<key>A4GAboutText</key>
+	<string>Apps4Good is an alliance of software developers who are passionate about improving our community, by doing what we love: build software.</string>
+	<key>A4GAboutURL</key>
+	<string>http://apps4good.ca</string>
 </dict>
 </plist>

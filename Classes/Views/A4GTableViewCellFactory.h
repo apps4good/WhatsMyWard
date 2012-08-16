@@ -28,19 +28,7 @@
 
 #import <Foundation/Foundation.h>
 
-@class A4GSwitchTableViewCell;
-@class A4GOptionTableViewCell;
-@class A4GImageTableViewCell;
-@class A4GButtonTableViewCell;
-@class A4GParagraphTableViewCell;
-@class A4GInputTableViewCell;
 @class A4GCheckTableViewCell;
-
-@protocol A4GSwitchTableViewCellDelegate;
-@protocol A4GOptionTableViewCellDelegate;
-@protocol A4GKioskTableViewCellDelegate;
-@protocol A4GInputTableViewCellDelegate;
-@protocol A4GCheckTableViewCellDelegate;
 
 @interface A4GTableViewCellFactory : NSObject
 
@@ -49,18 +37,6 @@
 + (UITableViewCell *) subtitleTableViewCell:(UITableView*)tableView;
 
 + (UITableViewCell *) valueTableViewCell:(UITableView*)tableView;
-
-+ (A4GSwitchTableViewCell*) switchTableViewCell:(UITableView*)tableView delegate:(id<A4GSwitchTableViewCellDelegate>)delegate index:(NSIndexPath*)indexPath;
-
-+ (A4GOptionTableViewCell*) optionTableViewCell:(UITableView*)tableView delegate:(id<A4GOptionTableViewCellDelegate>)delegate index:(NSIndexPath*)indexPath;
-
-+ (A4GButtonTableViewCell*) buttonTableViewCell:(UITableView*)tableView delegate:(id)delegate index:(NSIndexPath*)indexPath;
-
-+ (A4GImageTableViewCell*) imageTableViewCell:(UITableView*)tableView delegate:(id)delegate index:(NSIndexPath*)indexPath;
-
-+ (A4GParagraphTableViewCell*) paragraphTableViewCell:(UITableView*)tableView delegate:(id)delegate index:(NSIndexPath*)indexPath;
-
-+ (A4GInputTableViewCell*) inputTableViewCell:(UITableView*)tableView delegate:(id)delegate index:(NSIndexPath*)indexPath;
 
 + (A4GCheckTableViewCell*) checkTableViewCell:(UITableView*)tableView delegate:(id)delegate index:(NSIndexPath*)indexPath;
 
