@@ -63,6 +63,27 @@
 		3E555F9715D41C6C00EACFDE /* map@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E555F9315D41C6C00EACFDE /* map@2x.png */; };
 		3E555FAB15D424BA00EACFDE /* UIBarButtonItem+A4G.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E555FAA15D424BA00EACFDE /* UIBarButtonItem+A4G.m */; };
 		3E555FAC15D424BA00EACFDE /* UIBarButtonItem+A4G.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E555FAA15D424BA00EACFDE /* UIBarButtonItem+A4G.m */; };
+		3E5A008B15DCC7DB00479735 /* Artwork.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E5A007215DCC7DB00479735 /* Artwork.png */; };
+		3E5A008D15DCC7DB00479735 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E5A007415DCC7DB00479735 /* Default.png */; };
+		3E5A008F15DCC7DB00479735 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E5A007615DCC7DB00479735 /* Default@2x.png */; };
+		3E5A009115DCC7DB00479735 /* Icon-iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E5A007815DCC7DB00479735 /* Icon-iPad.png */; };
+		3E5A009215DCC7DB00479735 /* Icon-iPad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E5A007915DCC7DB00479735 /* Icon-iPad@2x.png */; };
+		3E5A009315DCC7DB00479735 /* Icon-Settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E5A007A15DCC7DB00479735 /* Icon-Settings.png */; };
+		3E5A009415DCC7DB00479735 /* Icon-Settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E5A007B15DCC7DB00479735 /* Icon-Settings@2x.png */; };
+		3E5A009515DCC7DB00479735 /* Icon-Spotlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E5A007C15DCC7DB00479735 /* Icon-Spotlight.png */; };
+		3E5A009615DCC7DB00479735 /* Icon-Spotlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E5A007D15DCC7DB00479735 /* Icon-Spotlight@2x.png */; };
+		3E5A009715DCC7DB00479735 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E5A007E15DCC7DB00479735 /* Icon.png */; };
+		3E5A009815DCC7DB00479735 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E5A007F15DCC7DB00479735 /* Icon@2x.png */; };
+		3E5A009A15DCC7DB00479735 /* ward_1.kml in Resources */ = {isa = PBXBuildFile; fileRef = 3E5A008115DCC7DB00479735 /* ward_1.kml */; };
+		3E5A009B15DCC7DB00479735 /* ward_2.kml in Resources */ = {isa = PBXBuildFile; fileRef = 3E5A008215DCC7DB00479735 /* ward_2.kml */; };
+		3E5A009C15DCC7DB00479735 /* ward_3.kml in Resources */ = {isa = PBXBuildFile; fileRef = 3E5A008315DCC7DB00479735 /* ward_3.kml */; };
+		3E5A009D15DCC7DB00479735 /* ward_4.kml in Resources */ = {isa = PBXBuildFile; fileRef = 3E5A008415DCC7DB00479735 /* ward_4.kml */; };
+		3E5A009E15DCC7DB00479735 /* ward_5.kml in Resources */ = {isa = PBXBuildFile; fileRef = 3E5A008515DCC7DB00479735 /* ward_5.kml */; };
+		3E5A009F15DCC7DB00479735 /* ward_6.kml in Resources */ = {isa = PBXBuildFile; fileRef = 3E5A008615DCC7DB00479735 /* ward_6.kml */; };
+		3E5A00A015DCC7DB00479735 /* ward_7.kml in Resources */ = {isa = PBXBuildFile; fileRef = 3E5A008715DCC7DB00479735 /* ward_7.kml */; };
+		3E5A00A115DCC7DB00479735 /* ward_8.kml in Resources */ = {isa = PBXBuildFile; fileRef = 3E5A008815DCC7DB00479735 /* ward_8.kml */; };
+		3E5A00A215DCC7DB00479735 /* ward_9.kml in Resources */ = {isa = PBXBuildFile; fileRef = 3E5A008915DCC7DB00479735 /* ward_9.kml */; };
+		3E5A00A315DCC7DB00479735 /* ward_10.kml in Resources */ = {isa = PBXBuildFile; fileRef = 3E5A008A15DCC7DB00479735 /* ward_10.kml */; };
 		3E5BB17715DCA02E001D40FE /* A4GCheckTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E5BB17615DCA02E001D40FE /* A4GCheckTableViewCell.xib */; };
 		3E5BB17815DCA02E001D40FE /* A4GCheckTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E5BB17615DCA02E001D40FE /* A4GCheckTableViewCell.xib */; };
 		3E5BB17B15DCA03D001D40FE /* A4GCheckTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E5BB17A15DCA03D001D40FE /* A4GCheckTableViewCell.m */; };
@@ -260,6 +281,28 @@
 		3E555F9315D41C6C00EACFDE /* map@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map@2x.png"; sourceTree = "<group>"; };
 		3E555FA915D424B900EACFDE /* UIBarButtonItem+A4G.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+A4G.h"; sourceTree = "<group>"; };
 		3E555FAA15D424BA00EACFDE /* UIBarButtonItem+A4G.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+A4G.m"; sourceTree = "<group>"; };
+		3E5A007215DCC7DB00479735 /* Artwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Artwork.png; sourceTree = "<group>"; };
+		3E5A007415DCC7DB00479735 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		3E5A007615DCC7DB00479735 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		3E5A007815DCC7DB00479735 /* Icon-iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-iPad.png"; sourceTree = "<group>"; };
+		3E5A007915DCC7DB00479735 /* Icon-iPad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-iPad@2x.png"; sourceTree = "<group>"; };
+		3E5A007A15DCC7DB00479735 /* Icon-Settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Settings.png"; sourceTree = "<group>"; };
+		3E5A007B15DCC7DB00479735 /* Icon-Settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Settings@2x.png"; sourceTree = "<group>"; };
+		3E5A007C15DCC7DB00479735 /* Icon-Spotlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Spotlight.png"; sourceTree = "<group>"; };
+		3E5A007D15DCC7DB00479735 /* Icon-Spotlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Spotlight@2x.png"; sourceTree = "<group>"; };
+		3E5A007E15DCC7DB00479735 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		3E5A007F15DCC7DB00479735 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		3E5A008015DCC7DB00479735 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3E5A008115DCC7DB00479735 /* ward_1.kml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ward_1.kml; sourceTree = "<group>"; };
+		3E5A008215DCC7DB00479735 /* ward_2.kml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ward_2.kml; sourceTree = "<group>"; };
+		3E5A008315DCC7DB00479735 /* ward_3.kml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ward_3.kml; sourceTree = "<group>"; };
+		3E5A008415DCC7DB00479735 /* ward_4.kml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ward_4.kml; sourceTree = "<group>"; };
+		3E5A008515DCC7DB00479735 /* ward_5.kml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ward_5.kml; sourceTree = "<group>"; };
+		3E5A008615DCC7DB00479735 /* ward_6.kml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ward_6.kml; sourceTree = "<group>"; };
+		3E5A008715DCC7DB00479735 /* ward_7.kml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ward_7.kml; sourceTree = "<group>"; };
+		3E5A008815DCC7DB00479735 /* ward_8.kml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ward_8.kml; sourceTree = "<group>"; };
+		3E5A008915DCC7DB00479735 /* ward_9.kml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ward_9.kml; sourceTree = "<group>"; };
+		3E5A008A15DCC7DB00479735 /* ward_10.kml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ward_10.kml; sourceTree = "<group>"; };
 		3E5BB17615DCA02E001D40FE /* A4GCheckTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = A4GCheckTableViewCell.xib; sourceTree = "<group>"; };
 		3E5BB17915DCA03C001D40FE /* A4GCheckTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = A4GCheckTableViewCell.h; sourceTree = "<group>"; };
 		3E5BB17A15DCA03D001D40FE /* A4GCheckTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = A4GCheckTableViewCell.m; sourceTree = "<group>"; };
@@ -416,6 +459,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3E5A007015DCC7C000479735 /* Regina */ = {
+			isa = PBXGroup;
+			children = (
+				3E5A008015DCC7DB00479735 /* Info.plist */,
+				3E5A008115DCC7DB00479735 /* ward_1.kml */,
+				3E5A008215DCC7DB00479735 /* ward_2.kml */,
+				3E5A008315DCC7DB00479735 /* ward_3.kml */,
+				3E5A008415DCC7DB00479735 /* ward_4.kml */,
+				3E5A008515DCC7DB00479735 /* ward_5.kml */,
+				3E5A008615DCC7DB00479735 /* ward_6.kml */,
+				3E5A008715DCC7DB00479735 /* ward_7.kml */,
+				3E5A008815DCC7DB00479735 /* ward_8.kml */,
+				3E5A008915DCC7DB00479735 /* ward_9.kml */,
+				3E5A008A15DCC7DB00479735 /* ward_10.kml */,
+				3E5A007215DCC7DB00479735 /* Artwork.png */,
+				3E5A007415DCC7DB00479735 /* Default.png */,
+				3E5A007615DCC7DB00479735 /* Default@2x.png */,
+				3E5A007815DCC7DB00479735 /* Icon-iPad.png */,
+				3E5A007915DCC7DB00479735 /* Icon-iPad@2x.png */,
+				3E5A007A15DCC7DB00479735 /* Icon-Settings.png */,
+				3E5A007B15DCC7DB00479735 /* Icon-Settings@2x.png */,
+				3E5A007C15DCC7DB00479735 /* Icon-Spotlight.png */,
+				3E5A007D15DCC7DB00479735 /* Icon-Spotlight@2x.png */,
+				3E5A007E15DCC7DB00479735 /* Icon.png */,
+				3E5A007F15DCC7DB00479735 /* Icon@2x.png */,
+			);
+			path = Regina;
+			sourceTree = "<group>";
+		};
 		3EA3B20D15BF64C8007F9287 /* JSON */ = {
 			isa = PBXGroup;
 			children = (
@@ -662,6 +734,7 @@
 		3EDFF67215BE01B600939749 /* Themes */ = {
 			isa = PBXGroup;
 			children = (
+				3E5A007015DCC7C000479735 /* Regina */,
 				3EDFF67C15BE022700939749 /* Saskatoon */,
 			);
 			path = Themes;
@@ -836,6 +909,27 @@
 				3E5BB17815DCA02E001D40FE /* A4GCheckTableViewCell.xib in Resources */,
 				3E5BB18015DCA3DA001D40FE /* done.png in Resources */,
 				3E5BB18215DCA3DA001D40FE /* done@2x.png in Resources */,
+				3E5A008B15DCC7DB00479735 /* Artwork.png in Resources */,
+				3E5A008D15DCC7DB00479735 /* Default.png in Resources */,
+				3E5A008F15DCC7DB00479735 /* Default@2x.png in Resources */,
+				3E5A009115DCC7DB00479735 /* Icon-iPad.png in Resources */,
+				3E5A009215DCC7DB00479735 /* Icon-iPad@2x.png in Resources */,
+				3E5A009315DCC7DB00479735 /* Icon-Settings.png in Resources */,
+				3E5A009415DCC7DB00479735 /* Icon-Settings@2x.png in Resources */,
+				3E5A009515DCC7DB00479735 /* Icon-Spotlight.png in Resources */,
+				3E5A009615DCC7DB00479735 /* Icon-Spotlight@2x.png in Resources */,
+				3E5A009715DCC7DB00479735 /* Icon.png in Resources */,
+				3E5A009815DCC7DB00479735 /* Icon@2x.png in Resources */,
+				3E5A009A15DCC7DB00479735 /* ward_1.kml in Resources */,
+				3E5A009B15DCC7DB00479735 /* ward_2.kml in Resources */,
+				3E5A009C15DCC7DB00479735 /* ward_3.kml in Resources */,
+				3E5A009D15DCC7DB00479735 /* ward_4.kml in Resources */,
+				3E5A009E15DCC7DB00479735 /* ward_5.kml in Resources */,
+				3E5A009F15DCC7DB00479735 /* ward_6.kml in Resources */,
+				3E5A00A015DCC7DB00479735 /* ward_7.kml in Resources */,
+				3E5A00A115DCC7DB00479735 /* ward_8.kml in Resources */,
+				3E5A00A215DCC7DB00479735 /* ward_9.kml in Resources */,
+				3E5A00A315DCC7DB00479735 /* ward_10.kml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
