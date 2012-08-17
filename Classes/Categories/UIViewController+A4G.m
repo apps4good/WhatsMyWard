@@ -53,8 +53,11 @@
         animation.startProgress = 0.55;
     }
     [animation setRemovedOnCompletion:NO];
-    [[self view] exchangeSubviewAtIndex:0 withSubviewAtIndex:1];
-    [[[self view] layer] addAnimation:animation forKey:@"pageCurlAnimation"];
+    for (UIView *subView in self.view.subviews) {
+        DLog(@"Before:%@", subView.class);
+    }
+    [self.view exchangeSubviewAtIndex:0 withSubviewAtIndex:1];
+    [[self.view layer] addAnimation:animation forKey:@"pageCurlAnimation"];
 }
 
 - (BOOL) isTopView:(UIView *)view {

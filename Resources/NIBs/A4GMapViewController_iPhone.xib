@@ -113,6 +113,7 @@
 								<string key="NSFrame">{{282, 421}, {18, 19}}</string>
 								<reference key="NSSuperview" ref="328893839"/>
 								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<int key="IBUIContentHorizontalAlignment">0</int>
@@ -215,12 +216,12 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
-						<string key="label">showInfo:event:</string>
+						<string key="label">showMapType:event:</string>
 						<reference key="source" ref="976570323"/>
 						<reference key="destination" ref="372490531"/>
 						<int key="IBEventType">7</int>
 					</object>
-					<int key="connectionID">30</int>
+					<int key="connectionID">34</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
@@ -320,49 +321,68 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">33</int>
+			<int key="maxID">34</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
 				<object class="IBPartialClassDescription">
-					<string key="className">A4GBaseViewController</string>
-					<string key="superclassName">UIViewController</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/A4GBaseViewController.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
 					<string key="className">A4GDetailsViewController</string>
-					<string key="superclassName">A4GBaseViewController</string>
-					<dictionary class="NSMutableDictionary" key="actions">
-						<string key="action:event:">id</string>
-						<string key="done:event:">id</string>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="actionInfosByName">
-						<object class="IBActionInfo" key="action:event:">
+					<string key="superclassName">A4GTableViewController</string>
+					<object class="NSMutableDictionary" key="actions">
+						<string key="NS.key.0">action:event:</string>
+						<string key="NS.object.0">id</string>
+					</object>
+					<object class="NSMutableDictionary" key="actionInfosByName">
+						<string key="NS.key.0">action:event:</string>
+						<object class="IBActionInfo" key="NS.object.0">
 							<string key="name">action:event:</string>
 							<string key="candidateClassName">id</string>
 						</object>
-						<object class="IBActionInfo" key="done:event:">
-							<string key="name">done:event:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-					</dictionary>
+					</object>
 					<object class="NSMutableDictionary" key="outlets">
-						<string key="NS.key.0">tableView</string>
-						<string key="NS.object.0">UITableView</string>
+						<string key="NS.key.0">webController</string>
+						<string key="NS.object.0">A4GWebViewController</string>
 					</object>
 					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<string key="NS.key.0">tableView</string>
+						<string key="NS.key.0">webController</string>
 						<object class="IBToOneOutletInfo" key="NS.object.0">
-							<string key="name">tableView</string>
-							<string key="candidateClassName">UITableView</string>
+							<string key="name">webController</string>
+							<string key="candidateClassName">A4GWebViewController</string>
 						</object>
 					</object>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">./Classes/A4GDetailsViewController.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">A4GLayersViewController</string>
+					<string key="superclassName">A4GTableViewController</string>
+					<object class="NSMutableDictionary" key="actions">
+						<string key="NS.key.0">done:event:</string>
+						<string key="NS.object.0">id</string>
+					</object>
+					<object class="NSMutableDictionary" key="actionInfosByName">
+						<string key="NS.key.0">done:event:</string>
+						<object class="IBActionInfo" key="NS.object.0">
+							<string key="name">done:event:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</object>
+					<object class="NSMutableDictionary" key="outlets">
+						<string key="NS.key.0">mapViewController</string>
+						<string key="NS.object.0">A4GMapViewController</string>
+					</object>
+					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<string key="NS.key.0">mapViewController</string>
+						<object class="IBToOneOutletInfo" key="NS.object.0">
+							<string key="name">mapViewController</string>
+							<string key="candidateClassName">A4GMapViewController</string>
+						</object>
+					</object>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/A4GLayersViewController.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
@@ -375,15 +395,20 @@
 				</object>
 				<object class="IBPartialClassDescription">
 					<string key="className">A4GMapViewController</string>
-					<string key="superclassName">A4GBaseViewController</string>
+					<string key="superclassName">A4GViewController</string>
 					<dictionary class="NSMutableDictionary" key="actions">
+						<string key="layers:event:">id</string>
 						<string key="locate:event:">id</string>
 						<string key="mapTypeCancelled:event:">id</string>
 						<string key="mapTypeChanged:event:">id</string>
 						<string key="settings:event:">id</string>
-						<string key="showInfo:event:">id</string>
+						<string key="showMapType:event:">id</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
+						<object class="IBActionInfo" key="layers:event:">
+							<string key="name">layers:event:</string>
+							<string key="candidateClassName">id</string>
+						</object>
 						<object class="IBActionInfo" key="locate:event:">
 							<string key="name">locate:event:</string>
 							<string key="candidateClassName">id</string>
@@ -400,8 +425,8 @@
 							<string key="name">settings:event:</string>
 							<string key="candidateClassName">id</string>
 						</object>
-						<object class="IBActionInfo" key="showInfo:event:">
-							<string key="name">showInfo:event:</string>
+						<object class="IBActionInfo" key="showMapType:event:">
+							<string key="name">showMapType:event:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 					</dictionary>
@@ -409,11 +434,13 @@
 						<string key="detailsViewController">A4GDetailsViewController</string>
 						<string key="flipView">UIButton</string>
 						<string key="infoButton">UIButton</string>
+						<string key="layersViewController">A4GLayersViewController</string>
 						<string key="locateButton">A4GLoadingButton</string>
 						<string key="mapType">UISegmentedControl</string>
 						<string key="mapView">MKMapView</string>
 						<string key="refreshButton">A4GLoadingButton</string>
 						<string key="settingsViewController">A4GSettingsViewController</string>
+						<string key="titleView">UIButton</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
 						<object class="IBToOneOutletInfo" key="detailsViewController">
@@ -427,6 +454,10 @@
 						<object class="IBToOneOutletInfo" key="infoButton">
 							<string key="name">infoButton</string>
 							<string key="candidateClassName">UIButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="layersViewController">
+							<string key="name">layersViewController</string>
+							<string key="candidateClassName">A4GLayersViewController</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="locateButton">
 							<string key="name">locateButton</string>
@@ -448,6 +479,10 @@
 							<string key="name">settingsViewController</string>
 							<string key="candidateClassName">A4GSettingsViewController</string>
 						</object>
+						<object class="IBToOneOutletInfo" key="titleView">
+							<string key="name">titleView</string>
+							<string key="candidateClassName">UIButton</string>
+						</object>
 					</dictionary>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
@@ -456,7 +491,7 @@
 				</object>
 				<object class="IBPartialClassDescription">
 					<string key="className">A4GSettingsViewController</string>
-					<string key="superclassName">A4GBaseViewController</string>
+					<string key="superclassName">A4GTableViewController</string>
 					<object class="NSMutableDictionary" key="actions">
 						<string key="NS.key.0">done:event:</string>
 						<string key="NS.object.0">id</string>
@@ -468,23 +503,113 @@
 							<string key="candidateClassName">id</string>
 						</object>
 					</object>
-					<dictionary class="NSMutableDictionary" key="outlets">
-						<string key="navigationBar">UINavigationBar</string>
-						<string key="tableView">UITableView</string>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<object class="IBToOneOutletInfo" key="navigationBar">
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/A4GSettingsViewController.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">A4GTableViewController</string>
+					<string key="superclassName">A4GViewController</string>
+					<object class="NSMutableDictionary" key="outlets">
+						<string key="NS.key.0">tableView</string>
+						<string key="NS.object.0">UITableView</string>
+					</object>
+					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<string key="NS.key.0">tableView</string>
+						<object class="IBToOneOutletInfo" key="NS.object.0">
+							<string key="name">tableView</string>
+							<string key="candidateClassName">UITableView</string>
+						</object>
+					</object>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/A4GTableViewController.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">A4GViewController</string>
+					<string key="superclassName">UIViewController</string>
+					<object class="NSMutableDictionary" key="outlets">
+						<string key="NS.key.0">navigationBar</string>
+						<string key="NS.object.0">UINavigationBar</string>
+					</object>
+					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<string key="NS.key.0">navigationBar</string>
+						<object class="IBToOneOutletInfo" key="NS.object.0">
 							<string key="name">navigationBar</string>
 							<string key="candidateClassName">UINavigationBar</string>
 						</object>
-						<object class="IBToOneOutletInfo" key="tableView">
-							<string key="name">tableView</string>
-							<string key="candidateClassName">UITableView</string>
+					</object>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/A4GViewController.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">A4GWebViewController</string>
+					<string key="superclassName">A4GViewController</string>
+					<dictionary class="NSMutableDictionary" key="actions">
+						<string key="navigate:event:">id</string>
+						<string key="scaleTypeCancelled:event:">id</string>
+						<string key="scaleTypeChanged:event:">id</string>
+						<string key="showScaleType:event:">id</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="actionInfosByName">
+						<object class="IBActionInfo" key="navigate:event:">
+							<string key="name">navigate:event:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="scaleTypeCancelled:event:">
+							<string key="name">scaleTypeCancelled:event:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="scaleTypeChanged:event:">
+							<string key="name">scaleTypeChanged:event:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="showScaleType:event:">
+							<string key="name">showScaleType:event:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="outlets">
+						<string key="flipView">UIButton</string>
+						<string key="infoButton">UIButton</string>
+						<string key="scaleType">UISegmentedControl</string>
+						<string key="segmentControl">UISegmentedControl</string>
+						<string key="textField">UITextField</string>
+						<string key="webView">UIWebView</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<object class="IBToOneOutletInfo" key="flipView">
+							<string key="name">flipView</string>
+							<string key="candidateClassName">UIButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="infoButton">
+							<string key="name">infoButton</string>
+							<string key="candidateClassName">UIButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="scaleType">
+							<string key="name">scaleType</string>
+							<string key="candidateClassName">UISegmentedControl</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="segmentControl">
+							<string key="name">segmentControl</string>
+							<string key="candidateClassName">UISegmentedControl</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="textField">
+							<string key="name">textField</string>
+							<string key="candidateClassName">UITextField</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="webView">
+							<string key="name">webView</string>
+							<string key="candidateClassName">UIWebView</string>
 						</object>
 					</dictionary>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/A4GSettingsViewController.h</string>
+						<string key="minorKey">./Classes/A4GWebViewController.h</string>
 					</object>
 				</object>
 			</array>

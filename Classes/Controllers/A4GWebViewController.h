@@ -26,20 +26,22 @@
 // 
 // ##########################################################################################
 
-#import "A4GTableViewController.h"
-#import "A4GShareController.h"
+#import "A4GViewController.h"
 
-@class A4GData;
-@class A4GWebViewController;
+@interface A4GWebViewController : A4GViewController<UITextFieldDelegate, 
+                                                    UIWebViewDelegate>
 
-@interface A4GDetailsViewController : A4GTableViewController<UITableViewDataSource, 
-                                                             UITableViewDelegate,
-                                                             UIActionSheetDelegate,
-                                                             UIAlertViewDelegate,
-                                                             A4GShareControllerDelegate>
-@property (strong, nonatomic) A4GData *data;
-@property (strong, nonatomic) IBOutlet A4GWebViewController *webController;
+@property (strong, nonatomic) IBOutlet UIWebView *webView;
+@property (strong, nonatomic) IBOutlet UISegmentedControl *segmentControl;
+@property (strong, nonatomic) IBOutlet UITextField *textField;
+@property (strong, nonatomic) IBOutlet UIButton *flipView;
+@property (strong, nonatomic) IBOutlet UISegmentedControl *scaleType;
+@property (strong, nonatomic) IBOutlet UIButton *infoButton;
+@property (strong, nonatomic) NSString *url;
 
-- (IBAction) action:(id)sender event:(UIEvent*)event;
+- (IBAction)navigate:(id)sender event:(UIEvent*)event;
+- (IBAction) showScaleType:(id)sender event:(UIEvent*)event;
+- (IBAction) scaleTypeChanged:(id)sender event:(UIEvent*)event;
+- (IBAction) scaleTypeCancelled:(id)sender event:(UIEvent*)event;
 
 @end

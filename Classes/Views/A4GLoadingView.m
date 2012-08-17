@@ -31,7 +31,7 @@
 @interface A4GLoadingView ()
 @property (nonatomic, retain) UIViewController *controller;
 
-- (void) removeFromSuperview;
+- (void) removeFromSuperviewAnimated;
 - (void) removeFromSuperviewAfterDelay:(NSNumber*)delay;
 
 @end
@@ -112,7 +112,7 @@
 
 - (void) hideAfterDelay:(NSTimeInterval)delay {
     if ([NSThread isMainThread]) {
-        [self performSelector:@selector(removeFromSuperview) withObject:nil afterDelay:delay];
+        [self performSelector:@selector(removeFromSuperviewAnimated) withObject:nil afterDelay:delay];
 	}
 	else {
         [self performSelectorOnMainThread:@selector(removeFromSuperviewAfterDelay:) withObject:[NSNumber numberWithFloat:delay] waitUntilDone:NO];
@@ -120,15 +120,15 @@
 }
 
 - (void) removeFromSuperviewAfterDelay:(NSNumber*)delay {
-    [self performSelector:@selector(removeFromSuperview) withObject:nil afterDelay:[delay floatValue]];
+    [self performSelector:@selector(removeFromSuperviewAnimated) withObject:nil afterDelay:[delay floatValue]];
 }
 
-- (void) removeFromSuperview {
+- (void) removeFromSuperviewAnimated {
     [UIView beginAnimations:@"removeFromSuperview" context:nil];
 	[UIView setAnimationDuration:0.3];
 	self.alpha = 0.0;
 	[UIView commitAnimations];
-	[self performSelector:@selector(removeFromSuperview) withObject:nil afterDelay:0.3];	
+    [self performSelector:@selector(removeFromSuperview) withObject:nil afterDelay:0.3];	
 }
 
 @end

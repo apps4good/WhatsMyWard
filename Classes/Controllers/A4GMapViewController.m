@@ -168,7 +168,7 @@ typedef enum {
     [self animatePageCurlDown:0.5];
 }
 
-- (IBAction) showInfo:(id)sender event:(UIEvent*)event {
+- (IBAction) showMapType:(id)sender event:(UIEvent*)event {
     DLog(@"");
     self.mapType.selectedSegmentIndex = self.mapView.mapType;
     [self animatePageCurlUp:0.5];

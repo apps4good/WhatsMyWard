@@ -17,8 +17,10 @@
 			<string>IBUICustomObject</string>
 			<string>IBUINavigationController</string>
 			<string>IBUIWindow</string>
+			<string>IBUITextField</string>
 			<string>IBUINavigationBar</string>
 			<string>IBUINavigationItem</string>
+			<string>IBUISegmentedControl</string>
 			<string>IBUIButton</string>
 		</array>
 		<array key="IBDocument.PluginDependencies">
@@ -46,7 +48,7 @@
 				<object class="NSPSMatrix" key="NSFrameMatrix"/>
 				<string key="NSFrameSize">{768, 1024}</string>
 				<reference key="NSSuperview"/>
-				<reference key="NSWindow"/>
+				<reference key="NSNextKeyView"/>
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">1</int>
 					<bytes key="NSRGB">MCAwIDAAA</bytes>
@@ -58,6 +60,109 @@
 				</object>
 				<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 				<bool key="IBUIResizesToFullScreen">YES</bool>
+			</object>
+			<object class="IBUIViewController" id="897977764">
+				<object class="IBUINavigationItem" key="IBUINavigationItem" id="1027031771">
+					<reference key="IBUINavigationBar"/>
+					<object class="IBUITextField" key="IBUITitleView" id="599877943">
+						<reference key="NSNextResponder"/>
+						<int key="NSvFlags">290</int>
+						<string key="NSFrame">{{53, 7}, {600, 31}}</string>
+						<reference key="NSSuperview"/>
+						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView" ref="271993400"/>
+						<bool key="IBUIOpaque">NO</bool>
+						<bool key="IBUIClipsSubviews">YES</bool>
+						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
+						<int key="IBUIContentVerticalAlignment">0</int>
+						<string key="IBUIText"/>
+						<int key="IBUIBorderStyle">3</int>
+						<string key="IBUIPlaceholder">Enter url or search</string>
+						<object class="NSColor" key="IBUITextColor">
+							<int key="NSColorSpace">3</int>
+							<bytes key="NSWhite">MAA</bytes>
+							<object class="NSColorSpace" key="NSCustomColorSpace">
+								<int key="NSID">2</int>
+							</object>
+						</object>
+						<bool key="IBUIAdjustsFontSizeToFit">YES</bool>
+						<float key="IBUIMinimumFontSize">17</float>
+						<object class="IBUITextInputTraits" key="IBUITextInputTraits">
+							<int key="IBUIAutocorrectionType">1</int>
+							<int key="IBUIKeyboardType">3</int>
+							<int key="IBUIReturnKeyType">1</int>
+							<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+						</object>
+						<int key="IBUIClearButtonMode">1</int>
+						<object class="IBUIFontDescription" key="IBUIFontDescription">
+							<int key="type">1</int>
+							<double key="pointSize">14</double>
+						</object>
+						<object class="NSFont" key="IBUIFont">
+							<string key="NSName">Helvetica</string>
+							<double key="NSSize">14</double>
+							<int key="NSfFlags">16</int>
+						</object>
+					</object>
+					<object class="IBUIBarButtonItem" key="IBUIRightBarButtonItem" id="1014567089">
+						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
+						<object class="IBUISegmentedControl" key="IBUICustomView" id="271993400">
+							<reference key="NSNextResponder"/>
+							<int key="NSvFlags">292</int>
+							<string key="NSFrame">{{661, 7}, {100, 30}}</string>
+							<reference key="NSSuperview"/>
+							<reference key="NSWindow"/>
+							<reference key="NSNextKeyView"/>
+							<bool key="IBUIOpaque">NO</bool>
+							<string key="targetRuntimeIdentifier">IBIPadFramework</string>
+							<int key="IBSegmentControlStyle">2</int>
+							<int key="IBNumberOfSegments">2</int>
+							<array key="IBSegmentTitles">
+								<string/>
+								<string/>
+							</array>
+							<array class="NSMutableArray" key="IBSegmentWidths">
+								<real value="0.0"/>
+								<real value="0.0"/>
+							</array>
+							<array class="NSMutableArray" key="IBSegmentEnabledStates">
+								<boolean value="YES"/>
+								<boolean value="YES"/>
+							</array>
+							<array class="NSMutableArray" key="IBSegmentContentOffsets">
+								<string>{0, 0}</string>
+								<string>{0, 0}</string>
+							</array>
+							<array class="NSMutableArray" key="IBSegmentImages">
+								<object class="NSCustomResource">
+									<string key="NSClassName">NSImage</string>
+									<string key="NSResourceName">back.png</string>
+								</object>
+								<object class="NSCustomResource">
+									<string key="NSClassName">NSImage</string>
+									<string key="NSResourceName">forward.png</string>
+								</object>
+							</array>
+							<bool key="IBMomentary">YES</bool>
+						</object>
+						<reference key="IBUINavigationItem" ref="1027031771"/>
+					</object>
+					<string key="targetRuntimeIdentifier">IBIPadFramework</string>
+				</object>
+				<string key="IBUINibName">A4GWebViewController_iPad</string>
+				<object class="IBUISimulatedNavigationBarMetrics" key="IBUISimulatedTopBarMetrics">
+					<int key="IBUIBarStyle">1</int>
+					<bool key="IBUIPrompted">NO</bool>
+				</object>
+				<object class="IBUISimulatedStatusBarMetrics" key="IBUISimulatedStatusBarMetrics">
+					<int key="IBUIStatusBarStyle">2</int>
+				</object>
+				<object class="IBUISimulatedOrientationMetrics" key="IBUISimulatedOrientationMetrics">
+					<int key="IBUIInterfaceOrientation">1</int>
+					<int key="interfaceOrientation">1</int>
+				</object>
+				<string key="targetRuntimeIdentifier">IBIPadFramework</string>
+				<bool key="IBUIHorizontal">NO</bool>
 			</object>
 			<object class="IBUINavigationController" id="1043839897">
 				<string key="IBUITitle">Master</string>
@@ -83,7 +188,6 @@
 					<object class="IBUIViewController" id="171444581">
 						<string key="IBUITitle">Layers</string>
 						<object class="IBUINavigationItem" key="IBUINavigationItem" id="605786520">
-							<reference key="IBUINavigationBar"/>
 							<string key="IBUITitle">Layers</string>
 							<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 						</object>
@@ -122,11 +226,12 @@
 					<object class="IBUIViewController" id="103614849">
 						<string key="IBUITitle">Map</string>
 						<object class="IBUINavigationItem" key="IBUINavigationItem" id="40496170">
-							<reference key="IBUINavigationBar"/>
 							<object class="IBUIButton" key="IBUITitleView" id="46583290">
-								<nil key="NSNextResponder"/>
+								<reference key="NSNextResponder"/>
 								<int key="NSvFlags">304</int>
 								<string key="NSFrame">{{68, 6}, {631, 33}}</string>
+								<reference key="NSSuperview"/>
+								<reference key="NSNextKeyView"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 								<int key="IBUIContentHorizontalAlignment">0</int>
@@ -177,6 +282,11 @@
 			<object class="IBUIViewController" id="29968766">
 				<object class="IBUINavigationItem" key="IBUINavigationItem" id="189330632">
 					<string key="IBUITitle">Details</string>
+					<object class="IBUIBarButtonItem" key="IBUIBackBarButtonItem" id="473523130">
+						<string key="IBUITitle">Back</string>
+						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
+						<int key="IBUIStyle">1</int>
+					</object>
 					<object class="IBUIBarButtonItem" key="IBUIRightBarButtonItem" id="677145392">
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 						<int key="IBUIStyle">1</int>
@@ -294,6 +404,14 @@
 					<int key="connectionID">114</int>
 				</object>
 				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">webController</string>
+						<reference key="source" ref="29968766"/>
+						<reference key="destination" ref="897977764"/>
+					</object>
+					<int key="connectionID">138</int>
+				</object>
+				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">done:event:</string>
 						<reference key="source" ref="1056827674"/>
@@ -366,6 +484,39 @@
 					</object>
 					<int key="connectionID">127</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">textField</string>
+						<reference key="source" ref="897977764"/>
+						<reference key="destination" ref="599877943"/>
+					</object>
+					<int key="connectionID">132</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">segmentControl</string>
+						<reference key="source" ref="897977764"/>
+						<reference key="destination" ref="271993400"/>
+					</object>
+					<int key="connectionID">137</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">delegate</string>
+						<reference key="source" ref="599877943"/>
+						<reference key="destination" ref="897977764"/>
+					</object>
+					<int key="connectionID">133</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">navigate:event:</string>
+						<reference key="source" ref="271993400"/>
+						<reference key="destination" ref="897977764"/>
+						<int key="IBEventType">13</int>
+					</object>
+					<int key="connectionID">136</int>
+				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<array key="orderedObjects">
@@ -431,6 +582,7 @@
 						<reference key="object" ref="189330632"/>
 						<array class="NSMutableArray" key="children">
 							<reference ref="677145392"/>
+							<reference ref="473523130"/>
 						</array>
 						<reference key="parent" ref="29968766"/>
 					</object>
@@ -508,6 +660,46 @@
 						<reference key="object" ref="46583290"/>
 						<reference key="parent" ref="40496170"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">129</int>
+						<reference key="object" ref="897977764"/>
+						<array class="NSMutableArray" key="children">
+							<reference ref="1027031771"/>
+						</array>
+						<reference key="parent" ref="0"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">130</int>
+						<reference key="object" ref="1027031771"/>
+						<array class="NSMutableArray" key="children">
+							<reference ref="599877943"/>
+							<reference ref="1014567089"/>
+						</array>
+						<reference key="parent" ref="897977764"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">131</int>
+						<reference key="object" ref="599877943"/>
+						<reference key="parent" ref="1027031771"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">135</int>
+						<reference key="object" ref="1014567089"/>
+						<array class="NSMutableArray" key="children">
+							<reference ref="271993400"/>
+						</array>
+						<reference key="parent" ref="1027031771"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">134</int>
+						<reference key="object" ref="271993400"/>
+						<reference key="parent" ref="1014567089"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">140</int>
+						<reference key="object" ref="473523130"/>
+						<reference key="parent" ref="189330632"/>
+					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
@@ -527,6 +719,14 @@
 				<string key="110.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="119.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="125.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="129.CustomClassName">A4GWebViewController</string>
+				<string key="129.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="130.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="131.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="134.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<integer value="0" key="134.IUISegmentedControlInspectorSelectedSegmentMetadataKey"/>
+				<string key="135.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="140.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<dictionary class="NSMutableDictionary" key="2.IBAttributePlaceholdersKey"/>
 				<string key="2.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="4.CustomClassName">A4GAppDelegate</string>
@@ -544,7 +744,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">128</int>
+			<int key="maxID">140</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -609,6 +809,17 @@
 							<string key="candidateClassName">id</string>
 						</object>
 					</object>
+					<object class="NSMutableDictionary" key="outlets">
+						<string key="NS.key.0">webController</string>
+						<string key="NS.object.0">A4GWebViewController</string>
+					</object>
+					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<string key="NS.key.0">webController</string>
+						<object class="IBToOneOutletInfo" key="NS.object.0">
+							<string key="name">webController</string>
+							<string key="candidateClassName">A4GWebViewController</string>
+						</object>
+					</object>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">./Classes/A4GDetailsViewController.h</string>
@@ -661,7 +872,7 @@
 						<string key="mapTypeCancelled:event:">id</string>
 						<string key="mapTypeChanged:event:">id</string>
 						<string key="settings:event:">id</string>
-						<string key="showInfo:event:">id</string>
+						<string key="showMapType:event:">id</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
 						<object class="IBActionInfo" key="layers:event:">
@@ -684,8 +895,8 @@
 							<string key="name">settings:event:</string>
 							<string key="candidateClassName">id</string>
 						</object>
-						<object class="IBActionInfo" key="showInfo:event:">
-							<string key="name">showInfo:event:</string>
+						<object class="IBActionInfo" key="showMapType:event:">
+							<string key="name">showMapType:event:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 					</dictionary>
@@ -762,17 +973,6 @@
 							<string key="candidateClassName">id</string>
 						</object>
 					</object>
-					<object class="NSMutableDictionary" key="outlets">
-						<string key="NS.key.0">closeButton</string>
-						<string key="NS.object.0">UIBarButtonItem</string>
-					</object>
-					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<string key="NS.key.0">closeButton</string>
-						<object class="IBToOneOutletInfo" key="NS.object.0">
-							<string key="name">closeButton</string>
-							<string key="candidateClassName">UIBarButtonItem</string>
-						</object>
-					</object>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">./Classes/A4GSettingsViewController.h</string>
@@ -816,16 +1016,83 @@
 						<string key="minorKey">./Classes/A4GViewController.h</string>
 					</object>
 				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">A4GWebViewController</string>
+					<string key="superclassName">A4GViewController</string>
+					<dictionary class="NSMutableDictionary" key="actions">
+						<string key="navigate:event:">id</string>
+						<string key="scaleTypeCancelled:event:">id</string>
+						<string key="scaleTypeChanged:event:">id</string>
+						<string key="showScaleType:event:">id</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="actionInfosByName">
+						<object class="IBActionInfo" key="navigate:event:">
+							<string key="name">navigate:event:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="scaleTypeCancelled:event:">
+							<string key="name">scaleTypeCancelled:event:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="scaleTypeChanged:event:">
+							<string key="name">scaleTypeChanged:event:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="showScaleType:event:">
+							<string key="name">showScaleType:event:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="outlets">
+						<string key="flipView">UIButton</string>
+						<string key="infoButton">UIButton</string>
+						<string key="scaleType">UISegmentedControl</string>
+						<string key="segmentControl">UISegmentedControl</string>
+						<string key="textField">UITextField</string>
+						<string key="webView">UIWebView</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<object class="IBToOneOutletInfo" key="flipView">
+							<string key="name">flipView</string>
+							<string key="candidateClassName">UIButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="infoButton">
+							<string key="name">infoButton</string>
+							<string key="candidateClassName">UIButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="scaleType">
+							<string key="name">scaleType</string>
+							<string key="candidateClassName">UISegmentedControl</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="segmentControl">
+							<string key="name">segmentControl</string>
+							<string key="candidateClassName">UISegmentedControl</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="textField">
+							<string key="name">textField</string>
+							<string key="candidateClassName">UITextField</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="webView">
+							<string key="name">webView</string>
+							<string key="candidateClassName">UIWebView</string>
+						</object>
+					</dictionary>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/A4GWebViewController.h</string>
+					</object>
+				</object>
 			</array>
 		</object>
 		<int key="IBDocument.localizationMode">0</int>
 		<string key="IBDocument.TargetRuntimeIdentifier">IBIPadFramework</string>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
-		<object class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="NS.key.0">gps.png</string>
-			<string key="NS.object.0">{20, 20}</string>
-		</object>
+		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
+			<string key="back.png">{7, 14}</string>
+			<string key="forward.png">{7, 14}</string>
+			<string key="gps.png">{20, 20}</string>
+		</dictionary>
 		<string key="IBCocoaTouchPluginVersion">933</string>
 	</data>
 </archive>

@@ -191,6 +191,20 @@
 		3EAD807A15BF00E3002ABABC /* A4GExceptionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EAD807915BF00E3002ABABC /* A4GExceptionView.m */; };
 		3EAD808015BF0186002ABABC /* A4GSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EAD807F15BF0186002ABABC /* A4GSettings.m */; };
 		3EAD808C15BF03A4002ABABC /* A4GDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EAD808B15BF03A3002ABABC /* A4GDevice.m */; };
+		3EB934F315DEB8A1002151B0 /* A4GWebViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EB934F215DEB8A1002151B0 /* A4GWebViewController_iPad.xib */; };
+		3EB934F415DEB8A1002151B0 /* A4GWebViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EB934F215DEB8A1002151B0 /* A4GWebViewController_iPad.xib */; };
+		3EB934F615DEB8BD002151B0 /* A4GWebViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EB934F515DEB8BD002151B0 /* A4GWebViewController_iPhone.xib */; };
+		3EB934F715DEB8BD002151B0 /* A4GWebViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EB934F515DEB8BD002151B0 /* A4GWebViewController_iPhone.xib */; };
+		3EB934FA15DEB8F1002151B0 /* A4GWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EB934F915DEB8F1002151B0 /* A4GWebViewController.m */; };
+		3EB934FB15DEB8F1002151B0 /* A4GWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EB934F915DEB8F1002151B0 /* A4GWebViewController.m */; };
+		3EB9350015DEBB68002151B0 /* forward.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EB934FC15DEBB68002151B0 /* forward.png */; };
+		3EB9350115DEBB68002151B0 /* forward.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EB934FC15DEBB68002151B0 /* forward.png */; };
+		3EB9350215DEBB68002151B0 /* forward@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EB934FD15DEBB68002151B0 /* forward@2x.png */; };
+		3EB9350315DEBB68002151B0 /* forward@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EB934FD15DEBB68002151B0 /* forward@2x.png */; };
+		3EB9350415DEBB68002151B0 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EB934FE15DEBB68002151B0 /* back.png */; };
+		3EB9350515DEBB68002151B0 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EB934FE15DEBB68002151B0 /* back.png */; };
+		3EB9350615DEBB68002151B0 /* back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EB934FF15DEBB68002151B0 /* back@2x.png */; };
+		3EB9350715DEBB68002151B0 /* back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EB934FF15DEBB68002151B0 /* back@2x.png */; };
 		3EC8C79E15CC67DE00D8FEB3 /* A4GApplication_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EC8C79515CC67DE00D8FEB3 /* A4GApplication_iPad.xib */; };
 		3EC8C79F15CC67DE00D8FEB3 /* A4GApplication_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EC8C79515CC67DE00D8FEB3 /* A4GApplication_iPad.xib */; };
 		3EC8C7A015CC67DE00D8FEB3 /* A4GApplication_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EC8C79615CC67DE00D8FEB3 /* A4GApplication_iPhone.xib */; };
@@ -377,6 +391,14 @@
 		3EAD808A15BF03A3002ABABC /* A4GDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = A4GDevice.h; sourceTree = "<group>"; };
 		3EAD808B15BF03A3002ABABC /* A4GDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = A4GDevice.m; sourceTree = "<group>"; };
 		3EAD809515BF0E17002ABABC /* A4GHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = A4GHeaderView.h; sourceTree = "<group>"; };
+		3EB934F215DEB8A1002151B0 /* A4GWebViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = A4GWebViewController_iPad.xib; sourceTree = "<group>"; };
+		3EB934F515DEB8BD002151B0 /* A4GWebViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = A4GWebViewController_iPhone.xib; sourceTree = "<group>"; };
+		3EB934F815DEB8F1002151B0 /* A4GWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = A4GWebViewController.h; sourceTree = "<group>"; };
+		3EB934F915DEB8F1002151B0 /* A4GWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = A4GWebViewController.m; sourceTree = "<group>"; };
+		3EB934FC15DEBB68002151B0 /* forward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = forward.png; sourceTree = "<group>"; };
+		3EB934FD15DEBB68002151B0 /* forward@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "forward@2x.png"; sourceTree = "<group>"; };
+		3EB934FE15DEBB68002151B0 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
+		3EB934FF15DEBB68002151B0 /* back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back@2x.png"; sourceTree = "<group>"; };
 		3EC8C79515CC67DE00D8FEB3 /* A4GApplication_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = A4GApplication_iPad.xib; sourceTree = "<group>"; };
 		3EC8C79615CC67DE00D8FEB3 /* A4GApplication_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = A4GApplication_iPhone.xib; sourceTree = "<group>"; };
 		3EC8C79715CC67DE00D8FEB3 /* A4GDetailsViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = A4GDetailsViewController_iPad.xib; sourceTree = "<group>"; };
@@ -583,6 +605,10 @@
 				3EF7795515D9709100C670E2 /* show@2x.png */,
 				3E5BB17D15DCA3DA001D40FE /* done.png */,
 				3E5BB17E15DCA3DA001D40FE /* done@2x.png */,
+				3EB934FC15DEBB68002151B0 /* forward.png */,
+				3EB934FD15DEBB68002151B0 /* forward@2x.png */,
+				3EB934FE15DEBB68002151B0 /* back.png */,
+				3EB934FF15DEBB68002151B0 /* back@2x.png */,
 				3E2BA4B015C7360C00CFACE7 /* phone.png */,
 				3E2BA4B115C7360C00CFACE7 /* phone@2x.png */,
 				3E2BA4B215C7360C00CFACE7 /* email.png */,
@@ -617,6 +643,8 @@
 				3EC8C79815CC67DE00D8FEB3 /* A4GDetailsViewController_iPhone.xib */,
 				3EC8C79A15CC67DE00D8FEB3 /* A4GMapViewController_iPad.xib */,
 				3EC8C79B15CC67DE00D8FEB3 /* A4GMapViewController_iPhone.xib */,
+				3EB934F215DEB8A1002151B0 /* A4GWebViewController_iPad.xib */,
+				3EB934F515DEB8BD002151B0 /* A4GWebViewController_iPhone.xib */,
 				3EC8C79C15CC67DE00D8FEB3 /* A4GSettingsViewController_iPad.xib */,
 				3EC8C79D15CC67DE00D8FEB3 /* A4GSettingsViewController_iPhone.xib */,
 				3E5BB17615DCA02E001D40FE /* A4GCheckTableViewCell.xib */,
@@ -671,6 +699,8 @@
 				3EDFF6AD15BE07E100939749 /* A4GDetailsViewController.m */,
 				3EDFF6A215BE04F800939749 /* A4GSettingsViewController.h */,
 				3EDFF6A315BE04F800939749 /* A4GSettingsViewController.m */,
+				3EB934F815DEB8F1002151B0 /* A4GWebViewController.h */,
+				3EB934F915DEB8F1002151B0 /* A4GWebViewController.m */,
 				3ED5C9D815DC001B006CA3BB /* A4GShareController.h */,
 				3ED5C9D915DC001B006CA3BB /* A4GShareController.m */,
 			);
@@ -930,6 +960,12 @@
 				3E5A00A115DCC7DB00479735 /* ward_8.kml in Resources */,
 				3E5A00A215DCC7DB00479735 /* ward_9.kml in Resources */,
 				3E5A00A315DCC7DB00479735 /* ward_10.kml in Resources */,
+				3EB934F415DEB8A1002151B0 /* A4GWebViewController_iPad.xib in Resources */,
+				3EB934F715DEB8BD002151B0 /* A4GWebViewController_iPhone.xib in Resources */,
+				3EB9350115DEBB68002151B0 /* forward.png in Resources */,
+				3EB9350315DEBB68002151B0 /* forward@2x.png in Resources */,
+				3EB9350515DEBB68002151B0 /* back.png in Resources */,
+				3EB9350715DEBB68002151B0 /* back@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1003,6 +1039,12 @@
 				3E5BB17715DCA02E001D40FE /* A4GCheckTableViewCell.xib in Resources */,
 				3E5BB17F15DCA3DA001D40FE /* done.png in Resources */,
 				3E5BB18115DCA3DA001D40FE /* done@2x.png in Resources */,
+				3EB934F315DEB8A1002151B0 /* A4GWebViewController_iPad.xib in Resources */,
+				3EB934F615DEB8BD002151B0 /* A4GWebViewController_iPhone.xib in Resources */,
+				3EB9350015DEBB68002151B0 /* forward.png in Resources */,
+				3EB9350215DEBB68002151B0 /* forward@2x.png in Resources */,
+				3EB9350415DEBB68002151B0 /* back.png in Resources */,
+				3EB9350615DEBB68002151B0 /* back@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1052,6 +1094,7 @@
 				3E68195015D48818007FF9C9 /* A4GTableViewController.m in Sources */,
 				3ED5C9DB15DC001B006CA3BB /* A4GShareController.m in Sources */,
 				3E5BB17C15DCA03D001D40FE /* A4GCheckTableViewCell.m in Sources */,
+				3EB934FB15DEB8F1002151B0 /* A4GWebViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1098,6 +1141,7 @@
 				3E68194F15D48818007FF9C9 /* A4GTableViewController.m in Sources */,
 				3ED5C9DA15DC001B006CA3BB /* A4GShareController.m in Sources */,
 				3E5BB17B15DCA03D001D40FE /* A4GCheckTableViewCell.m in Sources */,
+				3EB934FA15DEB8F1002151B0 /* A4GWebViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

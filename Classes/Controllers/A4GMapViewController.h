@@ -57,7 +57,7 @@
 - (IBAction) settings:(id)sender event:(UIEvent*)event;
 - (IBAction) locate:(id)sender event:(UIEvent*)event;
 - (IBAction) layers:(id)sender event:(UIEvent*)event;
-- (IBAction) showInfo:(id)sender event:(UIEvent*)event;
+- (IBAction) showMapType:(id)sender event:(UIEvent*)event;
 - (IBAction) mapTypeChanged:(id)sender event:(UIEvent*)event;
 - (IBAction) mapTypeCancelled:(id)sender event:(UIEvent*)event;
 

@@ -11,10 +11,10 @@
 			<string key="NS.object.0">933</string>
 		</object>
 		<array key="IBDocument.IntegratedClassDependencies">
+			<string>IBUIWebView</string>
 			<string>IBUIButton</string>
 			<string>IBUISegmentedControl</string>
 			<string>IBUIView</string>
-			<string>IBMKMapView</string>
 			<string>IBProxyObject</string>
 		</array>
 		<array key="IBDocument.PluginDependencies">
@@ -33,84 +33,84 @@
 				<string key="IBProxiedObjectIdentifier">IBFirstResponder</string>
 				<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 			</object>
-			<object class="IBUIView" id="848056950">
+			<object class="IBUIView" id="891408550">
 				<reference key="NSNextResponder"/>
 				<int key="NSvFlags">274</int>
 				<array class="NSMutableArray" key="NSSubviews">
-					<object class="IBUIView" id="489917452">
-						<reference key="NSNextResponder" ref="848056950"/>
+					<object class="IBUIView" id="944689816">
+						<reference key="NSNextResponder" ref="891408550"/>
 						<int key="NSvFlags">274</int>
 						<array class="NSMutableArray" key="NSSubviews">
-							<object class="IBUISegmentedControl" id="692820403">
-								<reference key="NSNextResponder" ref="489917452"/>
+							<object class="IBUISegmentedControl" id="116590325">
+								<reference key="NSNextResponder" ref="944689816"/>
 								<int key="NSvFlags">266</int>
 								<string key="NSFrame">{{42, 885}, {685, 44}}</string>
-								<reference key="NSSuperview" ref="489917452"/>
+								<reference key="NSSuperview" ref="944689816"/>
 								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 								<int key="IBUIContentHorizontalAlignment">0</int>
-								<int key="IBNumberOfSegments">3</int>
+								<int key="IBNumberOfSegments">2</int>
 								<int key="IBSelectedSegmentIndex">0</int>
 								<array key="IBSegmentTitles">
-									<string>Standard</string>
-									<string>Satellite</string>
-									<string>Hybrid</string>
+									<string>Regular Scale</string>
+									<string>Scale To Fit</string>
 								</array>
 								<array class="NSMutableArray" key="IBSegmentWidths">
-									<real value="0.0"/>
 									<real value="0.0"/>
 									<real value="0.0"/>
 								</array>
 								<array class="NSMutableArray" key="IBSegmentEnabledStates">
 									<boolean value="YES"/>
 									<boolean value="YES"/>
-									<boolean value="YES"/>
 								</array>
 								<array class="NSMutableArray" key="IBSegmentContentOffsets">
-									<string>{0, 0}</string>
 									<string>{0, 0}</string>
 									<string>{0, 0}</string>
 								</array>
 								<array class="NSMutableArray" key="IBSegmentImages">
 									<object class="NSNull" id="4"/>
 									<reference ref="4"/>
-									<reference ref="4"/>
 								</array>
 							</object>
 						</array>
 						<string key="NSFrame">{{0, 20}, {768, 960}}</string>
-						<reference key="NSSuperview" ref="848056950"/>
+						<reference key="NSSuperview" ref="891408550"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="692820403"/>
+						<reference key="NSNextKeyView" ref="116590325"/>
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">3</int>
 							<bytes key="NSWhite">MC42NjY2NjY2NjY3AA</bytes>
 						</object>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 					</object>
-					<object class="IBUIView" id="381256608">
-						<reference key="NSNextResponder" ref="848056950"/>
+					<object class="IBUIView" id="1041962067">
+						<reference key="NSNextResponder" ref="891408550"/>
 						<int key="NSvFlags">274</int>
 						<array class="NSMutableArray" key="NSSubviews">
-							<object class="IBMKMapView" id="452870778">
-								<reference key="NSNextResponder" ref="381256608"/>
-								<int key="NSvFlags">274</int>
+							<object class="IBUIWebView" id="769806502">
+								<reference key="NSNextResponder" ref="1041962067"/>
+								<int key="NSvFlags">292</int>
 								<string key="NSFrameSize">{768, 980}</string>
-								<reference key="NSSuperview" ref="381256608"/>
+								<reference key="NSSuperview" ref="1041962067"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView" ref="408502181"/>
-								<bool key="IBUIClipsSubviews">YES</bool>
-								<bool key="IBUIMultipleTouchEnabled">YES</bool>
+								<reference key="NSNextKeyView" ref="204978114"/>
+								<object class="NSColor" key="IBUIBackgroundColor">
+									<int key="NSColorSpace">1</int>
+									<bytes key="NSRGB">MSAxIDEAA</bytes>
+								</object>
 								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
+								<int key="IBUIDataDetectorTypes">1</int>
+								<bool key="IBUIDetectsPhoneNumbers">YES</bool>
 							</object>
-							<object class="IBUIButton" id="408502181">
-								<reference key="NSNextResponder" ref="381256608"/>
+							<object class="IBUIButton" id="204978114">
+								<reference key="NSNextResponder" ref="1041962067"/>
 								<int key="NSvFlags">265</int>
 								<string key="NSFrame">{{730, 941}, {18, 19}}</string>
-								<reference key="NSSuperview" ref="381256608"/>
+								<reference key="NSSuperview" ref="1041962067"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView" ref="489917452"/>
+								<reference key="NSNextKeyView" ref="944689816"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 								<int key="IBUIContentHorizontalAlignment">0</int>
@@ -141,13 +141,13 @@
 							</object>
 						</array>
 						<string key="NSFrameSize">{768, 980}</string>
-						<reference key="NSSuperview" ref="848056950"/>
+						<reference key="NSSuperview" ref="891408550"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="452870778"/>
+						<reference key="NSNextKeyView" ref="769806502"/>
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">3</int>
 							<bytes key="NSWhite">MQA</bytes>
-							<object class="NSColorSpace" key="NSCustomColorSpace" id="552277182">
+							<object class="NSColorSpace" key="NSCustomColorSpace" id="144342432">
 								<int key="NSID">2</int>
 							</object>
 						</object>
@@ -157,11 +157,11 @@
 				<string key="NSFrameSize">{768, 980}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
-				<reference key="NSNextKeyView" ref="381256608"/>
+				<reference key="NSNextKeyView" ref="1041962067"/>
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">3</int>
 					<bytes key="NSWhite">MQA</bytes>
-					<reference key="NSCustomColorSpace" ref="552277182"/>
+					<reference key="NSCustomColorSpace" ref="144342432"/>
 				</object>
 				<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 			</object>
@@ -170,78 +170,70 @@
 			<array class="NSMutableArray" key="connectionRecords">
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">view</string>
+						<string key="label">flipView</string>
 						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="848056950"/>
+						<reference key="destination" ref="944689816"/>
 					</object>
 					<int key="connectionID">18</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">mapView</string>
+						<string key="label">infoButton</string>
 						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="452870778"/>
+						<reference key="destination" ref="204978114"/>
 					</object>
 					<int key="connectionID">19</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">mapType</string>
+						<string key="label">scaleType</string>
 						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="692820403"/>
+						<reference key="destination" ref="116590325"/>
 					</object>
 					<int key="connectionID">20</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">infoButton</string>
+						<string key="label">webView</string>
 						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="408502181"/>
+						<reference key="destination" ref="769806502"/>
 					</object>
 					<int key="connectionID">21</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">flipView</string>
+						<string key="label">view</string>
 						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="489917452"/>
+						<reference key="destination" ref="891408550"/>
 					</object>
 					<int key="connectionID">25</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
-						<string key="label">mapTypeCancelled:event:</string>
-						<reference key="source" ref="489917452"/>
+						<string key="label">scaleTypeCancelled:event:</string>
+						<reference key="source" ref="944689816"/>
 						<reference key="destination" ref="372490531"/>
 						<int key="IBEventType">7</int>
 					</object>
-					<int key="connectionID">24</int>
+					<int key="connectionID">22</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
-						<string key="label">showMapType:event:</string>
-						<reference key="source" ref="408502181"/>
-						<reference key="destination" ref="372490531"/>
-						<int key="IBEventType">7</int>
-					</object>
-					<int key="connectionID">27</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">delegate</string>
-						<reference key="source" ref="452870778"/>
-						<reference key="destination" ref="372490531"/>
-					</object>
-					<int key="connectionID">26</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchEventConnection" key="connection">
-						<string key="label">mapTypeChanged:event:</string>
-						<reference key="source" ref="692820403"/>
+						<string key="label">scaleTypeChanged:event:</string>
+						<reference key="source" ref="116590325"/>
 						<reference key="destination" ref="372490531"/>
 						<int key="IBEventType">13</int>
 					</object>
 					<int key="connectionID">23</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">showScaleType:event:</string>
+						<reference key="source" ref="204978114"/>
+						<reference key="destination" ref="372490531"/>
+						<int key="IBEventType">7</int>
+					</object>
+					<int key="connectionID">26</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -264,272 +256,70 @@
 						<reference key="parent" ref="0"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">10</int>
-						<reference key="object" ref="848056950"/>
+						<int key="objectID">11</int>
+						<reference key="object" ref="891408550"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="489917452"/>
-							<reference ref="381256608"/>
+							<reference ref="1041962067"/>
+							<reference ref="944689816"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">11</int>
-						<reference key="object" ref="489917452"/>
-						<array class="NSMutableArray" key="children">
-							<reference ref="692820403"/>
-						</array>
-						<reference key="parent" ref="848056950"/>
-					</object>
-					<object class="IBObjectRecord">
 						<int key="objectID">12</int>
-						<reference key="object" ref="381256608"/>
+						<reference key="object" ref="1041962067"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="408502181"/>
-							<reference ref="452870778"/>
+							<reference ref="204978114"/>
+							<reference ref="769806502"/>
 						</array>
-						<reference key="parent" ref="848056950"/>
+						<reference key="parent" ref="891408550"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">15</int>
-						<reference key="object" ref="408502181"/>
-						<reference key="parent" ref="381256608"/>
+						<int key="objectID">13</int>
+						<reference key="object" ref="944689816"/>
+						<array class="NSMutableArray" key="children">
+							<reference ref="116590325"/>
+						</array>
+						<reference key="parent" ref="891408550"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">14</int>
+						<reference key="object" ref="116590325"/>
+						<reference key="parent" ref="944689816"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">16</int>
-						<reference key="object" ref="452870778"/>
-						<reference key="parent" ref="381256608"/>
+						<reference key="object" ref="204978114"/>
+						<reference key="parent" ref="1041962067"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">17</int>
-						<reference key="object" ref="692820403"/>
-						<reference key="parent" ref="489917452"/>
+						<reference key="object" ref="769806502"/>
+						<reference key="parent" ref="1041962067"/>
 					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
-				<string key="-1.CustomClassName">A4GMapViewController</string>
+				<string key="-1.CustomClassName">A4GWebViewController</string>
 				<string key="-1.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="-2.CustomClassName">UIResponder</string>
 				<string key="-2.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-				<string key="10.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-				<string key="11.CustomClassName">UIButton</string>
 				<string key="11.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="12.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-				<string key="15.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="13.CustomClassName">UIButton</string>
+				<string key="13.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="14.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<integer value="0" key="14.IUISegmentedControlInspectorSelectedSegmentMetadataKey"/>
 				<string key="16.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="17.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-				<integer value="1" key="17.IUISegmentedControlInspectorSelectedSegmentMetadataKey"/>
 			</dictionary>
 			<dictionary class="NSMutableDictionary" key="unlocalizedProperties"/>
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">27</int>
+			<int key="maxID">26</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
-				<object class="IBPartialClassDescription">
-					<string key="className">A4GDetailsViewController</string>
-					<string key="superclassName">A4GTableViewController</string>
-					<object class="NSMutableDictionary" key="actions">
-						<string key="NS.key.0">action:event:</string>
-						<string key="NS.object.0">id</string>
-					</object>
-					<object class="NSMutableDictionary" key="actionInfosByName">
-						<string key="NS.key.0">action:event:</string>
-						<object class="IBActionInfo" key="NS.object.0">
-							<string key="name">action:event:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-					</object>
-					<object class="NSMutableDictionary" key="outlets">
-						<string key="NS.key.0">webController</string>
-						<string key="NS.object.0">A4GWebViewController</string>
-					</object>
-					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<string key="NS.key.0">webController</string>
-						<object class="IBToOneOutletInfo" key="NS.object.0">
-							<string key="name">webController</string>
-							<string key="candidateClassName">A4GWebViewController</string>
-						</object>
-					</object>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/A4GDetailsViewController.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">A4GLayersViewController</string>
-					<string key="superclassName">A4GTableViewController</string>
-					<object class="NSMutableDictionary" key="actions">
-						<string key="NS.key.0">done:event:</string>
-						<string key="NS.object.0">id</string>
-					</object>
-					<object class="NSMutableDictionary" key="actionInfosByName">
-						<string key="NS.key.0">done:event:</string>
-						<object class="IBActionInfo" key="NS.object.0">
-							<string key="name">done:event:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-					</object>
-					<object class="NSMutableDictionary" key="outlets">
-						<string key="NS.key.0">mapViewController</string>
-						<string key="NS.object.0">A4GMapViewController</string>
-					</object>
-					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<string key="NS.key.0">mapViewController</string>
-						<object class="IBToOneOutletInfo" key="NS.object.0">
-							<string key="name">mapViewController</string>
-							<string key="candidateClassName">A4GMapViewController</string>
-						</object>
-					</object>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/A4GLayersViewController.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">A4GLoadingButton</string>
-					<string key="superclassName">UIBarButtonItem</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/A4GLoadingButton.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">A4GMapViewController</string>
-					<string key="superclassName">A4GViewController</string>
-					<dictionary class="NSMutableDictionary" key="actions">
-						<string key="layers:event:">id</string>
-						<string key="locate:event:">id</string>
-						<string key="mapTypeCancelled:event:">id</string>
-						<string key="mapTypeChanged:event:">id</string>
-						<string key="settings:event:">id</string>
-						<string key="showMapType:event:">id</string>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="actionInfosByName">
-						<object class="IBActionInfo" key="layers:event:">
-							<string key="name">layers:event:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="locate:event:">
-							<string key="name">locate:event:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="mapTypeCancelled:event:">
-							<string key="name">mapTypeCancelled:event:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="mapTypeChanged:event:">
-							<string key="name">mapTypeChanged:event:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="settings:event:">
-							<string key="name">settings:event:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="showMapType:event:">
-							<string key="name">showMapType:event:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="outlets">
-						<string key="detailsViewController">A4GDetailsViewController</string>
-						<string key="flipView">UIButton</string>
-						<string key="infoButton">UIButton</string>
-						<string key="layersViewController">A4GLayersViewController</string>
-						<string key="locateButton">A4GLoadingButton</string>
-						<string key="mapType">UISegmentedControl</string>
-						<string key="mapView">MKMapView</string>
-						<string key="refreshButton">A4GLoadingButton</string>
-						<string key="settingsViewController">A4GSettingsViewController</string>
-						<string key="titleView">UIButton</string>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<object class="IBToOneOutletInfo" key="detailsViewController">
-							<string key="name">detailsViewController</string>
-							<string key="candidateClassName">A4GDetailsViewController</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="flipView">
-							<string key="name">flipView</string>
-							<string key="candidateClassName">UIButton</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="infoButton">
-							<string key="name">infoButton</string>
-							<string key="candidateClassName">UIButton</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="layersViewController">
-							<string key="name">layersViewController</string>
-							<string key="candidateClassName">A4GLayersViewController</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="locateButton">
-							<string key="name">locateButton</string>
-							<string key="candidateClassName">A4GLoadingButton</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="mapType">
-							<string key="name">mapType</string>
-							<string key="candidateClassName">UISegmentedControl</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="mapView">
-							<string key="name">mapView</string>
-							<string key="candidateClassName">MKMapView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="refreshButton">
-							<string key="name">refreshButton</string>
-							<string key="candidateClassName">A4GLoadingButton</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="settingsViewController">
-							<string key="name">settingsViewController</string>
-							<string key="candidateClassName">A4GSettingsViewController</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="titleView">
-							<string key="name">titleView</string>
-							<string key="candidateClassName">UIButton</string>
-						</object>
-					</dictionary>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/A4GMapViewController.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">A4GSettingsViewController</string>
-					<string key="superclassName">A4GTableViewController</string>
-					<object class="NSMutableDictionary" key="actions">
-						<string key="NS.key.0">done:event:</string>
-						<string key="NS.object.0">id</string>
-					</object>
-					<object class="NSMutableDictionary" key="actionInfosByName">
-						<string key="NS.key.0">done:event:</string>
-						<object class="IBActionInfo" key="NS.object.0">
-							<string key="name">done:event:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-					</object>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/A4GSettingsViewController.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">A4GTableViewController</string>
-					<string key="superclassName">A4GViewController</string>
-					<object class="NSMutableDictionary" key="outlets">
-						<string key="NS.key.0">tableView</string>
-						<string key="NS.object.0">UITableView</string>
-					</object>
-					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<string key="NS.key.0">tableView</string>
-						<object class="IBToOneOutletInfo" key="NS.object.0">
-							<string key="name">tableView</string>
-							<string key="candidateClassName">UITableView</string>
-						</object>
-					</object>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/A4GTableViewController.h</string>
-					</object>
-				</object>
 				<object class="IBPartialClassDescription">
 					<string key="className">A4GViewController</string>
 					<string key="superclassName">UIViewController</string>

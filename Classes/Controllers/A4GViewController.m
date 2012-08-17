@@ -55,9 +55,6 @@ typedef enum {
         if (barButtonItem.style == UIBarButtonItemStyleDone) {
             barButtonItem.tintColor = [A4GSettings buttonDoneColor];
         }
-        else {
-            //barButtonItem.tintColor = [A4GSettings buttonPlainColor];
-        }
     }
 }
 

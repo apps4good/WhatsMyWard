@@ -28,6 +28,7 @@
 
 #import "A4GDetailsViewController.h"
 #import "A4GTableViewController.h"
+#import "A4GWebViewController.h"
 #import "A4GHeaderView.h"
 #import "A4GSettings.h"
 #import "A4GDevice.h"
@@ -47,6 +48,7 @@
 @implementation A4GDetailsViewController
 
 @synthesize data = _data;
+@synthesize webController = _webController;
 @synthesize shareController = _shareController;
 
 typedef enum {
@@ -64,6 +66,7 @@ typedef enum {
 
 - (void)dealloc {
     [_data release];
+    [_webController release];
     [_shareController release];
     [super dealloc];
 }
@@ -127,7 +130,9 @@ typedef enum {
         [self.shareController sendEmail:nil withSubject:self.title toRecipients:[NSArray arrayWithObject:text]];
     }
     else if ([NSString isPhotoURL:text]) {
-        [self.shareController openURL:text];
+        self.webController.url = text;
+        [self.navigationController pushViewController:self.webController animated:YES];
+//        [self.shareController openURL:text];
     }
     else if ([NSString isPhoneNumber:text]) {
         [self.shareController callNumber:text];
@@ -136,7 +141,9 @@ typedef enum {
         [self.shareController sendTweet:[text removeTwitterURL] withURL:nil];
     }
     else if ([NSString isWebURL:text]) {
-        [self.shareController openURL:text];
+        self.webController.url = text;
+        [self.navigationController pushViewController:self.webController animated:YES];
+//        [self.shareController openURL:text];
     }
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
