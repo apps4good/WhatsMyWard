@@ -29,6 +29,7 @@
 #import "A4GSettingsViewController.h"
 #import "A4GTableViewCellFactory.h"
 #import "UIViewController+A4G.h"
+#import "A4GImageTableViewCell.h"
 #import "A4GSettings.h"
 #import "A4GDevice.h"
 
@@ -56,7 +57,9 @@ typedef enum {
 
 typedef enum {
     TableSectionAboutRowText,
+    TableSectionAboutRowEmail,
     TableSectionAboutRowUrl,
+    TableSectionAboutRowLogo,
     TableSectionAboutRows
 } TableSectionAboutRow;
 
@@ -101,11 +104,11 @@ typedef enum {
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [A4GTableViewCellFactory defaultTableViewCell:tableView];
-    cell.textLabel.font = [UIFont boldSystemFontOfSize:17];
-    cell.textLabel.textColor = [A4GSettings tableGroupedTextColor];
-    cell.textLabel.numberOfLines = 0;
     if (indexPath.section == TableSectionApp) {
+        UITableViewCell *cell = [A4GTableViewCellFactory defaultTableViewCell:tableView];
+        cell.textLabel.font = [UIFont boldSystemFontOfSize:17];
+        cell.textLabel.textColor = [A4GSettings tableGroupedTextColor];
+        cell.textLabel.numberOfLines = 0;
         if (indexPath.row == TableSectionAppRowText) {
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
             cell.accessoryView = nil;
@@ -116,20 +119,36 @@ typedef enum {
             cell.accessoryView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"web.png"]];
             cell.textLabel.text = [A4GSettings appURL];
         }
+        return cell;
     }
     else if (indexPath.section == TableSectionAbout) {
+        if (indexPath.row == TableSectionAboutRowLogo) {
+            A4GImageTableViewCell *cell = [A4GTableViewCellFactory imageTableViewCell:tableView delegate:self index:indexPath];
+            cell.image = [UIImage imageNamed:@"logo.png"];
+            return cell;
+        }
+        UITableViewCell *cell = [A4GTableViewCellFactory defaultTableViewCell:tableView];
+        cell.textLabel.font = [UIFont boldSystemFontOfSize:17];
+        cell.textLabel.textColor = [A4GSettings tableGroupedTextColor];
+        cell.textLabel.numberOfLines = 0;
         if (indexPath.row == TableSectionAboutRowText) {
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
             cell.accessoryView = nil;
             cell.textLabel.text = [A4GSettings aboutText];
+        }
+        else if (indexPath.row == TableSectionAboutRowEmail) {
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            cell.accessoryView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"email.png"]];
+            cell.textLabel.text = [A4GSettings aboutEmail];
         }
         else if (indexPath.row == TableSectionAboutRowUrl) {
             cell.selectionStyle = UITableViewCellSelectionStyleGray;
             cell.accessoryView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"web.png"]];
             cell.textLabel.text = [A4GSettings aboutURL];
         }
+        return cell;
     }
-    return cell;
+    return nil;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -146,8 +165,14 @@ typedef enum {
         if (indexPath.row == TableSectionAboutRowText) {
             text = [A4GSettings aboutText];
         }
+        else if (indexPath.row == TableSectionAboutRowEmail) {
+            text = [A4GSettings aboutEmail];
+        }
         else if (indexPath.row == TableSectionAboutRowUrl) {
             text = [A4GSettings aboutURL];
+        }
+        else if (indexPath.row == TableSectionAboutRowLogo) {
+            return 200;
         }
     }
     return [self tableView:tableView heightForText:text withFont:[UIFont boldSystemFontOfSize:17]];
@@ -166,6 +191,9 @@ typedef enum {
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == TableSectionApp && indexPath.row == TableSectionAppRowUrl) {
         [self.shareController openURL:[A4GSettings appURL]];
+    }
+    if (indexPath.section == TableSectionAbout && indexPath.row == TableSectionAboutRowEmail) {
+        [self.shareController sendEmail:nil withSubject:[A4GSettings appName] toRecipient:[A4GSettings aboutEmail]];
     }
     else if (indexPath.section == TableSectionAbout && indexPath.row == TableSectionAboutRowUrl) {
         [self.shareController openURL:[A4GSettings aboutURL]];

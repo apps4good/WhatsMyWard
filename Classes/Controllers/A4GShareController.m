@@ -242,6 +242,10 @@ typedef enum {
     }
 }
 
+- (void) sendEmail:(NSString*)message withSubject:(NSString *)subject toRecipient:(NSString*)recipient {
+    [self sendEmail:message withSubject:subject toRecipients:[NSArray arrayWithObject:recipient]];
+}
+
 - (void) sendEmail:(NSString*)message withSubject:(NSString *)subject toRecipients:(NSArray*)recipients {
     DLog(@"Message:%@ Subject:%@", message, subject);
     if ([self canSendEmail]) {

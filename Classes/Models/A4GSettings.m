@@ -79,6 +79,10 @@
     return [A4GSettings stringFromBundleForKey:@"A4GAboutURL"]; 
 }
 
++(NSString *) aboutEmail {
+    return [A4GSettings stringFromBundleForKey:@"A4GAboutEmail"]; 
+}
+
 + (UIColor *) navBarColor {
     return [A4GSettings colorFromBundleForKey:@"A4GNavBarColor"];
 }

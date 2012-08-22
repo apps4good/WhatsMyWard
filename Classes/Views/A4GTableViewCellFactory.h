@@ -29,6 +29,7 @@
 #import <Foundation/Foundation.h>
 
 @class A4GCheckTableViewCell;
+@class A4GImageTableViewCell;
 
 @interface A4GTableViewCellFactory : NSObject
 
@@ -39,5 +40,7 @@
 + (UITableViewCell *) valueTableViewCell:(UITableView*)tableView;
 
 + (A4GCheckTableViewCell*) checkTableViewCell:(UITableView*)tableView delegate:(id)delegate index:(NSIndexPath*)indexPath;
+
++ (A4GImageTableViewCell*) imageTableViewCell:(UITableView*)tableView delegate:(id)delegate index:(NSIndexPath*)indexPath;
 
 @end

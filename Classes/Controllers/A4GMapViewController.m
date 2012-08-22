@@ -295,13 +295,10 @@ typedef enum {
 - (void)mapView:(MKMapView *)mapView didFailToLocateUserWithError:(NSError *)error  {
     DLog(@"Error:%@", [error description]);
     if (error != nil) {
-        [UIAlertView showWithTitle:NSLocalizedString(@"Locate Error", nil) 
-                           message:[error description] 
-                          delegate:self 
-                               tag:0 
-                 cancelButtonTitle:NSLocalizedString(@"OK", nil) 
-                 otherButtonTitles:nil];
+        [self showLoadingWithMessage:NSLocalizedString(@"Locate Error", nil)];
+        [self hideLoadingAfterDelay:2.0];
     }
+    [self.locateButton setLoading:NO];
 }
 
 - (void)mapView:(MKMapView *)mapView didAddAnnotationViews:(NSArray *)views {

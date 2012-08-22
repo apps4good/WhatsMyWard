@@ -8,8 +8,6 @@
 	<string>Saskatoon</string>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
-	<key>CFBundleIconFiles</key>
-	<array/>
 	<key>CFBundleIcons</key>
 	<dict>
 		<key>CFBundlePrimaryIcon</key>
@@ -18,12 +16,11 @@
 			<array>
 				<string>Icon.png</string>
 				<string>Icon@2x.png</string>
-				<string>Icon-iPad.png</string>
-				<string>Icon-iPad@2x.png</string>
-				<string>Icon-Settings.png</string>
-				<string>Icon-Settings@2x.png</string>
-				<string>Icon-Spotlight.png</string>
-				<string>Icon-Spotlight@2x.png</string>
+				<string>Icon-72.png</string>
+				<string>Icon-144.png</string>
+				<string>Icon-Small-50.png</string>
+				<string>Icon-Small.png</string>
+				<string>Icon-Small@2x.png</string>
 			</array>
 			<key>UIPrerenderedIcon</key>
 			<false/>
@@ -91,11 +88,13 @@
 	<key>A4GTableGroupedHeaderTextColor</key>
 	<string>#6E6E6E</string>
 	<key>A4GAppText</key>
-	<string>What&apos;s My Ward is an app to help find what ward you live in and who your city councillor is.</string>
+	<string>What&apos;s My Ward is an app to help residents of Saskatoon find what ward they live in and make it easy to contact their city councilor.</string>
 	<key>A4GAppURL</key>
-	<string>http://apps4good.ca/apps/whats-my-ward/</string>
+	<string>http://itunes.apple.com/us/app/whats-my-ward-saskatoon/id555098142</string>
 	<key>A4GAboutText</key>
 	<string>Apps4Good is an alliance of software developers who are passionate about improving our community, by doing what we love: build software.</string>
+	<key>A4GAboutEmail</key>
+	<string>contact@apps4good.ca</string>
 	<key>A4GAboutURL</key>
 	<string>http://apps4good.ca</string>
 </dict>

@@ -132,6 +132,7 @@ typedef enum {
 #pragma mark - UITextFieldDelegate
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    DLog(@"%@", textField.text);
     [self loadAddress:textField.text];
     [textField resignFirstResponder];
     return YES;

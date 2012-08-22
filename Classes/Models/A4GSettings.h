@@ -36,6 +36,7 @@
 + (NSString *) appVersion;
 
 + (NSString *) aboutText;
++ (NSString *) aboutEmail;
 + (NSString *) aboutURL;
 
 + (UIColor *) navBarColor;
