@@ -243,7 +243,8 @@ typedef enum {
 }
 
 - (void) sendEmail:(NSString*)message withSubject:(NSString *)subject toRecipient:(NSString*)recipient {
-    [self sendEmail:message withSubject:subject toRecipients:[NSArray arrayWithObject:recipient]];
+    NSArray *recipients = recipient != nil ? [NSArray arrayWithObject:recipient] : nil;
+    [self sendEmail:message withSubject:subject toRecipients:recipients];   
 }
 
 - (void) sendEmail:(NSString*)message withSubject:(NSString *)subject toRecipients:(NSArray*)recipients {

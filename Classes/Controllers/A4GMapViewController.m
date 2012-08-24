@@ -79,17 +79,14 @@ typedef enum {
 #pragma mark - Handlers
 
 - (void) addKML:(NSString*)kml {
-    //DLog(@"%@", kml);
     NSURL *url = [NSURL fileURLWithPath:kml];
     KMLParser *kmlParser = [[KMLParser alloc] initWithURL:url];
     [kmlParser parseKML];
     NSMutableArray *overlays = [NSMutableArray array];
     NSMutableArray *annotations = [NSMutableArray array];
     for (id <MKOverlay> overlay in [kmlParser overlays]) {
-        //DLog(@"%@ %@", [overlay class], overlay.title);
         if ([overlay isKindOfClass:[MKPolygon class]]) {
             MKPolygon *polygon = (MKPolygon*)overlay;
-            //TODO check is subtitle is JSON
             if ([NSString isNilOrEmpty:overlay.subtitle] == NO) {
                 A4GData *data = [[A4GData alloc] initWithJSON:overlay.subtitle];
                 [polygon setData:data];

@@ -316,8 +316,7 @@ static void strToCoords(NSString *str, CLLocationCoordinate2D **coordsOut, NSUIn
     }
 }
 
-- (id)initWithURL:(NSURL *)url
-{
+- (id)initWithURL:(NSURL *)url {
     if (self = [super init]) {
         _styles = [[NSMutableDictionary alloc] init];
         _placemarks = [[NSMutableArray alloc] init];
@@ -328,8 +327,7 @@ static void strToCoords(NSString *str, CLLocationCoordinate2D **coordsOut, NSUIn
     return self;
 }
 
-- (void)dealloc
-{
+- (void)dealloc {
     [_styles release];
     [_placemarks release];
     [_xmlParser release];
@@ -337,16 +335,23 @@ static void strToCoords(NSString *str, CLLocationCoordinate2D **coordsOut, NSUIn
     [super dealloc];
 }
 
-- (void)parseKML
-{
+- (void)parseKML {
     [_xmlParser parse];
     [self _assignStyles];
 }
 
+- (NSString *) title {
+    for (id <MKOverlay> overlay in [self overlays]) {
+        if (overlay.title != nil && overlay.title.length > 0) {
+            return overlay.title;
+        }
+    }
+    return nil;
+}
+
 // Return the list of KMLPlacemarks from the object graph that contain overlays
 // (as opposed to simply point annotations).
-- (NSArray *)overlays
-{
+- (NSArray *)overlays {
     NSMutableArray *overlays = [[NSMutableArray alloc] init];
     for (KMLPlacemark *placemark in _placemarks) {
         id <MKOverlay> overlay = [placemark overlay];
@@ -360,8 +365,7 @@ static void strToCoords(NSString *str, CLLocationCoordinate2D **coordsOut, NSUIn
 
 // Return the list of KMLPlacemarks from the object graph that are simply
 // MKPointAnnotations and are not MKOverlays.
-- (NSArray *)points
-{
+- (NSArray *)points {
     NSMutableArray *points = [[NSMutableArray alloc] init];
     for (KMLPlacemark *placemark in _placemarks) {
         id <MKAnnotation> point = [placemark point];
@@ -371,8 +375,7 @@ static void strToCoords(NSString *str, CLLocationCoordinate2D **coordsOut, NSUIn
     return [points autorelease];
 }
 
-- (MKAnnotationView *)viewForAnnotation:(id <MKAnnotation>)point
-{
+- (MKAnnotationView *)viewForAnnotation:(id <MKAnnotation>)point {
     // Find the KMLPlacemark object that owns this point and get
     // the view from it.
     for (KMLPlacemark *placemark in _placemarks) {
@@ -382,8 +385,7 @@ static void strToCoords(NSString *str, CLLocationCoordinate2D **coordsOut, NSUIn
     return nil;
 }
 
-- (MKOverlayView *)viewForOverlay:(id <MKOverlay>)overlay
-{
+- (MKOverlayView *)viewForOverlay:(id <MKOverlay>)overlay {
     // Find the KMLPlacemark object that owns this overlay and get
     // the view from it.
     for (KMLPlacemark *placemark in _placemarks) {
@@ -393,8 +395,7 @@ static void strToCoords(NSString *str, CLLocationCoordinate2D **coordsOut, NSUIn
     return nil;
 }
 
-- (UIColor *)strokeColorForOverlay:(id <MKOverlay>)overlay
-{
+- (UIColor *)strokeColorForOverlay:(id <MKOverlay>)overlay {
     for (KMLPlacemark *placemark in _placemarks) {
         if ([placemark overlay] == overlay) {
             KMLStyle *style = [placemark style];
@@ -406,8 +407,7 @@ static void strToCoords(NSString *str, CLLocationCoordinate2D **coordsOut, NSUIn
     return nil;
 }
 
-- (UIColor *)fillColorForOverlay:(id <MKOverlay>)overlay
-{
+- (UIColor *)fillColorForOverlay:(id <MKOverlay>)overlay {
     for (KMLPlacemark *placemark in _placemarks) {
         if ([placemark overlay] == overlay) {
             KMLStyle *style = [placemark style];

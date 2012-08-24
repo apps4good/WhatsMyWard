@@ -49,7 +49,6 @@
 				<string key="NSFrameSize">{320, 480}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
-				<reference key="NSNextKeyView"/>
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">1</int>
 					<bytes key="NSRGB">MCAwIDAAA</bytes>
@@ -108,13 +107,13 @@
 					</object>
 					<object class="IBUIBarButtonItem" key="IBUIRightBarButtonItem" id="788295073">
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+						<int key="IBUIStyle">1</int>
 						<object class="IBUISegmentedControl" key="IBUICustomView" id="475609087">
 							<reference key="NSNextResponder"/>
 							<int key="NSvFlags">292</int>
 							<string key="NSFrame">{{250, 7}, {65, 30}}</string>
 							<reference key="NSSuperview"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView"/>
 							<bool key="IBUIOpaque">NO</bool>
 							<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 							<int key="IBSegmentControlStyle">2</int>
@@ -189,7 +188,6 @@
 				<array class="NSMutableArray" key="IBUIViewControllers">
 					<object class="IBUIViewController" id="939666349">
 						<object class="IBUINavigationItem" key="IBUINavigationItem" id="922986198">
-							<reference key="IBUINavigationBar"/>
 							<object class="IBUIBarButtonItem" key="IBUIBackBarButtonItem" id="654398677">
 								<string key="IBUITitle">Back</string>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -205,12 +203,9 @@
 								<reference key="IBUINavigationItem" ref="922986198"/>
 							</object>
 							<object class="IBUIButton" key="IBUITitleView" id="833936388">
-								<reference key="NSNextResponder"/>
+								<nil key="NSNextResponder"/>
 								<int key="NSvFlags">290</int>
 								<string key="NSFrame">{{53, 6}, {214, 33}}</string>
-								<reference key="NSSuperview"/>
-								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<int key="IBUIContentHorizontalAlignment">0</int>
@@ -280,7 +275,6 @@
 			</object>
 			<object class="IBUIViewController" id="499366745">
 				<object class="IBUINavigationItem" key="IBUINavigationItem" id="887326432">
-					<reference key="IBUINavigationBar"/>
 					<string key="IBUITitle">Details</string>
 					<object class="IBUIBarButtonItem" key="IBUIBackBarButtonItem" id="343279411">
 						<string key="IBUITitle">Back</string>

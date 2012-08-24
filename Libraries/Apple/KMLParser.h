@@ -75,6 +75,8 @@
 @property (nonatomic, readonly) NSArray *overlays;
 @property (nonatomic, readonly) NSArray *points;
 
+- (NSString *)title;
+
 - (MKAnnotationView *)viewForAnnotation:(id <MKAnnotation>)point;
 - (MKOverlayView *)viewForOverlay:(id <MKOverlay>)overlay;
 - (UIColor *)strokeColorForOverlay:(id <MKOverlay>)overlay;

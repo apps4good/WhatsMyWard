@@ -14,11 +14,11 @@
 		<name>Ward 10</name>
 		<description>
             <![CDATA[
-                {"Councillor":"",
-                "Email":"",
-                "Home Phone":"",
-                "Website":"", 
-                "Bio":""}
+                {"Councillor":"Chris Szarka",
+                "Phone":"306-551-2766",
+                "Website":"http://www.regina.ca/residents/council-committees/meet-city-council/councillor-_szarka/", 
+                "Photo":"http://www.regina.ca/opencms/export/sites/regina.ca/residents/council-committees/.media/pictures/councillor-szarka.jpg", 
+                "Bio":"Sitting for his first term as a member of Regina City Council, representing the residents of Ward 10."}
             ]]>
         </description>
 		<styleUrl>#Style</styleUrl>

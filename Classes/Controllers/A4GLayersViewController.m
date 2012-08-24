@@ -32,10 +32,12 @@
 #import "A4GMapViewController.h"
 #import "A4GSettings.h"
 #import "NSString+A4G.h"
+#import "KMLParser.h"
+#import "A4GLayer.h"
 
 @interface A4GLayersViewController ()
 
-@property (strong, nonatomic) NSMutableDictionary *layers;
+@property (strong, nonatomic) NSMutableArray *layers;
 
 @end
 
@@ -62,9 +64,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationBar.topItem.title = NSLocalizedString(@"Layers", nil);
-    self.layers = [NSMutableDictionary dictionaryWithCapacity:0];
-    for (NSString *kml in [A4GSettings kmlFiles]) {
-        [self.layers setObject:[NSNumber numberWithBool:YES] forKey:kml];
+    NSArray *kmlFiles = [A4GSettings kmlFiles];
+    self.layers = [NSMutableArray arrayWithCapacity:kmlFiles.count];
+    for (NSString *kml in kmlFiles) {
+        DLog(@"KML:%@", kml);
+        NSURL *url = [NSURL fileURLWithPath:kml];
+        KMLParser *kmlParser = [[KMLParser alloc] initWithURL:url];
+        [kmlParser parseKML];
+        A4GLayer *layer = [[A4GLayer alloc] initWithURL:kml];
+        layer.title = kmlParser.title;
+        layer.overlays = kmlParser.overlays.count;
+        layer.points = kmlParser.points.count;
+        layer.selected = YES;
+        [self.layers addObject:layer];
+        [layer release];
+        [kmlParser release];
     }
 }
 
@@ -80,28 +94,50 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     A4GCheckTableViewCell *cell = [A4GTableViewCellFactory checkTableViewCell:tableView delegate:self index:indexPath];
-    NSArray *kmlFiles = [[self.layers allKeys] sortedArrayUsingSelector:@selector(compare:)];
-    NSString *kml = [kmlFiles objectAtIndex:indexPath.row];
-    cell.titleLabel.text = [[kml lastPathComponent] makePretty];
-    cell.subtitleLabel.text = [kml lastPathComponent];
-    cell.checked = [[self.layers objectForKey:kml] boolValue];
+    A4GLayer *layer = [self.layers objectAtIndex:indexPath.row];
+    if (layer.title != nil) {
+        cell.titleLabel.text = layer.title;    
+    }
+    else {
+        cell.titleLabel.text = [[layer.url lastPathComponent] makePretty];
+    }
+    NSMutableString *description = [NSMutableString string];
+    if (layer.overlays == 1) {
+        [description appendFormat:@"1 %@", NSLocalizedString(@"layer", nil)];
+    }
+    else if (layer.overlays > 1) {
+        [description appendFormat:@"%d %@", layer.overlays, NSLocalizedString(@"layers", nil)];
+    }
+    if (layer.points == 1) {
+        if (description.length > 0) {
+            [description appendString:@", "];
+        }
+        [description appendFormat:@"1 %@", NSLocalizedString(@"point", nil)];
+    }
+    else if (layer.points > 1) {
+        if (description.length > 0) {
+            [description appendString:@", "];
+        }
+        [description appendFormat:@"%d %@", layer.points, NSLocalizedString(@"points", nil)];
+    }
+    cell.subtitleLabel.text = description;
+    cell.checked = layer.selected;
     return cell;
 }
 
 #pragma mark - A4GCheckTableViewCell
 
 - (void) checkTableViewCellChanged:(A4GCheckTableViewCell *)cell index:(NSIndexPath *)indexPath checked:(BOOL)checked {
-    NSArray *kmlFiles = [[self.layers allKeys] sortedArrayUsingSelector:@selector(compare:)];
-    NSString *kml = [kmlFiles objectAtIndex:indexPath.row];
+    A4GLayer *layer = [self.layers objectAtIndex:indexPath.row];
     if (checked) {
-        DLog(@"Add: %@", kml);
-        [self.mapViewController addKML:kml];
-        [self.layers setObject:[NSNumber numberWithBool:YES] forKey:kml];
+        DLog(@"Add: %@", layer.title);
+        [self.mapViewController addKML:layer.url];
+        layer.selected = YES;
     }
     else {
-        DLog(@"Remove: %@", kml);
-        [self.mapViewController removeKML:kml];
-        [self.layers setObject:[NSNumber numberWithBool:NO] forKey:kml];
+        DLog(@"Remove: %@", layer.title);
+        [self.mapViewController removeKML:layer.url];
+        layer.selected = NO;
     }
 }
 

@@ -62,29 +62,7 @@
 		3E555F9715D41C6C00EACFDE /* map@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E555F9315D41C6C00EACFDE /* map@2x.png */; };
 		3E555FAB15D424BA00EACFDE /* UIBarButtonItem+A4G.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E555FAA15D424BA00EACFDE /* UIBarButtonItem+A4G.m */; };
 		3E555FAC15D424BA00EACFDE /* UIBarButtonItem+A4G.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E555FAA15D424BA00EACFDE /* UIBarButtonItem+A4G.m */; };
-		3E5A008B15DCC7DB00479735 /* Artwork.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E5A007215DCC7DB00479735 /* Artwork.png */; };
-		3E5A008D15DCC7DB00479735 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E5A007415DCC7DB00479735 /* Default.png */; };
-		3E5A008F15DCC7DB00479735 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E5A007615DCC7DB00479735 /* Default@2x.png */; };
-		3E5A009115DCC7DB00479735 /* Icon-iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E5A007815DCC7DB00479735 /* Icon-iPad.png */; };
-		3E5A009215DCC7DB00479735 /* Icon-iPad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E5A007915DCC7DB00479735 /* Icon-iPad@2x.png */; };
-		3E5A009315DCC7DB00479735 /* Icon-Settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E5A007A15DCC7DB00479735 /* Icon-Settings.png */; };
-		3E5A009415DCC7DB00479735 /* Icon-Settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E5A007B15DCC7DB00479735 /* Icon-Settings@2x.png */; };
-		3E5A009515DCC7DB00479735 /* Icon-Spotlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E5A007C15DCC7DB00479735 /* Icon-Spotlight.png */; };
-		3E5A009615DCC7DB00479735 /* Icon-Spotlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E5A007D15DCC7DB00479735 /* Icon-Spotlight@2x.png */; };
-		3E5A009715DCC7DB00479735 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E5A007E15DCC7DB00479735 /* Icon.png */; };
-		3E5A009815DCC7DB00479735 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E5A007F15DCC7DB00479735 /* Icon@2x.png */; };
-		3E5A009A15DCC7DB00479735 /* ward_1.kml in Resources */ = {isa = PBXBuildFile; fileRef = 3E5A008115DCC7DB00479735 /* ward_1.kml */; };
-		3E5A009B15DCC7DB00479735 /* ward_2.kml in Resources */ = {isa = PBXBuildFile; fileRef = 3E5A008215DCC7DB00479735 /* ward_2.kml */; };
-		3E5A009C15DCC7DB00479735 /* ward_3.kml in Resources */ = {isa = PBXBuildFile; fileRef = 3E5A008315DCC7DB00479735 /* ward_3.kml */; };
-		3E5A009D15DCC7DB00479735 /* ward_4.kml in Resources */ = {isa = PBXBuildFile; fileRef = 3E5A008415DCC7DB00479735 /* ward_4.kml */; };
-		3E5A009E15DCC7DB00479735 /* ward_5.kml in Resources */ = {isa = PBXBuildFile; fileRef = 3E5A008515DCC7DB00479735 /* ward_5.kml */; };
-		3E5A009F15DCC7DB00479735 /* ward_6.kml in Resources */ = {isa = PBXBuildFile; fileRef = 3E5A008615DCC7DB00479735 /* ward_6.kml */; };
-		3E5A00A015DCC7DB00479735 /* ward_7.kml in Resources */ = {isa = PBXBuildFile; fileRef = 3E5A008715DCC7DB00479735 /* ward_7.kml */; };
-		3E5A00A115DCC7DB00479735 /* ward_8.kml in Resources */ = {isa = PBXBuildFile; fileRef = 3E5A008815DCC7DB00479735 /* ward_8.kml */; };
-		3E5A00A215DCC7DB00479735 /* ward_9.kml in Resources */ = {isa = PBXBuildFile; fileRef = 3E5A008915DCC7DB00479735 /* ward_9.kml */; };
-		3E5A00A315DCC7DB00479735 /* ward_10.kml in Resources */ = {isa = PBXBuildFile; fileRef = 3E5A008A15DCC7DB00479735 /* ward_10.kml */; };
 		3E5BB17715DCA02E001D40FE /* A4GCheckTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E5BB17615DCA02E001D40FE /* A4GCheckTableViewCell.xib */; };
-		3E5BB17815DCA02E001D40FE /* A4GCheckTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E5BB17615DCA02E001D40FE /* A4GCheckTableViewCell.xib */; };
 		3E5BB17B15DCA03D001D40FE /* A4GCheckTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E5BB17A15DCA03D001D40FE /* A4GCheckTableViewCell.m */; };
 		3E5BB17C15DCA03D001D40FE /* A4GCheckTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E5BB17A15DCA03D001D40FE /* A4GCheckTableViewCell.m */; };
 		3E5BB17F15DCA3DA001D40FE /* done.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E5BB17D15DCA3DA001D40FE /* done.png */; };
@@ -114,12 +92,51 @@
 		3E7DF92A15E4AA8700FCD24A /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E7DF92315E4AA8600FCD24A /* Icon-Small@2x.png */; };
 		3E7DF92B15E4AA8700FCD24A /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E7DF92415E4AA8600FCD24A /* Icon.png */; };
 		3E7DF92C15E4AA8700FCD24A /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E7DF92515E4AA8600FCD24A /* Icon@2x.png */; };
+		3E7FC7FE15E774A30069610D /* Artwork.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E7FC7D715E774A20069610D /* Artwork.png */; };
+		3E7FC80015E774A30069610D /* Default-Portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E7FC7D915E774A20069610D /* Default-Portrait.png */; };
+		3E7FC80215E774A30069610D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E7FC7DB15E774A20069610D /* Default.png */; };
+		3E7FC80415E774A30069610D /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E7FC7DD15E774A20069610D /* Default@2x.png */; };
+		3E7FC80615E774A30069610D /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E7FC7DF15E774A20069610D /* Icon-72.png */; };
+		3E7FC80715E774A30069610D /* Icon-144.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E7FC7E015E774A20069610D /* Icon-144.png */; };
+		3E7FC80815E774A30069610D /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E7FC7E115E774A20069610D /* Icon-Small-50.png */; };
+		3E7FC80915E774A30069610D /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E7FC7E215E774A20069610D /* Icon-Small.png */; };
+		3E7FC80A15E774A30069610D /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E7FC7E315E774A20069610D /* Icon-Small@2x.png */; };
+		3E7FC80B15E774A30069610D /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E7FC7E415E774A20069610D /* Icon.png */; };
+		3E7FC80D15E774A30069610D /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E7FC7E615E774A20069610D /* Icon@2x.png */; };
+		3E7FC81A15E774A30069610D /* ward_01.kml in Resources */ = {isa = PBXBuildFile; fileRef = 3E7FC7F415E774A30069610D /* ward_01.kml */; };
+		3E7FC81B15E774A30069610D /* ward_02.kml in Resources */ = {isa = PBXBuildFile; fileRef = 3E7FC7F515E774A30069610D /* ward_02.kml */; };
+		3E7FC81C15E774A30069610D /* ward_03.kml in Resources */ = {isa = PBXBuildFile; fileRef = 3E7FC7F615E774A30069610D /* ward_03.kml */; };
+		3E7FC81D15E774A30069610D /* ward_04.kml in Resources */ = {isa = PBXBuildFile; fileRef = 3E7FC7F715E774A30069610D /* ward_04.kml */; };
+		3E7FC81E15E774A30069610D /* ward_05.kml in Resources */ = {isa = PBXBuildFile; fileRef = 3E7FC7F815E774A30069610D /* ward_05.kml */; };
+		3E7FC81F15E774A30069610D /* ward_06.kml in Resources */ = {isa = PBXBuildFile; fileRef = 3E7FC7F915E774A30069610D /* ward_06.kml */; };
+		3E7FC82015E774A30069610D /* ward_07.kml in Resources */ = {isa = PBXBuildFile; fileRef = 3E7FC7FA15E774A30069610D /* ward_07.kml */; };
+		3E7FC82115E774A30069610D /* ward_08.kml in Resources */ = {isa = PBXBuildFile; fileRef = 3E7FC7FB15E774A30069610D /* ward_08.kml */; };
+		3E7FC82215E774A30069610D /* ward_09.kml in Resources */ = {isa = PBXBuildFile; fileRef = 3E7FC7FC15E774A30069610D /* ward_09.kml */; };
+		3E7FC82315E774A30069610D /* ward_10.kml in Resources */ = {isa = PBXBuildFile; fileRef = 3E7FC7FD15E774A30069610D /* ward_10.kml */; };
+		3E86749C15E78DCF0033AEBD /* A4GLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E86749B15E78DCF0033AEBD /* A4GLayer.m */; };
+		3E86749D15E78DCF0033AEBD /* A4GLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E86749B15E78DCF0033AEBD /* A4GLayer.m */; };
+		3E86749F15E7A4B60033AEBD /* A4GApplication_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EC8C79515CC67DE00D8FEB3 /* A4GApplication_iPad.xib */; };
+		3E8674A015E7A4B60033AEBD /* A4GApplication_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EC8C79615CC67DE00D8FEB3 /* A4GApplication_iPhone.xib */; };
+		3E8674A115E7A4B60033AEBD /* A4GLayersViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3ECE33F215D449C200C1E50F /* A4GLayersViewController_iPad.xib */; };
+		3E8674A215E7A4B60033AEBD /* A4GLayersViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3ECE33EF15D449AA00C1E50F /* A4GLayersViewController_iPhone.xib */; };
+		3E8674A315E7A4B60033AEBD /* A4GDetailsViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EC8C79715CC67DE00D8FEB3 /* A4GDetailsViewController_iPad.xib */; };
+		3E8674A415E7A4B60033AEBD /* A4GDetailsViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EC8C79815CC67DE00D8FEB3 /* A4GDetailsViewController_iPhone.xib */; };
+		3E8674A515E7A4B60033AEBD /* A4GMapViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EC8C79A15CC67DE00D8FEB3 /* A4GMapViewController_iPad.xib */; };
+		3E8674A615E7A4B60033AEBD /* A4GMapViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EC8C79B15CC67DE00D8FEB3 /* A4GMapViewController_iPhone.xib */; };
+		3E8674A715E7A4B60033AEBD /* A4GWebViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EB934F215DEB8A1002151B0 /* A4GWebViewController_iPad.xib */; };
+		3E8674A815E7A4B60033AEBD /* A4GWebViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EB934F515DEB8BD002151B0 /* A4GWebViewController_iPhone.xib */; };
+		3E8674A915E7A4B60033AEBD /* A4GSettingsViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EC8C79C15CC67DE00D8FEB3 /* A4GSettingsViewController_iPad.xib */; };
+		3E8674AA15E7A4B60033AEBD /* A4GSettingsViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EC8C79D15CC67DE00D8FEB3 /* A4GSettingsViewController_iPhone.xib */; };
+		3E8674AB15E7A4B60033AEBD /* A4GImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E89B77C15E48E4000591398 /* A4GImageTableViewCell.xib */; };
+		3E8674AC15E7A4B60033AEBD /* A4GCheckTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E5BB17615DCA02E001D40FE /* A4GCheckTableViewCell.xib */; };
+		3E8674AD15E7A4B60033AEBD /* A4GLoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EC8C79915CC67DE00D8FEB3 /* A4GLoadingView.xib */; };
+		3E8674AE15E7A4C10033AEBD /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E89B77315E48DC000591398 /* logo.png */; };
+		3E8674AF15E7A4C10033AEBD /* logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E89B77415E48DC000591398 /* logo@2x.png */; };
 		3E89B77515E48DC000591398 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E89B77315E48DC000591398 /* logo.png */; };
 		3E89B77615E48DC000591398 /* logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E89B77415E48DC000591398 /* logo@2x.png */; };
 		3E89B77A15E48E2D00591398 /* A4GImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E89B77915E48E2D00591398 /* A4GImageTableViewCell.m */; };
 		3E89B77B15E48E2D00591398 /* A4GImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E89B77915E48E2D00591398 /* A4GImageTableViewCell.m */; };
 		3E89B77D15E48E4000591398 /* A4GImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E89B77C15E48E4000591398 /* A4GImageTableViewCell.xib */; };
-		3E89B77E15E48E4000591398 /* A4GImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E89B77C15E48E4000591398 /* A4GImageTableViewCell.xib */; };
 		3E9EEC7C15C840350030B210 /* pattern.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E9EEC7B15C840350030B210 /* pattern.png */; };
 		3E9EEC7D15C840350030B210 /* pattern.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E9EEC7B15C840350030B210 /* pattern.png */; };
 		3E9F045415C1D583000CD356 /* A4GAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDFF67A15BE01FF00939749 /* A4GAppDelegate.m */; };
@@ -158,15 +175,15 @@
 		3E9F048515C1D583000CD356 /* gps@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EAD805215BEEF95002ABABC /* gps@2x.png */; };
 		3E9F049215C1D583000CD356 /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E52A10F15BFCD19007A2392 /* refresh.png */; };
 		3E9F049315C1D583000CD356 /* refresh@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E52A11015BFCD19007A2392 /* refresh@2x.png */; };
-		3E9F04D015C1D99C000CD356 /* ward_1.kml in Resources */ = {isa = PBXBuildFile; fileRef = 3E9F04C615C1D99C000CD356 /* ward_1.kml */; };
-		3E9F04D115C1D99C000CD356 /* ward_2.kml in Resources */ = {isa = PBXBuildFile; fileRef = 3E9F04C715C1D99C000CD356 /* ward_2.kml */; };
-		3E9F04D215C1D99C000CD356 /* ward_3.kml in Resources */ = {isa = PBXBuildFile; fileRef = 3E9F04C815C1D99C000CD356 /* ward_3.kml */; };
-		3E9F04D315C1D99C000CD356 /* ward_4.kml in Resources */ = {isa = PBXBuildFile; fileRef = 3E9F04C915C1D99C000CD356 /* ward_4.kml */; };
-		3E9F04D415C1D99C000CD356 /* ward_5.kml in Resources */ = {isa = PBXBuildFile; fileRef = 3E9F04CA15C1D99C000CD356 /* ward_5.kml */; };
-		3E9F04D515C1D99C000CD356 /* ward_6.kml in Resources */ = {isa = PBXBuildFile; fileRef = 3E9F04CB15C1D99C000CD356 /* ward_6.kml */; };
-		3E9F04D615C1D99C000CD356 /* ward_7.kml in Resources */ = {isa = PBXBuildFile; fileRef = 3E9F04CC15C1D99C000CD356 /* ward_7.kml */; };
-		3E9F04D715C1D99C000CD356 /* ward_8.kml in Resources */ = {isa = PBXBuildFile; fileRef = 3E9F04CD15C1D99C000CD356 /* ward_8.kml */; };
-		3E9F04D815C1D99C000CD356 /* ward_9.kml in Resources */ = {isa = PBXBuildFile; fileRef = 3E9F04CE15C1D99C000CD356 /* ward_9.kml */; };
+		3E9F04D015C1D99C000CD356 /* ward_01.kml in Resources */ = {isa = PBXBuildFile; fileRef = 3E9F04C615C1D99C000CD356 /* ward_01.kml */; };
+		3E9F04D115C1D99C000CD356 /* ward_02.kml in Resources */ = {isa = PBXBuildFile; fileRef = 3E9F04C715C1D99C000CD356 /* ward_02.kml */; };
+		3E9F04D215C1D99C000CD356 /* ward_03.kml in Resources */ = {isa = PBXBuildFile; fileRef = 3E9F04C815C1D99C000CD356 /* ward_03.kml */; };
+		3E9F04D315C1D99C000CD356 /* ward_04.kml in Resources */ = {isa = PBXBuildFile; fileRef = 3E9F04C915C1D99C000CD356 /* ward_04.kml */; };
+		3E9F04D415C1D99C000CD356 /* ward_05.kml in Resources */ = {isa = PBXBuildFile; fileRef = 3E9F04CA15C1D99C000CD356 /* ward_05.kml */; };
+		3E9F04D515C1D99C000CD356 /* ward_06.kml in Resources */ = {isa = PBXBuildFile; fileRef = 3E9F04CB15C1D99C000CD356 /* ward_06.kml */; };
+		3E9F04D615C1D99C000CD356 /* ward_07.kml in Resources */ = {isa = PBXBuildFile; fileRef = 3E9F04CC15C1D99C000CD356 /* ward_07.kml */; };
+		3E9F04D715C1D99C000CD356 /* ward_08.kml in Resources */ = {isa = PBXBuildFile; fileRef = 3E9F04CD15C1D99C000CD356 /* ward_08.kml */; };
+		3E9F04D815C1D99C000CD356 /* ward_09.kml in Resources */ = {isa = PBXBuildFile; fileRef = 3E9F04CE15C1D99C000CD356 /* ward_09.kml */; };
 		3E9F04D915C1D99C000CD356 /* ward_10.kml in Resources */ = {isa = PBXBuildFile; fileRef = 3E9F04CF15C1D99C000CD356 /* ward_10.kml */; };
 		3EA3B20315BF2C76007F9287 /* A4GLoadingButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EA3B20215BF2C76007F9287 /* A4GLoadingButton.m */; };
 		3EA3B22715BF64DF007F9287 /* NSObject+SBJson.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EA3B20F15BF64DF007F9287 /* NSObject+SBJson.m */; };
@@ -188,9 +205,7 @@
 		3EAD808015BF0186002ABABC /* A4GSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EAD807F15BF0186002ABABC /* A4GSettings.m */; };
 		3EAD808C15BF03A4002ABABC /* A4GDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EAD808B15BF03A3002ABABC /* A4GDevice.m */; };
 		3EB934F315DEB8A1002151B0 /* A4GWebViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EB934F215DEB8A1002151B0 /* A4GWebViewController_iPad.xib */; };
-		3EB934F415DEB8A1002151B0 /* A4GWebViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EB934F215DEB8A1002151B0 /* A4GWebViewController_iPad.xib */; };
 		3EB934F615DEB8BD002151B0 /* A4GWebViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EB934F515DEB8BD002151B0 /* A4GWebViewController_iPhone.xib */; };
-		3EB934F715DEB8BD002151B0 /* A4GWebViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EB934F515DEB8BD002151B0 /* A4GWebViewController_iPhone.xib */; };
 		3EB934FA15DEB8F1002151B0 /* A4GWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EB934F915DEB8F1002151B0 /* A4GWebViewController.m */; };
 		3EB934FB15DEB8F1002151B0 /* A4GWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EB934F915DEB8F1002151B0 /* A4GWebViewController.m */; };
 		3EB9350015DEBB68002151B0 /* forward.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EB934FC15DEBB68002151B0 /* forward.png */; };
@@ -202,31 +217,20 @@
 		3EB9350615DEBB68002151B0 /* back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EB934FF15DEBB68002151B0 /* back@2x.png */; };
 		3EB9350715DEBB68002151B0 /* back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EB934FF15DEBB68002151B0 /* back@2x.png */; };
 		3EC8C79E15CC67DE00D8FEB3 /* A4GApplication_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EC8C79515CC67DE00D8FEB3 /* A4GApplication_iPad.xib */; };
-		3EC8C79F15CC67DE00D8FEB3 /* A4GApplication_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EC8C79515CC67DE00D8FEB3 /* A4GApplication_iPad.xib */; };
 		3EC8C7A015CC67DE00D8FEB3 /* A4GApplication_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EC8C79615CC67DE00D8FEB3 /* A4GApplication_iPhone.xib */; };
-		3EC8C7A115CC67DE00D8FEB3 /* A4GApplication_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EC8C79615CC67DE00D8FEB3 /* A4GApplication_iPhone.xib */; };
 		3EC8C7A215CC67DE00D8FEB3 /* A4GDetailsViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EC8C79715CC67DE00D8FEB3 /* A4GDetailsViewController_iPad.xib */; };
-		3EC8C7A315CC67DE00D8FEB3 /* A4GDetailsViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EC8C79715CC67DE00D8FEB3 /* A4GDetailsViewController_iPad.xib */; };
 		3EC8C7A415CC67DE00D8FEB3 /* A4GDetailsViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EC8C79815CC67DE00D8FEB3 /* A4GDetailsViewController_iPhone.xib */; };
-		3EC8C7A515CC67DE00D8FEB3 /* A4GDetailsViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EC8C79815CC67DE00D8FEB3 /* A4GDetailsViewController_iPhone.xib */; };
 		3EC8C7A615CC67DE00D8FEB3 /* A4GLoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EC8C79915CC67DE00D8FEB3 /* A4GLoadingView.xib */; };
-		3EC8C7A715CC67DE00D8FEB3 /* A4GLoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EC8C79915CC67DE00D8FEB3 /* A4GLoadingView.xib */; };
 		3EC8C7A815CC67DE00D8FEB3 /* A4GMapViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EC8C79A15CC67DE00D8FEB3 /* A4GMapViewController_iPad.xib */; };
-		3EC8C7A915CC67DE00D8FEB3 /* A4GMapViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EC8C79A15CC67DE00D8FEB3 /* A4GMapViewController_iPad.xib */; };
 		3EC8C7AA15CC67DE00D8FEB3 /* A4GMapViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EC8C79B15CC67DE00D8FEB3 /* A4GMapViewController_iPhone.xib */; };
-		3EC8C7AB15CC67DE00D8FEB3 /* A4GMapViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EC8C79B15CC67DE00D8FEB3 /* A4GMapViewController_iPhone.xib */; };
 		3EC8C7AC15CC67DE00D8FEB3 /* A4GSettingsViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EC8C79C15CC67DE00D8FEB3 /* A4GSettingsViewController_iPad.xib */; };
-		3EC8C7AD15CC67DE00D8FEB3 /* A4GSettingsViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EC8C79C15CC67DE00D8FEB3 /* A4GSettingsViewController_iPad.xib */; };
 		3EC8C7AE15CC67DE00D8FEB3 /* A4GSettingsViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EC8C79D15CC67DE00D8FEB3 /* A4GSettingsViewController_iPhone.xib */; };
-		3EC8C7AF15CC67DE00D8FEB3 /* A4GSettingsViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EC8C79D15CC67DE00D8FEB3 /* A4GSettingsViewController_iPhone.xib */; };
 		3EC8C7DC15CC784200D8FEB3 /* A4GTableViewCellFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC8C7DB15CC784000D8FEB3 /* A4GTableViewCellFactory.m */; };
 		3EC8C7DD15CC784200D8FEB3 /* A4GTableViewCellFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC8C7DB15CC784000D8FEB3 /* A4GTableViewCellFactory.m */; };
 		3ECE33ED15D447A900C1E50F /* A4GLayersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ECE33EC15D447A900C1E50F /* A4GLayersViewController.m */; };
 		3ECE33EE15D447A900C1E50F /* A4GLayersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ECE33EC15D447A900C1E50F /* A4GLayersViewController.m */; };
 		3ECE33F015D449AA00C1E50F /* A4GLayersViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3ECE33EF15D449AA00C1E50F /* A4GLayersViewController_iPhone.xib */; };
-		3ECE33F115D449AA00C1E50F /* A4GLayersViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3ECE33EF15D449AA00C1E50F /* A4GLayersViewController_iPhone.xib */; };
 		3ECE33F315D449C300C1E50F /* A4GLayersViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3ECE33F215D449C200C1E50F /* A4GLayersViewController_iPad.xib */; };
-		3ECE33F415D449C300C1E50F /* A4GLayersViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3ECE33F215D449C200C1E50F /* A4GLayersViewController_iPad.xib */; };
 		3ED42A9015BFB42D00769FD1 /* NSString+A4G.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ED42A8F15BFB42D00769FD1 /* NSString+A4G.m */; };
 		3ED42A9415BFB54800769FD1 /* UIAlertView+A4G.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ED42A9315BFB54800769FD1 /* UIAlertView+A4G.m */; };
 		3ED5C9DA15DC001B006CA3BB /* A4GShareController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ED5C9D915DC001B006CA3BB /* A4GShareController.m */; };
@@ -291,28 +295,7 @@
 		3E555F9315D41C6C00EACFDE /* map@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map@2x.png"; sourceTree = "<group>"; };
 		3E555FA915D424B900EACFDE /* UIBarButtonItem+A4G.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+A4G.h"; sourceTree = "<group>"; };
 		3E555FAA15D424BA00EACFDE /* UIBarButtonItem+A4G.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+A4G.m"; sourceTree = "<group>"; };
-		3E5A007215DCC7DB00479735 /* Artwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Artwork.png; sourceTree = "<group>"; };
-		3E5A007415DCC7DB00479735 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		3E5A007615DCC7DB00479735 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		3E5A007815DCC7DB00479735 /* Icon-iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-iPad.png"; sourceTree = "<group>"; };
-		3E5A007915DCC7DB00479735 /* Icon-iPad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-iPad@2x.png"; sourceTree = "<group>"; };
-		3E5A007A15DCC7DB00479735 /* Icon-Settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Settings.png"; sourceTree = "<group>"; };
-		3E5A007B15DCC7DB00479735 /* Icon-Settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Settings@2x.png"; sourceTree = "<group>"; };
-		3E5A007C15DCC7DB00479735 /* Icon-Spotlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Spotlight.png"; sourceTree = "<group>"; };
-		3E5A007D15DCC7DB00479735 /* Icon-Spotlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Spotlight@2x.png"; sourceTree = "<group>"; };
-		3E5A007E15DCC7DB00479735 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
-		3E5A007F15DCC7DB00479735 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		3E5A008015DCC7DB00479735 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3E5A008115DCC7DB00479735 /* ward_1.kml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ward_1.kml; sourceTree = "<group>"; };
-		3E5A008215DCC7DB00479735 /* ward_2.kml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ward_2.kml; sourceTree = "<group>"; };
-		3E5A008315DCC7DB00479735 /* ward_3.kml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ward_3.kml; sourceTree = "<group>"; };
-		3E5A008415DCC7DB00479735 /* ward_4.kml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ward_4.kml; sourceTree = "<group>"; };
-		3E5A008515DCC7DB00479735 /* ward_5.kml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ward_5.kml; sourceTree = "<group>"; };
-		3E5A008615DCC7DB00479735 /* ward_6.kml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ward_6.kml; sourceTree = "<group>"; };
-		3E5A008715DCC7DB00479735 /* ward_7.kml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ward_7.kml; sourceTree = "<group>"; };
-		3E5A008815DCC7DB00479735 /* ward_8.kml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ward_8.kml; sourceTree = "<group>"; };
-		3E5A008915DCC7DB00479735 /* ward_9.kml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ward_9.kml; sourceTree = "<group>"; };
-		3E5A008A15DCC7DB00479735 /* ward_10.kml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ward_10.kml; sourceTree = "<group>"; };
 		3E5BB17615DCA02E001D40FE /* A4GCheckTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = A4GCheckTableViewCell.xib; sourceTree = "<group>"; };
 		3E5BB17915DCA03C001D40FE /* A4GCheckTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = A4GCheckTableViewCell.h; sourceTree = "<group>"; };
 		3E5BB17A15DCA03D001D40FE /* A4GCheckTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = A4GCheckTableViewCell.m; sourceTree = "<group>"; };
@@ -335,6 +318,29 @@
 		3E7DF92315E4AA8600FCD24A /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@2x.png"; sourceTree = "<group>"; };
 		3E7DF92415E4AA8600FCD24A /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		3E7DF92515E4AA8600FCD24A /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		3E7FC7D715E774A20069610D /* Artwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Artwork.png; sourceTree = "<group>"; };
+		3E7FC7D915E774A20069610D /* Default-Portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait.png"; sourceTree = "<group>"; };
+		3E7FC7DB15E774A20069610D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		3E7FC7DD15E774A20069610D /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		3E7FC7DF15E774A20069610D /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
+		3E7FC7E015E774A20069610D /* Icon-144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-144.png"; sourceTree = "<group>"; };
+		3E7FC7E115E774A20069610D /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50.png"; sourceTree = "<group>"; };
+		3E7FC7E215E774A20069610D /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small.png"; sourceTree = "<group>"; };
+		3E7FC7E315E774A20069610D /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@2x.png"; sourceTree = "<group>"; };
+		3E7FC7E415E774A20069610D /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		3E7FC7E615E774A20069610D /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		3E7FC7F415E774A30069610D /* ward_01.kml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ward_01.kml; sourceTree = "<group>"; };
+		3E7FC7F515E774A30069610D /* ward_02.kml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ward_02.kml; sourceTree = "<group>"; };
+		3E7FC7F615E774A30069610D /* ward_03.kml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ward_03.kml; sourceTree = "<group>"; };
+		3E7FC7F715E774A30069610D /* ward_04.kml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ward_04.kml; sourceTree = "<group>"; };
+		3E7FC7F815E774A30069610D /* ward_05.kml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ward_05.kml; sourceTree = "<group>"; };
+		3E7FC7F915E774A30069610D /* ward_06.kml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ward_06.kml; sourceTree = "<group>"; };
+		3E7FC7FA15E774A30069610D /* ward_07.kml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ward_07.kml; sourceTree = "<group>"; };
+		3E7FC7FB15E774A30069610D /* ward_08.kml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ward_08.kml; sourceTree = "<group>"; };
+		3E7FC7FC15E774A30069610D /* ward_09.kml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ward_09.kml; sourceTree = "<group>"; };
+		3E7FC7FD15E774A30069610D /* ward_10.kml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ward_10.kml; sourceTree = "<group>"; };
+		3E86749A15E78DCF0033AEBD /* A4GLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = A4GLayer.h; sourceTree = "<group>"; };
+		3E86749B15E78DCF0033AEBD /* A4GLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = A4GLayer.m; sourceTree = "<group>"; };
 		3E89B77315E48DC000591398 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		3E89B77415E48DC000591398 /* logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo@2x.png"; sourceTree = "<group>"; };
 		3E89B77815E48E2D00591398 /* A4GImageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = A4GImageTableViewCell.h; sourceTree = "<group>"; };
@@ -342,15 +348,15 @@
 		3E89B77C15E48E4000591398 /* A4GImageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = A4GImageTableViewCell.xib; sourceTree = "<group>"; };
 		3E9EEC7B15C840350030B210 /* pattern.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pattern.png; sourceTree = "<group>"; };
 		3E9F049715C1D583000CD356 /* WMW_Regina.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WMW_Regina.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		3E9F04C615C1D99C000CD356 /* ward_1.kml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ward_1.kml; sourceTree = "<group>"; };
-		3E9F04C715C1D99C000CD356 /* ward_2.kml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ward_2.kml; sourceTree = "<group>"; };
-		3E9F04C815C1D99C000CD356 /* ward_3.kml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ward_3.kml; sourceTree = "<group>"; };
-		3E9F04C915C1D99C000CD356 /* ward_4.kml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ward_4.kml; sourceTree = "<group>"; };
-		3E9F04CA15C1D99C000CD356 /* ward_5.kml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ward_5.kml; sourceTree = "<group>"; };
-		3E9F04CB15C1D99C000CD356 /* ward_6.kml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ward_6.kml; sourceTree = "<group>"; };
-		3E9F04CC15C1D99C000CD356 /* ward_7.kml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ward_7.kml; sourceTree = "<group>"; };
-		3E9F04CD15C1D99C000CD356 /* ward_8.kml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ward_8.kml; sourceTree = "<group>"; };
-		3E9F04CE15C1D99C000CD356 /* ward_9.kml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ward_9.kml; sourceTree = "<group>"; };
+		3E9F04C615C1D99C000CD356 /* ward_01.kml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ward_01.kml; sourceTree = "<group>"; };
+		3E9F04C715C1D99C000CD356 /* ward_02.kml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ward_02.kml; sourceTree = "<group>"; };
+		3E9F04C815C1D99C000CD356 /* ward_03.kml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ward_03.kml; sourceTree = "<group>"; };
+		3E9F04C915C1D99C000CD356 /* ward_04.kml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ward_04.kml; sourceTree = "<group>"; };
+		3E9F04CA15C1D99C000CD356 /* ward_05.kml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ward_05.kml; sourceTree = "<group>"; };
+		3E9F04CB15C1D99C000CD356 /* ward_06.kml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ward_06.kml; sourceTree = "<group>"; };
+		3E9F04CC15C1D99C000CD356 /* ward_07.kml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ward_07.kml; sourceTree = "<group>"; };
+		3E9F04CD15C1D99C000CD356 /* ward_08.kml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ward_08.kml; sourceTree = "<group>"; };
+		3E9F04CE15C1D99C000CD356 /* ward_09.kml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ward_09.kml; sourceTree = "<group>"; };
 		3E9F04CF15C1D99C000CD356 /* ward_10.kml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ward_10.kml; sourceTree = "<group>"; };
 		3EA3B20115BF2C76007F9287 /* A4GLoadingButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = A4GLoadingButton.h; sourceTree = "<group>"; };
 		3EA3B20215BF2C76007F9287 /* A4GLoadingButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = A4GLoadingButton.m; sourceTree = "<group>"; };
@@ -485,27 +491,27 @@
 			isa = PBXGroup;
 			children = (
 				3E5A008015DCC7DB00479735 /* Info.plist */,
-				3E5A008115DCC7DB00479735 /* ward_1.kml */,
-				3E5A008215DCC7DB00479735 /* ward_2.kml */,
-				3E5A008315DCC7DB00479735 /* ward_3.kml */,
-				3E5A008415DCC7DB00479735 /* ward_4.kml */,
-				3E5A008515DCC7DB00479735 /* ward_5.kml */,
-				3E5A008615DCC7DB00479735 /* ward_6.kml */,
-				3E5A008715DCC7DB00479735 /* ward_7.kml */,
-				3E5A008815DCC7DB00479735 /* ward_8.kml */,
-				3E5A008915DCC7DB00479735 /* ward_9.kml */,
-				3E5A008A15DCC7DB00479735 /* ward_10.kml */,
-				3E5A007215DCC7DB00479735 /* Artwork.png */,
-				3E5A007415DCC7DB00479735 /* Default.png */,
-				3E5A007615DCC7DB00479735 /* Default@2x.png */,
-				3E5A007815DCC7DB00479735 /* Icon-iPad.png */,
-				3E5A007915DCC7DB00479735 /* Icon-iPad@2x.png */,
-				3E5A007A15DCC7DB00479735 /* Icon-Settings.png */,
-				3E5A007B15DCC7DB00479735 /* Icon-Settings@2x.png */,
-				3E5A007C15DCC7DB00479735 /* Icon-Spotlight.png */,
-				3E5A007D15DCC7DB00479735 /* Icon-Spotlight@2x.png */,
-				3E5A007E15DCC7DB00479735 /* Icon.png */,
-				3E5A007F15DCC7DB00479735 /* Icon@2x.png */,
+				3E7FC7D715E774A20069610D /* Artwork.png */,
+				3E7FC7D915E774A20069610D /* Default-Portrait.png */,
+				3E7FC7DB15E774A20069610D /* Default.png */,
+				3E7FC7DD15E774A20069610D /* Default@2x.png */,
+				3E7FC7DF15E774A20069610D /* Icon-72.png */,
+				3E7FC7E015E774A20069610D /* Icon-144.png */,
+				3E7FC7E115E774A20069610D /* Icon-Small-50.png */,
+				3E7FC7E215E774A20069610D /* Icon-Small.png */,
+				3E7FC7E315E774A20069610D /* Icon-Small@2x.png */,
+				3E7FC7E415E774A20069610D /* Icon.png */,
+				3E7FC7E615E774A20069610D /* Icon@2x.png */,
+				3E7FC7F415E774A30069610D /* ward_01.kml */,
+				3E7FC7F515E774A30069610D /* ward_02.kml */,
+				3E7FC7F615E774A30069610D /* ward_03.kml */,
+				3E7FC7F715E774A30069610D /* ward_04.kml */,
+				3E7FC7F815E774A30069610D /* ward_05.kml */,
+				3E7FC7F915E774A30069610D /* ward_06.kml */,
+				3E7FC7FA15E774A30069610D /* ward_07.kml */,
+				3E7FC7FB15E774A30069610D /* ward_08.kml */,
+				3E7FC7FC15E774A30069610D /* ward_09.kml */,
+				3E7FC7FD15E774A30069610D /* ward_10.kml */,
 			);
 			path = Regina;
 			sourceTree = "<group>";
@@ -753,6 +759,8 @@
 				3EAD808B15BF03A3002ABABC /* A4GDevice.m */,
 				3E2BA4DF15C73F7B00CFACE7 /* A4GData.h */,
 				3E2BA4E015C73F7B00CFACE7 /* A4GData.m */,
+				3E86749A15E78DCF0033AEBD /* A4GLayer.h */,
+				3E86749B15E78DCF0033AEBD /* A4GLayer.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -779,15 +787,15 @@
 			isa = PBXGroup;
 			children = (
 				3EDFF67D15BE026300939749 /* Info.plist */,
-				3E9F04C615C1D99C000CD356 /* ward_1.kml */,
-				3E9F04C715C1D99C000CD356 /* ward_2.kml */,
-				3E9F04C815C1D99C000CD356 /* ward_3.kml */,
-				3E9F04C915C1D99C000CD356 /* ward_4.kml */,
-				3E9F04CA15C1D99C000CD356 /* ward_5.kml */,
-				3E9F04CB15C1D99C000CD356 /* ward_6.kml */,
-				3E9F04CC15C1D99C000CD356 /* ward_7.kml */,
-				3E9F04CD15C1D99C000CD356 /* ward_8.kml */,
-				3E9F04CE15C1D99C000CD356 /* ward_9.kml */,
+				3E9F04C615C1D99C000CD356 /* ward_01.kml */,
+				3E9F04C715C1D99C000CD356 /* ward_02.kml */,
+				3E9F04C815C1D99C000CD356 /* ward_03.kml */,
+				3E9F04C915C1D99C000CD356 /* ward_04.kml */,
+				3E9F04CA15C1D99C000CD356 /* ward_05.kml */,
+				3E9F04CB15C1D99C000CD356 /* ward_06.kml */,
+				3E9F04CC15C1D99C000CD356 /* ward_07.kml */,
+				3E9F04CD15C1D99C000CD356 /* ward_08.kml */,
+				3E9F04CE15C1D99C000CD356 /* ward_09.kml */,
 				3E9F04CF15C1D99C000CD356 /* ward_10.kml */,
 				3E716F1015C235B1000E3F1A /* Default.png */,
 				3E716F1115C235B1000E3F1A /* Default@2x.png */,
@@ -908,60 +916,62 @@
 				3E2BA4D715C7373B00CFACE7 /* web.png in Resources */,
 				3E2BA4D915C7373B00CFACE7 /* web@2x.png in Resources */,
 				3E9EEC7D15C840350030B210 /* pattern.png in Resources */,
-				3EC8C79F15CC67DE00D8FEB3 /* A4GApplication_iPad.xib in Resources */,
-				3EC8C7A115CC67DE00D8FEB3 /* A4GApplication_iPhone.xib in Resources */,
-				3EC8C7A315CC67DE00D8FEB3 /* A4GDetailsViewController_iPad.xib in Resources */,
-				3EC8C7A515CC67DE00D8FEB3 /* A4GDetailsViewController_iPhone.xib in Resources */,
-				3EC8C7A715CC67DE00D8FEB3 /* A4GLoadingView.xib in Resources */,
-				3EC8C7A915CC67DE00D8FEB3 /* A4GMapViewController_iPad.xib in Resources */,
-				3EC8C7AB15CC67DE00D8FEB3 /* A4GMapViewController_iPhone.xib in Resources */,
-				3EC8C7AD15CC67DE00D8FEB3 /* A4GSettingsViewController_iPad.xib in Resources */,
-				3EC8C7AF15CC67DE00D8FEB3 /* A4GSettingsViewController_iPhone.xib in Resources */,
 				3E555F9515D41C6C00EACFDE /* map.png in Resources */,
 				3E555F9715D41C6C00EACFDE /* map@2x.png in Resources */,
 				3E5F0D6915D4438D00A83AF2 /* checked.png in Resources */,
 				3E5F0D6B15D4438D00A83AF2 /* checked@2x.png in Resources */,
 				3E5F0D6D15D4438D00A83AF2 /* unchecked.png in Resources */,
 				3E5F0D6F15D4438D00A83AF2 /* unchecked@2x.png in Resources */,
-				3ECE33F115D449AA00C1E50F /* A4GLayersViewController_iPhone.xib in Resources */,
-				3ECE33F415D449C300C1E50F /* A4GLayersViewController_iPad.xib in Resources */,
 				3E68194915D45E8E007FF9C9 /* layers.png in Resources */,
 				3E68194B15D45E8E007FF9C9 /* layers@2x.png in Resources */,
 				3EF7795715D9709100C670E2 /* hide.png in Resources */,
 				3EF7795915D9709100C670E2 /* hide@2x.png in Resources */,
 				3EF7795B15D9709100C670E2 /* show.png in Resources */,
 				3EF7795D15D9709100C670E2 /* show@2x.png in Resources */,
-				3E5BB17815DCA02E001D40FE /* A4GCheckTableViewCell.xib in Resources */,
 				3E5BB18015DCA3DA001D40FE /* done.png in Resources */,
 				3E5BB18215DCA3DA001D40FE /* done@2x.png in Resources */,
-				3E5A008B15DCC7DB00479735 /* Artwork.png in Resources */,
-				3E5A008D15DCC7DB00479735 /* Default.png in Resources */,
-				3E5A008F15DCC7DB00479735 /* Default@2x.png in Resources */,
-				3E5A009115DCC7DB00479735 /* Icon-iPad.png in Resources */,
-				3E5A009215DCC7DB00479735 /* Icon-iPad@2x.png in Resources */,
-				3E5A009315DCC7DB00479735 /* Icon-Settings.png in Resources */,
-				3E5A009415DCC7DB00479735 /* Icon-Settings@2x.png in Resources */,
-				3E5A009515DCC7DB00479735 /* Icon-Spotlight.png in Resources */,
-				3E5A009615DCC7DB00479735 /* Icon-Spotlight@2x.png in Resources */,
-				3E5A009715DCC7DB00479735 /* Icon.png in Resources */,
-				3E5A009815DCC7DB00479735 /* Icon@2x.png in Resources */,
-				3E5A009A15DCC7DB00479735 /* ward_1.kml in Resources */,
-				3E5A009B15DCC7DB00479735 /* ward_2.kml in Resources */,
-				3E5A009C15DCC7DB00479735 /* ward_3.kml in Resources */,
-				3E5A009D15DCC7DB00479735 /* ward_4.kml in Resources */,
-				3E5A009E15DCC7DB00479735 /* ward_5.kml in Resources */,
-				3E5A009F15DCC7DB00479735 /* ward_6.kml in Resources */,
-				3E5A00A015DCC7DB00479735 /* ward_7.kml in Resources */,
-				3E5A00A115DCC7DB00479735 /* ward_8.kml in Resources */,
-				3E5A00A215DCC7DB00479735 /* ward_9.kml in Resources */,
-				3E5A00A315DCC7DB00479735 /* ward_10.kml in Resources */,
-				3EB934F415DEB8A1002151B0 /* A4GWebViewController_iPad.xib in Resources */,
-				3EB934F715DEB8BD002151B0 /* A4GWebViewController_iPhone.xib in Resources */,
 				3EB9350115DEBB68002151B0 /* forward.png in Resources */,
 				3EB9350315DEBB68002151B0 /* forward@2x.png in Resources */,
 				3EB9350515DEBB68002151B0 /* back.png in Resources */,
 				3EB9350715DEBB68002151B0 /* back@2x.png in Resources */,
-				3E89B77E15E48E4000591398 /* A4GImageTableViewCell.xib in Resources */,
+				3E7FC7FE15E774A30069610D /* Artwork.png in Resources */,
+				3E7FC80015E774A30069610D /* Default-Portrait.png in Resources */,
+				3E7FC80215E774A30069610D /* Default.png in Resources */,
+				3E7FC80415E774A30069610D /* Default@2x.png in Resources */,
+				3E7FC80615E774A30069610D /* Icon-72.png in Resources */,
+				3E7FC80715E774A30069610D /* Icon-144.png in Resources */,
+				3E7FC80815E774A30069610D /* Icon-Small-50.png in Resources */,
+				3E7FC80915E774A30069610D /* Icon-Small.png in Resources */,
+				3E7FC80A15E774A30069610D /* Icon-Small@2x.png in Resources */,
+				3E7FC80B15E774A30069610D /* Icon.png in Resources */,
+				3E7FC80D15E774A30069610D /* Icon@2x.png in Resources */,
+				3E7FC81A15E774A30069610D /* ward_01.kml in Resources */,
+				3E7FC81B15E774A30069610D /* ward_02.kml in Resources */,
+				3E7FC81C15E774A30069610D /* ward_03.kml in Resources */,
+				3E7FC81D15E774A30069610D /* ward_04.kml in Resources */,
+				3E7FC81E15E774A30069610D /* ward_05.kml in Resources */,
+				3E7FC81F15E774A30069610D /* ward_06.kml in Resources */,
+				3E7FC82015E774A30069610D /* ward_07.kml in Resources */,
+				3E7FC82115E774A30069610D /* ward_08.kml in Resources */,
+				3E7FC82215E774A30069610D /* ward_09.kml in Resources */,
+				3E7FC82315E774A30069610D /* ward_10.kml in Resources */,
+				3E86749F15E7A4B60033AEBD /* A4GApplication_iPad.xib in Resources */,
+				3E8674A015E7A4B60033AEBD /* A4GApplication_iPhone.xib in Resources */,
+				3E8674A115E7A4B60033AEBD /* A4GLayersViewController_iPad.xib in Resources */,
+				3E8674A215E7A4B60033AEBD /* A4GLayersViewController_iPhone.xib in Resources */,
+				3E8674A315E7A4B60033AEBD /* A4GDetailsViewController_iPad.xib in Resources */,
+				3E8674A415E7A4B60033AEBD /* A4GDetailsViewController_iPhone.xib in Resources */,
+				3E8674A515E7A4B60033AEBD /* A4GMapViewController_iPad.xib in Resources */,
+				3E8674A615E7A4B60033AEBD /* A4GMapViewController_iPhone.xib in Resources */,
+				3E8674A715E7A4B60033AEBD /* A4GWebViewController_iPad.xib in Resources */,
+				3E8674A815E7A4B60033AEBD /* A4GWebViewController_iPhone.xib in Resources */,
+				3E8674A915E7A4B60033AEBD /* A4GSettingsViewController_iPad.xib in Resources */,
+				3E8674AA15E7A4B60033AEBD /* A4GSettingsViewController_iPhone.xib in Resources */,
+				3E8674AB15E7A4B60033AEBD /* A4GImageTableViewCell.xib in Resources */,
+				3E8674AC15E7A4B60033AEBD /* A4GCheckTableViewCell.xib in Resources */,
+				3E8674AD15E7A4B60033AEBD /* A4GLoadingView.xib in Resources */,
+				3E8674AE15E7A4C10033AEBD /* logo.png in Resources */,
+				3E8674AF15E7A4C10033AEBD /* logo@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -973,15 +983,15 @@
 				3EAD805415BEEF95002ABABC /* gps@2x.png in Resources */,
 				3E52A11115BFCD19007A2392 /* refresh.png in Resources */,
 				3E52A11215BFCD19007A2392 /* refresh@2x.png in Resources */,
-				3E9F04D015C1D99C000CD356 /* ward_1.kml in Resources */,
-				3E9F04D115C1D99C000CD356 /* ward_2.kml in Resources */,
-				3E9F04D215C1D99C000CD356 /* ward_3.kml in Resources */,
-				3E9F04D315C1D99C000CD356 /* ward_4.kml in Resources */,
-				3E9F04D415C1D99C000CD356 /* ward_5.kml in Resources */,
-				3E9F04D515C1D99C000CD356 /* ward_6.kml in Resources */,
-				3E9F04D615C1D99C000CD356 /* ward_7.kml in Resources */,
-				3E9F04D715C1D99C000CD356 /* ward_8.kml in Resources */,
-				3E9F04D815C1D99C000CD356 /* ward_9.kml in Resources */,
+				3E9F04D015C1D99C000CD356 /* ward_01.kml in Resources */,
+				3E9F04D115C1D99C000CD356 /* ward_02.kml in Resources */,
+				3E9F04D215C1D99C000CD356 /* ward_03.kml in Resources */,
+				3E9F04D315C1D99C000CD356 /* ward_04.kml in Resources */,
+				3E9F04D415C1D99C000CD356 /* ward_05.kml in Resources */,
+				3E9F04D515C1D99C000CD356 /* ward_06.kml in Resources */,
+				3E9F04D615C1D99C000CD356 /* ward_07.kml in Resources */,
+				3E9F04D715C1D99C000CD356 /* ward_08.kml in Resources */,
+				3E9F04D815C1D99C000CD356 /* ward_09.kml in Resources */,
 				3E9F04D915C1D99C000CD356 /* ward_10.kml in Resources */,
 				3E716F1215C235B2000E3F1A /* Default.png in Resources */,
 				3E716F1315C235B2000E3F1A /* Default@2x.png in Resources */,
@@ -1094,6 +1104,7 @@
 				3E5BB17C15DCA03D001D40FE /* A4GCheckTableViewCell.m in Sources */,
 				3EB934FB15DEB8F1002151B0 /* A4GWebViewController.m in Sources */,
 				3E89B77B15E48E2D00591398 /* A4GImageTableViewCell.m in Sources */,
+				3E86749D15E78DCF0033AEBD /* A4GLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1142,6 +1153,7 @@
 				3E5BB17B15DCA03D001D40FE /* A4GCheckTableViewCell.m in Sources */,
 				3EB934FA15DEB8F1002151B0 /* A4GWebViewController.m in Sources */,
 				3E89B77A15E48E2D00591398 /* A4GImageTableViewCell.m in Sources */,
+				3E86749C15E78DCF0033AEBD /* A4GLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1160,8 +1172,12 @@
 		3E9F049615C1D583000CD356 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Apps4Good Incorporated";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Apps4Good Incorporated";
 				INFOPLIST_FILE = Themes/Regina/Info.plist;
 				PRODUCT_NAME = WMW_Regina;
+				PROVISIONING_PROFILE = "950DE33A-6755-464A-A014-61A16A0992ED";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "950DE33A-6755-464A-A014-61A16A0992ED";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -51,6 +51,7 @@ typedef enum {
 
 typedef enum {
     TableSectionAppRowText,
+    TableSectionAppRowEmail,
     TableSectionAppRowUrl,
     TableSectionAppRows
 } TableSectionAppRow;
@@ -114,10 +115,15 @@ typedef enum {
             cell.accessoryView = nil;
             cell.textLabel.text = [A4GSettings appText];
         }
+        else if (indexPath.row == TableSectionAppRowEmail) {
+            cell.selectionStyle = UITableViewCellSelectionStyleGray;
+            cell.accessoryView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"email.png"]];
+            cell.textLabel.text = NSLocalizedString(@"Share Application", nil);
+        }
         else if (indexPath.row == TableSectionAppRowUrl) {
             cell.selectionStyle = UITableViewCellSelectionStyleGray;
             cell.accessoryView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"web.png"]];
-            cell.textLabel.text = [A4GSettings appURL];
+            cell.textLabel.text = NSLocalizedString(@"Visit App Store", nil);
         }
         return cell;
     }
@@ -157,8 +163,11 @@ typedef enum {
         if (indexPath.row == TableSectionAppRowText) {
             text = [A4GSettings appText];
         }
+        else if (indexPath.row == TableSectionAppRowEmail) {
+            text = NSLocalizedString(@"Share Application", nil);
+        }
         else if (indexPath.row == TableSectionAppRowUrl) {
-            text = [A4GSettings appURL];
+            text = NSLocalizedString(@"Visit App Store", nil);
         }
     }
     else if (indexPath.section == TableSectionAbout) {
@@ -180,23 +189,33 @@ typedef enum {
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     if (section == TableSectionApp) {
-        return NSLocalizedString(@"About", nil);
+        return NSLocalizedString(@"App", nil);
     }
     else if (section == TableSectionAbout) {
-        return NSLocalizedString(@"Apps4Good", nil);
+        return NSLocalizedString(@"About", nil);
     }
     return nil;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == TableSectionApp && indexPath.row == TableSectionAppRowUrl) {
-        [self.shareController openURL:[A4GSettings appURL]];
+    if (indexPath.section == TableSectionApp) {
+        if (indexPath.row == TableSectionAppRowEmail) {
+            NSMutableString *email = [NSMutableString string];
+            [email appendFormat:@"%@", [A4GSettings appText]];
+            [email appendString:@"<br/><br/>"];
+            [email appendFormat:@"<a href='%@'>%@</a>", [A4GSettings appURL], [A4GSettings appURL]];
+            [self.shareController sendEmail:email 
+                                withSubject:[A4GSettings appName] 
+                                toRecipient:nil];
+        }
+        else if (indexPath.row == TableSectionAppRowUrl) {
+            [self.shareController openURL:[A4GSettings appURL]];
+        }
     }
-    if (indexPath.section == TableSectionAbout && indexPath.row == TableSectionAboutRowEmail) {
-        [self.shareController sendEmail:nil withSubject:[A4GSettings appName] toRecipient:[A4GSettings aboutEmail]];
-    }
-    else if (indexPath.section == TableSectionAbout && indexPath.row == TableSectionAboutRowUrl) {
-        [self.shareController openURL:[A4GSettings aboutURL]];
+    else if (indexPath.section == TableSectionAbout) {
+        if (indexPath.row == TableSectionAboutRowUrl) {
+            [self.shareController openURL:[A4GSettings aboutURL]];
+        }
     }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
