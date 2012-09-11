@@ -51,6 +51,7 @@ typedef enum {
 
 typedef enum {
     TableSectionAppRowText,
+    TableSectionAppRowVersion,
     TableSectionAppRowEmail,
     TableSectionAppRowUrl,
     TableSectionAppRows
@@ -64,12 +65,6 @@ typedef enum {
     TableSectionAboutRows
 } TableSectionAboutRow;
 
-#pragma mark - Handlers
-
-- (IBAction) done:(id)sender event:(UIEvent*)event {
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
 #pragma mark - UIViewController
 
 - (void)dealloc {
@@ -80,7 +75,6 @@ typedef enum {
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.shareController = [[A4GShareController alloc] initWithController:self];
-    self.navigationBar.topItem.title = NSLocalizedString(@"Settings", nil);
 }
 
 - (void) viewDidUnload {
@@ -114,6 +108,11 @@ typedef enum {
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
             cell.accessoryView = nil;
             cell.textLabel.text = [A4GSettings appText];
+        }
+        else if (indexPath.row == TableSectionAppRowVersion) {
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            cell.accessoryView = nil;
+            cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", NSLocalizedString(@"Version", nil), [A4GSettings appVersion]];
         }
         else if (indexPath.row == TableSectionAppRowEmail) {
             cell.selectionStyle = UITableViewCellSelectionStyleGray;
@@ -215,6 +214,11 @@ typedef enum {
     else if (indexPath.section == TableSectionAbout) {
         if (indexPath.row == TableSectionAboutRowUrl) {
             [self.shareController openURL:[A4GSettings aboutURL]];
+        }
+        else if (indexPath.row == TableSectionAboutRowEmail) {
+            [self.shareController sendEmail:nil 
+                                withSubject:[A4GSettings appName] 
+                                toRecipient:[A4GSettings aboutEmail]];
         }
     }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];

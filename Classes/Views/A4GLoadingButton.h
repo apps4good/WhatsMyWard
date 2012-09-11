@@ -32,6 +32,4 @@
 
 @property (assign, nonatomic) BOOL loading;
 
-- (id) initWithImage:(UIImage *)image;
-
 @end

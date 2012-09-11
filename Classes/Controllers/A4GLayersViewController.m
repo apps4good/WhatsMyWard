@@ -48,13 +48,6 @@
 
 #pragma mark - UIViewController
 
-- (IBAction)done:(id)sender event:(UIEvent*)event {
-    DLog(@"");
-    [self dismissModalViewControllerAnimated:YES];   
-}
-
-#pragma mark - UIViewController
-
 - (void)dealloc {
     [_layers release];
     [_mapViewController release];

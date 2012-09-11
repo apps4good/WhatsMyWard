@@ -64,9 +64,10 @@
 - (id <MKOverlay>) overlayForPoint:(CGPoint)point {
     for (id<MKOverlay> overlay in self.overlays) {
         MKOverlayView *view = [self viewForOverlay:overlay];
-        if (view) {
+        if (view != nil) {
             CGRect frame = [view.superview convertRect:view.frame toView:self];
             if (CGRectContainsPoint(frame, point)) {
+                DLog(@"%f,%f in %@", point.x, point.y, overlay.title);
                 return overlay;
             }
         }

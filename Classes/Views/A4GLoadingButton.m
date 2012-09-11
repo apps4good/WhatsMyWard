@@ -52,8 +52,8 @@
     self.activityIndicator.hidesWhenStopped = YES;
 }
 
-- (id) initWithImage:(UIImage *)image {
-    if (self = [super init]){
+- (id)initWithImage:(UIImage *)image style:(UIBarButtonItemStyle)style target:(id)target action:(SEL)action {
+    if (self = [super initWithImage:image style:style target:target action:action]){
         self.orginalImage = image;
         self.blankImage = [self blankFromImage:image];
         self.activityIndicator = [[[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite] autorelease];

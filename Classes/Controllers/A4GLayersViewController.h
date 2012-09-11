@@ -35,6 +35,4 @@
 
 @property (strong, nonatomic) IBOutlet A4GMapViewController *mapViewController;
 
-- (IBAction)done:(id)sender event:(UIEvent*)event;
-
 @end

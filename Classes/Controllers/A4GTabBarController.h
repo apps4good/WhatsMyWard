@@ -27,38 +27,9 @@
 // ##########################################################################################
 
 #import <UIKit/UIKit.h>
-#import <MapKit/MapKit.h>
-#import "A4GViewController.h"
 
-@class A4GDetailsViewController;
-@class A4GLayersViewController;
-@class A4GSettingsViewController;
-@class A4GTabBarController;
-@class A4GLoadingButton;
+@interface A4GTabBarController : UITabBarController
 
-@interface A4GMapViewController : A4GViewController<MKMapViewDelegate,
-                                                    UISplitViewControllerDelegate,
-                                                    UIGestureRecognizerDelegate>
-
-@property (strong, nonatomic) IBOutlet MKMapView *mapView;
-@property (strong, nonatomic) IBOutlet UIButton *flipView;
-@property (strong, nonatomic) IBOutlet UISegmentedControl *mapType;
-@property (strong, nonatomic) IBOutlet UIButton *infoButton;
-
-@property (strong, nonatomic) IBOutlet A4GLoadingButton *refreshButton;
-@property (strong, nonatomic) IBOutlet A4GLoadingButton *locateButton;
-@property (strong, nonatomic) IBOutlet A4GSettingsViewController *settingsViewController;
-@property (strong, nonatomic) IBOutlet A4GDetailsViewController *detailsViewController;
-@property (strong, nonatomic) IBOutlet A4GLayersViewController *layersViewController;
-@property (strong, nonatomic) IBOutlet A4GTabBarController *tabBarController;
-
-- (void) addKML:(NSString*)kml;
-- (void) removeKML:(NSString*)kml;
-
-- (IBAction) locate:(id)sender event:(UIEvent*)event;
-- (IBAction) layers:(id)sender event:(UIEvent*)event;
-- (IBAction) showMapType:(id)sender event:(UIEvent*)event;
-- (IBAction) mapTypeChanged:(id)sender event:(UIEvent*)event;
-- (IBAction) mapTypeCancelled:(id)sender event:(UIEvent*)event;
+- (IBAction)done:(id)sender event:(UIEvent*)event;
 
 @end

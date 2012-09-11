@@ -28,6 +28,7 @@
 
 #import <UIKit/UIKit.h>
 
+@class A4GTabBarController;
 @class A4GMapViewController;
 @class A4GDetailsViewController;
 @class A4GSettingsViewController;
@@ -36,8 +37,7 @@
 @interface A4GAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) IBOutlet UIWindow *window;
-@property (strong, nonatomic) IBOutlet UINavigationController *masterNavigationController;
-@property (strong, nonatomic) IBOutlet UINavigationController *detailNavigationController;
+@property (strong, nonatomic) IBOutlet A4GTabBarController *tabBarController;
 @property (strong, nonatomic) IBOutlet A4GMapViewController *mapViewController;
 @property (strong, nonatomic) IBOutlet A4GDetailsViewController *detailsViewController;
 @property (strong, nonatomic) IBOutlet A4GSettingsViewController *settingsViewController;

@@ -26,39 +26,37 @@
 // 
 // ##########################################################################################
 
-#import <UIKit/UIKit.h>
-#import <MapKit/MapKit.h>
-#import "A4GViewController.h"
+#import <Foundation/Foundation.h>
+#import "Reachability.h"
 
-@class A4GDetailsViewController;
-@class A4GLayersViewController;
-@class A4GSettingsViewController;
-@class A4GTabBarController;
-@class A4GLoadingButton;
+@protocol A4GInternetDelegate;
 
-@interface A4GMapViewController : A4GViewController<MKMapViewDelegate,
-                                                    UISplitViewControllerDelegate,
-                                                    UIGestureRecognizerDelegate>
+@interface A4GInternet : NSObject
 
-@property (strong, nonatomic) IBOutlet MKMapView *mapView;
-@property (strong, nonatomic) IBOutlet UIButton *flipView;
-@property (strong, nonatomic) IBOutlet UISegmentedControl *mapType;
-@property (strong, nonatomic) IBOutlet UIButton *infoButton;
+@property (strong, nonatomic) Reachability *network;
+@property (strong, nonatomic) Reachability *wifi;
+@property (assign, nonatomic) id<A4GInternetDelegate> delegate;
 
-@property (strong, nonatomic) IBOutlet A4GLoadingButton *refreshButton;
-@property (strong, nonatomic) IBOutlet A4GLoadingButton *locateButton;
-@property (strong, nonatomic) IBOutlet A4GSettingsViewController *settingsViewController;
-@property (strong, nonatomic) IBOutlet A4GDetailsViewController *detailsViewController;
-@property (strong, nonatomic) IBOutlet A4GLayersViewController *layersViewController;
-@property (strong, nonatomic) IBOutlet A4GTabBarController *tabBarController;
+- (id) initWithDelegate:(id<A4GInternetDelegate>)delegate;
 
-- (void) addKML:(NSString*)kml;
-- (void) removeKML:(NSString*)kml;
+- (BOOL) hasNetwork;
+- (BOOL) hasWiFi;
 
-- (IBAction) locate:(id)sender event:(UIEvent*)event;
-- (IBAction) layers:(id)sender event:(UIEvent*)event;
-- (IBAction) showMapType:(id)sender event:(UIEvent*)event;
-- (IBAction) mapTypeChanged:(id)sender event:(UIEvent*)event;
-- (IBAction) mapTypeCancelled:(id)sender event:(UIEvent*)event;
+- (void) listen;
+- (void) stop;
+
+- (void) alertNetworkNotAvailable:(id<UIAlertViewDelegate>)delegate;
+- (void) alertWifFiNotAvailable:(id<UIAlertViewDelegate>)delegate;
+
+- (BOOL) isSettings:(NSString*)button;
+
+@end
+
+@protocol A4GInternetDelegate <NSObject>
+
+@optional
+
+- (void) networkChanged:(A4GInternet *)internet connected:(BOOL)connected;
+- (void) wifiChanged:(A4GInternet *)internet connected:(BOOL)connected;
 
 @end

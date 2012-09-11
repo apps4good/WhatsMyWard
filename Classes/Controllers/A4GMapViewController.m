@@ -30,6 +30,7 @@
 #import "A4GDetailsViewController.h"
 #import "A4GLayersViewController.h"
 #import "A4GSettingsViewController.h"
+#import "A4GTabBarController.h"
 #import "A4GLoadingButton.h"
 #import "A4GSettings.h"
 #import "A4GDevice.h"
@@ -52,6 +53,7 @@
 @property (strong, nonatomic) NSMutableDictionary *annotations;
 
 - (void) mapTapped:(UITapGestureRecognizer *)recognizer;
+- (void) selectAnnotation:(id <MKAnnotation>)annotation;
 
 @end
 
@@ -65,13 +67,13 @@ typedef enum {
 
 @synthesize mapView = _mapView;
 @synthesize flipView = _flipView;
-@synthesize titleView = _titleView;
 @synthesize mapType = _mapType;
 @synthesize overlays = _overlays;
 @synthesize annotations = _annotations;
 @synthesize infoButton = _infoButton;
 @synthesize refreshButton = _refreshButton;
 @synthesize locateButton = _locateButton;
+@synthesize tabBarController = _tabBarController;
 @synthesize settingsViewController = _settingsViewController;
 @synthesize layersViewController = _layersViewController;
 @synthesize detailsViewController = _detailsViewController;
@@ -124,13 +126,6 @@ typedef enum {
     [self.mapView showAllOverlays:YES allAnnotations:YES];
 }
 
-- (IBAction)settings:(id)sender event:(UIEvent*)event {
-    DLog(@"");
-    self.settingsViewController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
-    self.settingsViewController.modalPresentationStyle = UIModalPresentationFormSheet;
-    [self.navigationController presentModalViewController:self.settingsViewController animated:YES];  
-}
-
 - (IBAction)locate:(id)sender event:(UIEvent*)event {
     DLog(@"");
     if (self.mapView.userLocationVisible) {
@@ -142,16 +137,18 @@ typedef enum {
             }
         }   
     }
-    [self.mapView setUserTrackingMode:MKUserTrackingModeNone];
+    if ([self.mapView respondsToSelector:@selector(setUserTrackingMode:)]) {
+        [self.mapView setUserTrackingMode:MKUserTrackingModeNone];
+    }
     [self.mapView setShowsUserLocation:NO];
     [self.mapView setShowsUserLocation:YES];
 }
 
 - (IBAction)layers:(id)sender event:(UIEvent*)event {
     DLog(@"");
-    self.layersViewController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
-    self.layersViewController.modalPresentationStyle = UIModalPresentationFormSheet;
-    [self.navigationController presentModalViewController:self.layersViewController animated:YES];  
+    self.tabBarController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    self.tabBarController.modalPresentationStyle = UIModalPresentationFormSheet;
+    [self.navigationController presentModalViewController:self.tabBarController animated:YES];  
 }
 
 - (IBAction) mapTypeChanged:(id)sender event:(UIEvent*)event {
@@ -175,7 +172,6 @@ typedef enum {
 
 - (void)dealloc {
     [_mapView release];
-    [_titleView release];
     [_refreshButton release];
     [_locateButton release];
     [_overlays release];
@@ -187,8 +183,7 @@ typedef enum {
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.titleView setTitle:[A4GSettings appName] forState:UIControlStateNormal];
-    [self.titleView setTitle:[A4GSettings appName] forState:UIControlStateSelected];
+    self.title = [A4GSettings appName];
     [self.flipView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"pattern.png"]]];
     
     [self.mapType setTitle:NSLocalizedString(@"Standard", nil) forSegmentAtIndex:MKMapTypeStandard];
@@ -207,7 +202,9 @@ typedef enum {
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     if (self.mapView.showsUserLocation == NO) {
-        [self.mapView setUserTrackingMode:MKUserTrackingModeNone];
+        if ([self.mapView respondsToSelector:@selector(setUserTrackingMode:)]) {
+            [self.mapView setUserTrackingMode:MKUserTrackingModeNone];
+        }
         [self.mapView setShowsUserLocation:YES];   
     }
 }
@@ -269,12 +266,12 @@ typedef enum {
 
 - (void)mapViewWillStartLocatingUser:(MKMapView *)mapView {
     DLog(@"");
-    [self.locateButton setLoading:YES];
+    self.locateButton.loading = YES;
 }
 
 - (void)mapViewDidStopLocatingUser:(MKMapView *)mapView {
     DLog(@""); 
-    [self.locateButton setLoading:NO];
+    self.locateButton.loading = NO;
 }
 
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation {
@@ -286,40 +283,52 @@ typedef enum {
         [polygonView setNeedsDisplay];
         mapView.tag = MapViewActionShowLocation;
     }
-    [self.locateButton setLoading:NO];
+    self.locateButton.loading = NO;
 }
 
 - (void)mapView:(MKMapView *)mapView didFailToLocateUserWithError:(NSError *)error  {
     DLog(@"Error:%@", [error description]);
-    if (error != nil) {
-        [self showLoadingWithMessage:NSLocalizedString(@"Locate Error", nil)];
-        [self hideLoadingAfterDelay:2.0];
-    }
-    [self.locateButton setLoading:NO];
+    self.locateButton.loading = NO;
 }
 
 - (void)mapView:(MKMapView *)mapView didAddAnnotationViews:(NSArray *)views {
     if (mapView.selectedAnnotations.count == 0) {
         for (MKAnnotationView *annotationView in views) {
-            if ([annotationView.annotation isKindOfClass:[MKUserLocation class]]) {
-                if (mapView.tag == MapViewActionShowLocation) {
-                    DLog(@"User:%@", annotationView.annotation.title);
-                    [mapView selectAnnotation:annotationView.annotation animated:YES];
-                    mapView.tag = MapViewActionNone;  
-                }
+            if ([annotationView.annotation isKindOfClass:[MKUserLocation class]] && 
+                mapView.tag == MapViewActionShowLocation) {
+                DLog(@"Title:%@", annotationView.annotation.title);
+                [mapView selectAnnotation:annotationView.annotation animated:YES];
+                mapView.tag = MapViewActionNone;  
             }
         }   
     }
 }
 
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view {
-    DLog(@"%@", view.annotation.title);
+    if (mapView.tag == MapViewActionShowCallout) {
+        DLog(@"MapViewActionShowCallout: %@", view.annotation.title);
+    }
+    else if (mapView.tag == MapViewActionShowLocation) {
+        DLog(@"MapViewActionShowLocation: %@", view.annotation.title);
+    }
+    else {
+        DLog(@"MapViewActionNone: %@", view.annotation.title);
+    }
 }
 
 - (void)mapView:(MKMapView *)mapView didDeselectAnnotationView:(MKAnnotationView *)view {
     if (mapView.tag == MapViewActionShowCallout) {
-        [mapView selectAnnotation:view.annotation animated:NO];
+        DLog(@"MapViewActionShowCallout: %@", view.annotation.title);
+        if (view != nil && view.annotation != nil) {
+            [mapView selectAnnotation:view.annotation animated:NO];
+        }
         mapView.tag = MapViewActionNone;
+    }
+    else if (mapView.tag == MapViewActionShowLocation) {
+        DLog(@"MapViewActionShowLocation: %@", view.annotation.title);
+    }
+    else {
+        DLog(@"MapViewActionNone: %@", view.annotation.title);
     }
 }
 
@@ -357,19 +366,36 @@ typedef enum {
 
 - (void)mapTapped:(UITapGestureRecognizer *)recognizer {
     if (recognizer.state == UIGestureRecognizerStateEnded) {
-        self.mapView.tag = MapViewActionNone;
         CGPoint point = [recognizer locationInView:self.mapView];
-        id<MKOverlay> overlay = [self.mapView overlayForPoint:point];
-        DLog(@"Tapped:%@", overlay.title);
-        for (id <MKAnnotation> annotation in self.mapView.annotations) {
-            if ([annotation.title isEqualToString:overlay.title] && 
-                self.mapView.selectedAnnotations.count == 0) {
-                self.mapView.tag = MapViewActionShowCallout;
-                [self.mapView selectAnnotation:annotation animated:YES];
-                return;
+        CLLocationCoordinate2D coordinate = [self.mapView convertPoint:point toCoordinateFromView:self.mapView];
+        DLog(@"%f,%f > %f,%f", point.x, point.y, coordinate.latitude, coordinate.longitude);
+        self.mapView.tag = MapViewActionNone;
+        for (id<MKAnnotation> annotation in self.mapView.selectedAnnotations) {
+            [self.mapView deselectAnnotation:annotation animated:NO];
+        }
+        for (id<MKOverlay> overlay in self.mapView.overlays) {
+            MKPolygonView *polygonView = (MKPolygonView *)[self.mapView viewForOverlay:overlay];
+            MKMapPoint mapPoint = MKMapPointForCoordinate(coordinate);
+            CGPoint polygonViewPoint = [polygonView pointForMapPoint:mapPoint];
+            if (CGPathContainsPoint(polygonView.path, NULL, polygonViewPoint, NO)) {
+                DLog(@"Tapped:%@", overlay.title);
+                for (id <MKAnnotation> annotation in self.mapView.annotations) {
+                    if ([annotation.title isEqualToString:overlay.title] && 
+                        self.mapView.selectedAnnotations.count == 0) {
+                        self.mapView.tag = MapViewActionShowCallout;
+                        [self performSelector:@selector(selectAnnotation:) withObject:annotation afterDelay:0.5];
+                        //[self.mapView selectAnnotation:annotation animated:YES];
+                        return;
+                    }
+                }    
+
             }
-        }        
+        }       
     }
+}
+
+- (void) selectAnnotation:(id <MKAnnotation>)annotation {
+    [self.mapView selectAnnotation:annotation animated:YES];
 }
 
 #pragma mark - UISplitViewController

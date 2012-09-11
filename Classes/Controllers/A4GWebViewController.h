@@ -27,19 +27,19 @@
 // ##########################################################################################
 
 #import "A4GViewController.h"
+#import "A4GInternet.h"
 
-@interface A4GWebViewController : A4GViewController<UITextFieldDelegate, 
-                                                    UIWebViewDelegate>
+@class A4GLoadingButton;
+
+@interface A4GWebViewController : A4GViewController<UIWebViewDelegate, 
+                                                    A4GInternetDelegate>
 
 @property (strong, nonatomic) IBOutlet UIWebView *webView;
-@property (strong, nonatomic) IBOutlet UISegmentedControl *segmentControl;
-@property (strong, nonatomic) IBOutlet UITextField *textField;
 @property (strong, nonatomic) IBOutlet UIButton *flipView;
 @property (strong, nonatomic) IBOutlet UISegmentedControl *scaleType;
 @property (strong, nonatomic) IBOutlet UIButton *infoButton;
 @property (strong, nonatomic) NSString *url;
 
-- (IBAction)navigate:(id)sender event:(UIEvent*)event;
 - (IBAction) showScaleType:(id)sender event:(UIEvent*)event;
 - (IBAction) scaleTypeChanged:(id)sender event:(UIEvent*)event;
 - (IBAction) scaleTypeCancelled:(id)sender event:(UIEvent*)event;

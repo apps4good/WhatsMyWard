@@ -33,6 +33,4 @@
                                                               UITableViewDelegate,
                                                               A4GShareControllerDelegate>
 
-- (IBAction) done:(id)sender event:(UIEvent*)event;
-
 @end

@@ -26,9 +26,8 @@
 // 
 // ##########################################################################################
 
-
-
 #import "A4GAppDelegate.h"
+#import "A4GTabBarController.h"
 #import "A4GMapViewController.h"
 #import "A4GDetailsViewController.h"
 #import "A4GSettingsViewController.h"
@@ -39,12 +38,15 @@
 @interface A4GAppDelegate ()
 
 @property (strong, nonatomic) UISplitViewController *splitViewController;
+@property (strong, nonatomic) UINavigationController *masterNavigationController;
+@property (strong, nonatomic) UINavigationController *detailNavigationController;
 
 @end
 
 @implementation A4GAppDelegate
 
 @synthesize window = _window;
+@synthesize tabBarController = _tabBarController;
 @synthesize splitViewController = _splitViewController;
 @synthesize mapViewController = _mapViewController;
 @synthesize detailsViewController = _detailsViewController;
@@ -57,7 +59,7 @@
 
 - (void)sidebar:(id)sender event:(UIEvent*)event {
     UIBarButtonItem *barButtonItem = (UIBarButtonItem*)sender;
-    CGRect master = self.masterNavigationController.view.frame;
+    CGRect master = self.tabBarController.view.frame;
     CGRect split = self.splitViewController.view.frame;    
     UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];  
     DLog(@"Before:%@", NSStringFromCGRect(split));
@@ -110,6 +112,7 @@
 
 - (void)dealloc {
     [_window release];
+    [_tabBarController release];
     [_splitViewController release];
     [_mapViewController release];
     [_detailsViewController release];
@@ -125,16 +128,17 @@
         self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     }
     if ([A4GDevice isIPad]) {
-        self.masterNavigationController.navigationBar.tintColor = [A4GSettings navBarColor];
+        self.detailNavigationController = [[UINavigationController alloc] initWithRootViewController:self.mapViewController];
         self.detailNavigationController.navigationBar.tintColor = [A4GSettings navBarColor];
         
         self.splitViewController = [[UISplitViewController alloc] init];
-        self.splitViewController.viewControllers = [NSArray arrayWithObjects:self.masterNavigationController, self.detailNavigationController, nil];
+        self.splitViewController.viewControllers = [NSArray arrayWithObjects:self.tabBarController, self.detailNavigationController, nil];
         self.splitViewController.delegate = self.mapViewController;
         
         self.window.rootViewController = self.splitViewController;
     } 
     else {
+        self.masterNavigationController = [[UINavigationController alloc] initWithRootViewController:self.mapViewController];
         self.masterNavigationController.navigationBar.tintColor = [A4GSettings navBarColor];
         self.window.rootViewController = self.masterNavigationController;
     }

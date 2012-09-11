@@ -29,8 +29,16 @@
 #import "A4GWebViewController.h"
 #import "UIViewController+A4G.h"
 #import "UIAlertView+A4G.h"
+#import "UIBarButtonItem+A4G.h"
+#import "A4GLoadingButton.h"
+#import "A4GDevice.h"
 
 @interface A4GWebViewController ()
+
+@property (strong, nonatomic) A4GInternet *internet;
+@property (strong, nonatomic) UIBarButtonItem *backButton;
+@property (strong, nonatomic) UIBarButtonItem *forwardButton;
+@property (strong, nonatomic) A4GLoadingButton *refreshButton;
 
 - (void) loadAddress:(NSString *)address;
 
@@ -39,17 +47,14 @@
 @implementation A4GWebViewController
 
 @synthesize url = _url;
+@synthesize internet = _internet;
 @synthesize webView = _webView;
-@synthesize textField = _textField;
 @synthesize infoButton = _infoButton;
 @synthesize flipView = _flipView;
 @synthesize scaleType = _scaleType;
-@synthesize segmentControl = _segmentControl;
-
-typedef enum {
-    NavigateBack,
-    NavigateForward
-} Navigate;
+@synthesize backButton = _backButton;
+@synthesize forwardButton = _forwardButton;
+@synthesize refreshButton = _refreshButton;
 
 typedef enum {
     WebScaleNormal,
@@ -68,15 +73,6 @@ typedef enum {
     } 
 }
 
-- (IBAction)navigate:(id)sender event:(UIEvent*)event {
-    if (self.segmentControl.selectedSegmentIndex == NavigateBack) {
-        [self.webView goBack];
-    }
-    else if (self.segmentControl.selectedSegmentIndex == NavigateForward) {
-        [self.webView goForward];
-    }
-}
-
 - (IBAction) scaleTypeChanged:(id)sender event:(UIEvent*)event {
     DLog(@"");
     if (self.scaleType.selectedSegmentIndex == WebScaleNormal) {
@@ -86,7 +82,7 @@ typedef enum {
         self.webView.scalesPageToFit = YES;
     }
     [self animatePageCurlDown:0.5];
-    [self loadAddress:self.textField.text];
+    [self loadAddress:self.url];
 }
 
 - (void)scaleTypeCancelled:(id)sender event:(UIEvent*)event {
@@ -109,61 +105,78 @@ typedef enum {
 
 - (void)dealloc {
     [_url release];
+    [_internet release];
     [_webView release];
-    [_textField release];
     [_scaleType release];
     [_infoButton release];
     [_flipView release];
-    [_segmentControl release];
+    [_backButton release];
+    [_forwardButton release];
+    [_refreshButton release];
     [super dealloc];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.internet = [[A4GInternet alloc] initWithDelegate:self];
     [self.flipView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"pattern.png"]]];
+    self.backButton = [UIBarButtonItem borderedItemWithImage:[UIImage imageNamed:@"back.png"] target:self.webView action:@selector(goBack)];
+    self.forwardButton = [UIBarButtonItem borderedItemWithImage:[UIImage imageNamed:@"forward.png"] target:self.webView action:@selector(goForward)];
+    self.refreshButton = [[A4GLoadingButton alloc] initWithImage:[UIImage imageNamed:@"refresh.png"] style:UIBarButtonItemStyleBordered target:self.webView action:@selector(reload)];
+    self.navigationItem.rightBarButtonItem = [self barButtonWithItems:self.refreshButton, self.backButton, self.forwardButton, nil];                                
+}
+
+- (void) viewDidUnload {
+    [super viewDidUnload];
+    self.internet = nil;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    self.textField.text = self.url;
     [self loadAddress:self.url];
-}
-
-#pragma mark - UITextFieldDelegate
-
-- (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    DLog(@"%@", textField.text);
-    [self loadAddress:textField.text];
-    [textField resignFirstResponder];
-    return YES;
 }
 
 #pragma mark - UIWebViewDelegate
 
 - (void)webViewDidStartLoad:(UIWebView *)webView {
     DLog(@"");
-    [self showLoadingWithMessage:NSLocalizedString(@"Loading...", nil)];
-    NSURL *url = [[webView request] URL];
-    if (url != nil) {
-        self.textField.text = [url absoluteString];   
+    if ([self.internet hasWiFi] || [self.internet hasNetwork]) {
+        self.navigationItem.title = NSLocalizedString(@"Loading...", nil);
+        self.refreshButton.loading = YES;
     }
-    [self.segmentControl setEnabled:webView.canGoBack forSegmentAtIndex:NavigateBack];
-    [self.segmentControl setEnabled:webView.canGoForward forSegmentAtIndex:NavigateForward];
+    else {
+        self.navigationItem.title = NSLocalizedString(@"No Internet", nil);
+        [self showLoadingWithMessage:NSLocalizedString(@"No Internet", nil)];
+        [self hideLoadingAfterDelay:2.0];
+    }
+    self.backButton.enabled = webView.canGoBack;
+    self.forwardButton.enabled = webView.canGoForward;    
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
     DLog(@"");
-    NSURL *url = [[webView request] URL];
-    if (url != nil) {
-        self.textField.text = [url absoluteString];   
-    }
-    [self.segmentControl setEnabled:webView.canGoBack forSegmentAtIndex:NavigateBack];
-    [self.segmentControl setEnabled:webView.canGoForward forSegmentAtIndex:NavigateForward];
-    [self hideLoading];
+    self.navigationItem.title = [webView stringByEvaluatingJavaScriptFromString:@"document.title"];
+    self.refreshButton.loading = NO;
+    self.backButton.enabled = webView.canGoBack;
+    self.forwardButton.enabled = webView.canGoForward;
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
     DLog(@"%@", [error localizedDescription]);
+    self.navigationItem.title = [error localizedDescription];
+    self.refreshButton.loading = NO;
+    self.backButton.enabled = webView.canGoBack;
+    self.forwardButton.enabled = webView.canGoForward;
+}
+
+#pragma mark - A4GInternetDelegate
+
+- (void) networkChanged:(A4GInternet *)internet connected:(BOOL)connected {
+    DLog(@"Network: %@", connected ? @"Connected" : @"Not Connected");
+}
+
+- (void) wifiChanged:(A4GInternet *)internet connected:(BOOL)connected {
+    DLog(@"WiFi: %@", connected ? @"Connected" : @"Not Connected");
 }
 
 @end

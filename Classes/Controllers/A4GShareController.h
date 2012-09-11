@@ -29,10 +29,8 @@
 #import <Foundation/Foundation.h>
 #import <MessageUI/MessageUI.h>
 #import <MessageUI/MFMailComposeViewController.h>
-#if defined(__IPHONE_5_0) && __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_5_0
 #import <Twitter/Twitter.h>
 #import <Accounts/Accounts.h>
-#endif
 
 @protocol A4GShareControllerDelegate;
 

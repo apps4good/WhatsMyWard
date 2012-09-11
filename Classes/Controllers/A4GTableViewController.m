@@ -152,10 +152,16 @@ typedef enum {
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForText:(NSString*)text withFont:(UIFont*)font {
+    DLog(@"tableView.frame.size.width: %f", tableView.frame.size.width);
     CGFloat width = tableView.frame.size.width;
     if (tableView.style == UITableViewStyleGrouped) {
         if ([A4GDevice isIPad]){
-            width -= 90.0;
+            if (width > 320) {
+                width -= 90.0;
+            }
+            else {
+                width -= 40.0;     
+            }           
         }
         else {
             width -= 20.0;

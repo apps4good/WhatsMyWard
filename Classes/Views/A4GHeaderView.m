@@ -69,7 +69,10 @@
 
 + (CGFloat) getPaddingForTable:(UITableView *)tableView {
 	if ([A4GDevice isIPad]) {
-		return tableView.style == UITableViewStylePlain ? 10 : 50;
+        if (tableView.style == UITableViewStylePlain) {
+            return 10;
+        }
+        return tableView.contentSize.width > 320 ? 50 : 18;
 	}
 	return tableView.style == UITableViewStylePlain ? 10 : 15;
 }

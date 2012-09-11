@@ -107,7 +107,7 @@
     va_end(args);
     [toolbar setItems:buttons animated:NO];
     
-    double width = [toolbar.items count] > 1 ? 12.0 : 0.0;
+    double width = toolbar.items.count > 1 ? 12.0 * (toolbar.items.count - 1) : 0.0;
     for(int i = 0; i < [toolbar.subviews count]; i++){
         UIView *view = (UIView *)[toolbar.subviews objectAtIndex:i];
         width += view.bounds.size.width;
