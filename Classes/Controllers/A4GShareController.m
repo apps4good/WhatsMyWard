@@ -135,9 +135,7 @@ typedef enum {
 }
 
 - (BOOL) canSendTweet {
-    return [TWTweetComposeViewController class] != nil &&
-        [TWTweetComposeViewController canSendTweet];
-    //return NSClassFromString(@"TWTweetComposeViewController") != nil;
+    return [TWTweetComposeViewController class] != nil && [TWTweetComposeViewController canSendTweet];
 }
 
 - (BOOL) canCallNumber:(NSString*)number {
@@ -160,8 +158,6 @@ typedef enum {
 - (void) sendTweet:(NSString*)tweet withURL:(NSString*)url {
     DLog(@"Tweet:%@ URL:%@", tweet, url);
     if ([self canSendTweet]) {
-        //Class TWTweetComposeViewControllerClass = NSClassFromString(@"TWTweetComposeViewController");
-        //UIViewController *twitterViewController = [[TWTweetComposeViewControllerClass alloc] init];
         TWTweetComposeViewController *twitterViewController = [[TWTweetComposeViewController alloc] init];
         if (tweet != nil) {
             [twitterViewController performSelector:@selector(setInitialText:) withObject:tweet];

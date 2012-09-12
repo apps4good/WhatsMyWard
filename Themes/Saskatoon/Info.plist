@@ -5,11 +5,11 @@
 	<key>A4GAboutEmail</key>
 	<string>contact@apps4good.ca</string>
 	<key>A4GAboutText</key>
-	<string>Apps4Good is an alliance of software developers who are passionate about improving our community, by doing what they love: build software.</string>
+	<string>Apps4Good is an alliance of software developers who are passionate about improving their community, by doing what they love: build software.</string>
 	<key>A4GAboutURL</key>
 	<string>http://apps4good.ca</string>
 	<key>A4GAppText</key>
-	<string>What's My Ward is an app to help residents of Saskatoon find what ward they live in and make it easy to contact their city councillor.</string>
+	<string>What&apos;s My Ward is an app to help residents of Saskatoon find what ward they live in and make it easy to contact their city councillor.</string>
 	<key>A4GAppURL</key>
 	<string>http://itunes.apple.com/us/app/whats-my-ward-saskatoon/id555098142</string>
 	<key>A4GButtonDoneColor</key>
@@ -63,7 +63,7 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>What's My Ward?</string>
+	<string>What&apos;s My Ward?</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
@@ -80,7 +80,7 @@
 	<string>A4GApplication_iPad</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
-		<string>armv7</string>
+		<string>armv6</string>
 	</array>
 	<key>UIStatusBarStyle</key>
 	<string>UIStatusBarStyleBlackOpaque</string>

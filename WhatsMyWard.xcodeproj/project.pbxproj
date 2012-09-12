@@ -1252,7 +1252,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = (
+					armv6,
+					armv7,
+				);
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1280,7 +1283,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = (
+					armv6,
+					armv7,
+				);
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1302,8 +1308,12 @@
 		3EDFF66615BE00BC00939749 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Dale Zak (89V8WPXURA)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Dale Zak (89V8WPXURA)";
 				INFOPLIST_FILE = Themes/Saskatoon/Info.plist;
 				PRODUCT_NAME = WMW_Saskatoon;
+				PROVISIONING_PROFILE = "848B5B07-6A64-48D6-8F12-B6840B1BAE66";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "848B5B07-6A64-48D6-8F12-B6840B1BAE66";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
