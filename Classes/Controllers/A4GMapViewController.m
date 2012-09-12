@@ -244,15 +244,17 @@ typedef enum {
         annotationView.canShowCallout = NO;
         CLLocationCoordinate2D coordinate = mapView.userLocation.coordinate;
         for (id <MKOverlay> overlay in self.mapView.overlays) {
-            MKMapPoint userPoint = MKMapPointForCoordinate(coordinate);
-            if (MKMapRectContainsPoint(overlay.boundingMapRect, userPoint) ) {
+            MKMapPoint mapPoint = MKMapPointForCoordinate(coordinate);
+            MKPolygonView *polygonView = (MKPolygonView *)[mapView viewForOverlay:overlay];
+            CGPoint polygonViewPoint = [polygonView pointForMapPoint:mapPoint];
+            if (CGPathContainsPoint(polygonView.path, NULL, polygonViewPoint, NO)) {
                 annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
                 annotation.title = overlay.title;
                 annotation.subtitle = overlay.subtitle;  
                 annotationView.canShowCallout = YES;
                 break;
             }
-        }
+        }        
         return annotationView;
     }
     else {
