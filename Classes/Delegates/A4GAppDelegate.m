@@ -142,7 +142,9 @@
         self.masterNavigationController.navigationBar.tintColor = [A4GSettings navBarColor];
         self.window.rootViewController = self.masterNavigationController;
     }
+    [self.window setFrame:[[UIScreen mainScreen] bounds]];
     [self.window makeKeyAndVisible];
+    
     return YES;
 }
 

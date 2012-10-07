@@ -421,19 +421,19 @@ typedef enum {
 - (BOOL)splitViewController: (UISplitViewController*)splitController 
    shouldHideViewController:(UIViewController *)viewController 
               inOrientation:(UIInterfaceOrientation)orientation {
-    if (orientation == UIInterfaceOrientationLandscapeLeft) {
-        return NO;
-    }
-    if (orientation == UIInterfaceOrientationLandscapeRight) {
-        return NO;
-    }
-    if (orientation == UIInterfaceOrientationPortrait) {
-        return YES;
-    }
-    if (orientation == UIInterfaceOrientationPortraitUpsideDown) {
-        return YES;
-    }
-    return NO;
+//    if (orientation == UIInterfaceOrientationLandscapeLeft) {
+//        return NO;
+//    }
+//    if (orientation == UIInterfaceOrientationLandscapeRight) {
+//        return NO;
+//    }
+//    if (orientation == UIInterfaceOrientationPortrait) {
+//        return YES;
+//    }
+//    if (orientation == UIInterfaceOrientationPortraitUpsideDown) {
+//        return YES;
+//    }
+    return YES;
 }
 
 @end
